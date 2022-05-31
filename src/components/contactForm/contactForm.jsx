@@ -1,21 +1,46 @@
-import React, { useState } from "react";
+import React, { useReducer } from "react";
+import Modal from "../modal/modal";
 import SubmitButton from "../submitButton";
 import styles from "./contactForm.module.scss";
 
+initialState = {
+  sending: false,
+  message: "",
+  showModal: false,
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "SENDING":
+      return { ...state, sending: true };
+    case "SENT":
+      return {
+        ...state,
+        sending: false,
+        message: action.message,
+        showModal: true,
+      };
+    case "CLOSE_MODAL":
+      return { ...state, showModal: false };
+    default:
+      return state;
+  }
+};
+
 const ContactForm = () => {
-  const [sending, setSending] = useState(false);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Enviado");
+    console.log("Enviando");
     const form = e.target;
     const data = new FormData(form);
     const dataObject = Object.fromEntries(data.entries());
-    setSending(true);
+    dispatch({ type: "SENDING" });
     //make mock post request
     const postCallback = () => {
       console.table(dataObject);
-      setSending(false);
+      dispatch({ type: "SENT", message: "Message sent successfully!" });
     };
     setTimeout(() => postCallback(), 2000);
   };
@@ -90,6 +115,11 @@ const ContactForm = () => {
           />
         </div>
         <SubmitButton sending={sending} />
+        <Modal
+          show={state.showModal}
+          onClose={() => dispatch({ type: "CLOSE_MODAL" })}
+          message={state.message}
+        />
       </form>
     </section>
   );

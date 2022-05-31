@@ -1,10 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./submitButton.module.scss";
 
 const SubmitButton = ({ sending }) => {
-  useEffect(() => {
-    console.log(sending);
-  }, [sending]);
   return (
     <button
       type="submit"
