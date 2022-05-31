@@ -1,12 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import SubmitButton from "../submitButton";
 import styles from "./contactForm.module.scss";
 
 const ContactForm = () => {
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Enviado");
+    const form = e.target;
+    const data = new FormData(form);
+    const dataObject = Object.fromEntries(data.entries());
+    setSending(true);
+    //make mock post request
+    const postCallback = () => {
+      console.table(dataObject);
+      setSending(false);
+    };
+    setTimeout(() => postCallback(), 2000);
+  };
+
   return (
     <section aria-labelledby="Contact Us Form">
       <h1 className={styles.sectionTitle}>Contact Us</h1>
-      <form className={styles.contactForm}>
+      <form className={styles.contactForm} onSubmit={handleSubmit}>
         <div className={styles.contactForm_group}>
           <label className={styles.contactForm_Label} htmlFor="name">
             NAME
@@ -50,13 +67,13 @@ const ContactForm = () => {
           <select
             className={styles.contactForm_Input}
             type="range"
-            name="enquiretype"
+            name="enquirytype"
             required
           >
-            <option value="1">Advertising</option>
-            <option value="2">Request Information</option>
-            <option value="3">Complaining</option>
-            <option value="4">Feedback</option>
+            <option value="Advertising">Advertising</option>
+            <option value="Request Information">Request Information</option>
+            <option value="Complaining">Complaining</option>
+            <option value="Feedback">Feedback</option>
           </select>
         </div>
         <div className={styles.contactForm_group}>
@@ -72,7 +89,7 @@ const ContactForm = () => {
             required
           />
         </div>
-        <SubmitButton />
+        <SubmitButton sending={sending} />
       </form>
     </section>
   );
