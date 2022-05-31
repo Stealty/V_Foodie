@@ -1,0 +1,12 @@
+@import "../../styles/global.scss";
+
+.submitButton {
+  background-color: $primary-text-color;
+  color: $primary-background-color;
+  padding: 1rem;
+  border-radius: 16px;
+  width: 100%;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.5rem;
+}
