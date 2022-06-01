@@ -1,0 +1,27 @@
+@mixin Hamburguer{
+    width: 90%;
+    border-radius: 20%;
+    background-color: black;
+    height: 5vw;
+}
+
+.Menu{
+    list-style-type: none;
+    width: 90%;
+    height: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 5% 5%;
+    padding: 0;
+    .Menu-Top{
+        @include Hamburguer;
+    }
+    .Menu-Middle{
+        @include Hamburguer;
+    }
+    .Menu-Bottom{
+        @include Hamburguer;
+    }
+}
