@@ -1,4 +1,24 @@
-@import "../../styles/global.scss";
+@use "../../styles/global";
+
+@mixin input_template {
+  width: 100%;
+  padding: 1rem;
+  font-family: "Inter", sans-serif;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  transition: all 0.2s ease-in-out;
+  &:focus {
+    outline: none;
+    border-color: global.$accent-color-logo;
+  }
+  ::placeholder {
+    color: rgba(0, 0, 0, 0.6);
+    letter-spacing: -0.02rem;
+    font-family: "Inter", sans-serif;
+    font-size: 0.875rem;
+  }
+}
 
 .sectionTitle {
   font-weight: 600;
@@ -7,23 +27,17 @@
   letter-spacing: -0.04em;
 }
 
+.contactForm {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .contactForm_Input {
-  width: 100%;
-  padding: 1rem;
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 16px;
-}
-
-.contactForm_Input ::placeholder {
-  color: rgba(0, 0, 0, 0.6);
-  letter-spacing: -0.02rem;
-  font-size: 0.875rem;
-}
-
-.contactForm_Input:focus {
-  outline: none;
-  border-color: $accent-color-logo;
+  @include input_template;
 }
 
 .contactForm_Label {
@@ -33,7 +47,7 @@
   line-height: 1.25rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 1rem 1rem 1rem 0;
+  padding: 1rem 1rem 0 0;
   color: rgba(0, 0, 0, 0.6);
 }
 
@@ -42,16 +56,12 @@
 }
 
 .contactForm_textArea {
+  @include input_template;
   max-width: 100%;
   min-width: 100%;
-  padding: 1rem;
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 16px;
   resize: none;
 }
 
-.contactForm_textArea:focus {
-  outline: none;
-  border-color: $accent-color-logo;
+.contactForm_group__textArea {
+  grid-column: 1 / -1;
 }

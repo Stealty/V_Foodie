@@ -3,7 +3,7 @@ import Modal from "../modal/modal";
 import SubmitButton from "../submitButton";
 import styles from "./contactForm.module.scss";
 
-initialState = {
+const initialState = {
   sending: false,
   message: "",
   showModal: false,
@@ -101,7 +101,9 @@ const ContactForm = () => {
             <option value="Feedback">Feedback</option>
           </select>
         </div>
-        <div className={styles.contactForm_group}>
+        <div
+          className={`${styles.contactForm_group} ${styles.contactForm_group__textArea}`}
+        >
           <label className={styles.contactForm_Label} htmlFor="message">
             MESSAGE
           </label>
@@ -109,12 +111,11 @@ const ContactForm = () => {
             className={styles.contactForm_textArea}
             name="message"
             placeholder="Enter your message..."
-            cols="30"
             rows="10"
             required
           />
         </div>
-        <SubmitButton sending={sending} />
+        <SubmitButton sending={state.sending} />
         <Modal
           show={state.showModal}
           onClose={() => dispatch({ type: "CLOSE_MODAL" })}
