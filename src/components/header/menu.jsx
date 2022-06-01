@@ -11,7 +11,7 @@ const Menu = () => {
         <ul className="Menu Menu-Slider-On">
             <li>Home</li>
             <li>Recipes</li>
-            <li>Blogaaaa</li>
+            <li>Blog</li>
             <li>About Us</li>
             <li>Contact</li>
         </ul>
