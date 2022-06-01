@@ -53,6 +53,7 @@
     color: rgba(0, 0, 0, 0.6);
     font-size: 14px;
     letter-spacing: -0.02em;
+    font-weight: 600;
 
     &__time {
       display: flex;
@@ -74,7 +75,6 @@
       display: flex;
       justify-content: space-between;
       width: 80px;
-
     }
   }
 }
