@@ -1,0 +1,24 @@
+$primary-text-color: #000;
+$primary-background-color: #fff;
+$card-background-color: #E4E6F1;
+$accent-color-logo: rgb(255,166,38);
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    color: $primary-text-color;
+    background-color: $primary-background-color;
+    font-family: "Inter", sans-serif;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
