@@ -1,11 +1,49 @@
-.carousel-wrapper {
+.carousel {
   display: flex;
   flex-direction: row;
+  position: relative;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   gap: 2.5rem;
+  margin-left: 4.7px;
 
   &::-webkit-scrollbar {
     display: none;
   }
+
+   &__scrollButton--left {
+     z-index: 1;
+     position: fixed;
+     top: 7rem;
+     left: 4.7px;
+     height: 46px;
+     width: 31px;
+     background-image: url("/images/Union.png");
+     border: none;
+     background-color: transparent;
+
+
+     & img {
+       width: 100%;
+       height: 100%;
+     }
+   }
+
+   &__scrollButton--right {
+     position: fixed;
+     top: 7rem;
+     right: 4.7px;
+     height: 46px;
+     width: 31px;
+     background-image: url("/images/Union.png");
+     border: none;
+     background-color: transparent;
+     transform: rotate(180deg);
+
+
+     & img {
+       width: 100%;
+       height: 100%;
+     }
+   }
 }
