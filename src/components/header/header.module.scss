@@ -1,0 +1,15 @@
+.Header{
+    display: grid;
+    grid-template-columns: 75% 25%;
+    width: 100%;
+    height: 9vh;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+
+@media(min-width:1024px){
+    .Header{
+        grid-template-columns: 20% 80%;
+    }
+}

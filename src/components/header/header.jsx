@@ -1,8 +1,10 @@
 import React from "react";
-import './header.scss';
+import Menu from "./menu";
+import Logo from "../logo/logo"
+import styles from "./header.module.scss";
 
 const Header = () => {
-  return <header>Header</header>;
+  return <header className={styles["Header"]}><Logo></Logo><Menu></Menu></header>;
 };
 
 export default Header;
