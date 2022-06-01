@@ -1,0 +1,57 @@
+@import "../../styles/global.scss";
+
+.sectionTitle {
+  font-weight: 600;
+  font-size: 3.75rem;
+  line-height: 4.5625rem;
+  letter-spacing: -0.04em;
+}
+
+.contactForm_Input {
+  width: 100%;
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+}
+
+.contactForm_Input ::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+  letter-spacing: -0.02rem;
+  font-size: 0.875rem;
+}
+
+.contactForm_Input:focus {
+  outline: none;
+  border-color: $accent-color-logo;
+}
+
+.contactForm_Label {
+  display: block;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 1rem 1rem 1rem 0;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.contactForm_group {
+  margin-bottom: 0.5rem;
+}
+
+.contactForm_textArea {
+  max-width: 100%;
+  min-width: 100%;
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  resize: none;
+}
+
+.contactForm_textArea:focus {
+  outline: none;
+  border-color: $accent-color-logo;
+}
