@@ -1,38 +1,11 @@
 import styles from "./Card.module.scss";
 
-const cards = [
-  {
-    image: "/images/fruit-salad.png",
-    title: "Mixed Tropical Fruit Salad with Superfood Boosts",
-    time: "30 Minutes",
-    type: "Healthy",
-  },
-  {
-    image: "/images/beef.png",
-    title: "Big and Juicy Wagyu Beef Cheeseburger",
-    time: "30 Minutes",
-    type: "Western",
-  },
-  {
-    image: "/images/japanese.png",
-    title: "Healthy Japanese Fried Rice with Asparagus",
-    time: "30 Minutes",
-    type: "Healthy",
-  },
-  {
-    image: "/images/taco.png",
-    title: "Cauliflower Walnut Vegetarian Taco Meat",
-    time: "30 Minutes",
-    type: "Eastern",
-  },
-];
-
-export default function Card() {
+export default function Card({ card }) {
   return (
     <div className={styles["card"]}>
       <div className={styles["card__container"]}>
         <img
-          src={cards[0].image}
+          src={card.image}
           alt="Mixed Tropical Fruit Salad with Superfood Boosts"
           className={styles["card__image"]}
         />
@@ -45,7 +18,7 @@ export default function Card() {
       </div>
 
       <div className={styles["card__info"]}>
-        <h2 className={styles["card__info__title"]}>{cards[0].title}</h2>
+        <h2 className={styles["card__info__title"]}>{card.title}</h2>
         <div className={styles["card__info__text"]}>
           <p className={styles["card__info__text__time"]}>
             <span>
@@ -62,7 +35,7 @@ export default function Card() {
                 />
               </svg>
             </span>{" "}
-            {cards[0].time}
+            {card.time}
           </p>
           <p className={styles["card__info__text__type"]}>
             <span>
@@ -91,7 +64,7 @@ export default function Card() {
                 />
               </svg>
             </span>{" "}
-            {cards[0].type}
+            {card.type}
           </p>
         </div>
       </div>
