@@ -9,7 +9,7 @@
 
   &__heart {
     position: absolute;
-    top: 36px;
+    top: 18px;
     right: 16px;
     display: flex;
     align-items: center;
@@ -36,10 +36,45 @@
 .card-wrapper__info {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+
+  &__title {
+    font-size: 18px;
+    letter-spacing: -0.04em;
+    line-height: 26px;
+    margin-top: 12px;
+    margin-bottom: 27px;
+  }
 
   &__text {
+    position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    letter-spacing: -0.02em;
+
+    &__time {
+      display: flex;
+      justify-content: space-between;
+      width: 99px;
+      margin-right: 28px;
+    }
+
+    &__time::before {
+      position: absolute;
+      top: -18px;
+      left: 6px;
+      display: flex;
+      content: "_";
+      font-weight: bold;
+    }
+
+    &__type {
+      display: flex;
+      justify-content: space-between;
+      width: 80px;
+
+    }
   }
 }
