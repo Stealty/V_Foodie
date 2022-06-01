@@ -7,7 +7,6 @@
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 16px;
-  transition: all 0.2s ease-in-out;
   &:focus {
     outline: none;
     border-color: global.$accent-color-logo;
@@ -20,24 +19,70 @@
   }
 }
 
+.contactUsSection {
+  margin-bottom: 2rem;
+}
+
 .sectionTitle {
   font-weight: 600;
-  font-size: 3.75rem;
+  font-size: 3rem;
   line-height: 4.5625rem;
   letter-spacing: -0.04em;
+  @media screen and (min-width: 768px) {
+    font-size: 4rem;
+    line-height: 7.813rem;
+    letter-spacing: -0.04em;
+    text-align: center;
+  }
 }
 
 .contactForm {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 1rem 2rem;
+  grid-template-rows: 1fr 1fr 1fr 1fr 3fr min-content;
+  grid-template-areas:
+    "name"
+    "email"
+    "enquiry"
+    "subject"
+    "message"
+    "button";
   @media screen and (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 3fr min-content;
+    grid-template-areas:
+      "name email"
+      "subject enquiry"
+      "message message"
+      "button .";
+  }
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: min-content 1fr 1fr;
+    grid-template-rows: min-content min-content 1fr min-content;
+    grid-template-areas:
+      "image name email"
+      "image subject enquiry"
+      "image message message"
+      ". button .";
   }
 }
 
 .contactForm_Input {
   @include input_template;
+}
+
+.contactForm_group__name {
+  grid-area: name;
+}
+.contactForm_group__email {
+  grid-area: email;
+}
+.contactForm_group__subject {
+  grid-area: subject;
+}
+.contactForm_group__enquiry {
+  grid-area: enquiry;
 }
 
 .contactForm_Label {
@@ -47,21 +92,30 @@
   line-height: 1.25rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 1rem 1rem 0 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   color: rgba(0, 0, 0, 0.6);
 }
 
 .contactForm_group {
-  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .contactForm_textArea {
   @include input_template;
   max-width: 100%;
   min-width: 100%;
+  height: 100%;
   resize: none;
 }
 
 .contactForm_group__textArea {
   grid-column: 1 / -1;
+  grid-area: message;
+  height: 100%;
+}
+
+.submitButton_wrapper {
+  grid-area: button;
 }
