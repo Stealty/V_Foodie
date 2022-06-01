@@ -1,0 +1,45 @@
+.card-wrapper {
+  width: 290px;
+  height: 363PX;
+  position: relative; 
+}
+
+.card-wrapper__image__container {
+  width: 100%;
+
+  &__heart {
+    position: absolute;
+    top: 36px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: white;
+    border-radius: 100%;
+    
+
+    &__svg {
+      width: 20px;
+      height: 18px;
+    }
+  }
+
+  &__image{
+    width: 290px;
+    height: 200px;
+    border-radius: 20px;
+  }
+}
+
+.card-wrapper__info {
+  display: flex;
+  flex-direction: column;
+
+  &__text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
