@@ -1,19 +1,18 @@
 @mixin Hamburguer{
-    width: 90%;
+    width: 60%;
     border-radius: 20%;
     background-color: black;
-    height: 5vw;
+    height: 10%;
 }
 
 .Menu{
     list-style-type: none;
     width: 90%;
-    height: 5vw;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    margin: 5% 5%;
     padding: 0;
     .Menu-Top{
         @include Hamburguer;
