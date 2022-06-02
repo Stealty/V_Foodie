@@ -2,7 +2,7 @@
 
 @keyframes MenuSlider {
     0% {
-        transform: translateY(-100px);
+        transform: translateY(-100vh);
     }
 
     100% {
@@ -41,7 +41,7 @@
 }
 
 @mixin Hamburguer () {
-    width: 50px;
+    width: 40px;
     border-radius: 5px;
     background-color: black;
     height: 6px;
@@ -98,39 +98,23 @@
 }
 
 .Slider-On {
-    display: block;
+    display: flex;
+    flex-direction: column;
     position: absolute;
     left: 0;
     top: 9%;
-    font-size: 2rem;
-    font-weight: 500;
     width: 100vw;
     height: 100vh;
     background-color: white;
+    padding-top: 5%;
     animation-name: MenuSlider;
     animation-duration: 2s;
     .Item{
-        margin-bottom: 20px;
-    }
-}
-
-@media(min-width:480px) {
-    @mixin Hamburguer {
-        width: 60px;
-    }
-
-    .Menu-Hamburguer {
-        .Menu-Top {
-            @include Hamburguer;
-        }
-
-        .Menu-Middle {
-            @include Hamburguer;
-        }
-
-        .Menu-Bottom {
-            @include Hamburguer;
-        }
+        margin: 0 0 6% 6%;
+        font-size: 1rem;
+        font-weight: 500;
+        text-decoration: none;;
+        color: $primary-text-color;
     }
 }
 

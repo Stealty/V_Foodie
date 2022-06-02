@@ -18,10 +18,10 @@ const Footer = () => {
         </p>
 
         <nav className={styles.navContainer}>
-          <NavContainer text="Recipes"></NavContainer>
-          <NavContainer text="Blog"></NavContainer>
-          <NavContainer text="Contact"></NavContainer>
-          <NavContainer text="About Us"></NavContainer>
+          <NavContainer classname = {styles.navItem} text="Recipes"></NavContainer>
+          <NavContainer classname = {styles.navItem} text="Blog"></NavContainer>
+          <NavContainer classname = {styles.navItem} text="Contact"></NavContainer>
+          <NavContainer classname = {styles.navItem} text="About Us"></NavContainer>
         </nav>
       </div>
 
