@@ -28,7 +28,7 @@ export default function Card({ card }) {
   }, [like]);
 
   return (
-    <div className={styles["card"]}>
+    <li className={styles["card"]}>
       <div className={styles["card__container"]}>
         <img
           src={card.image}
@@ -95,6 +95,6 @@ export default function Card({ card }) {
           </p>
         </div>
       </div>
-    </div>
+    </li>
   );
 }

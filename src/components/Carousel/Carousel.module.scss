@@ -1,10 +1,22 @@
 .carousel {
   display: flex;
+  align-items: center;
   flex-direction: row;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
-  gap: 2.5rem;
+
   padding-right: 40px;
+  margin-left: 40px;
+
+  &__recipes {
+    display: none;
+    text-align: center;
+    margin-top: 160px;
+    margin-bottom: 32px;
+    letter-spacing: -0.04em;
+    font-weight: 600;
+    font-size: 36px;
+  }
 
   &:last-child {
     margin: 0;
@@ -46,13 +58,22 @@
   }
 }
 
+.card__list {
+  display: flex;
+  gap: 2.5rem;
+}
+
 @media screen and (min-width: 768px) {
   .carousel {
     &__scrollButton--left {
-      top: 57rem;
+      top: 68rem;
     }
     &__scrollButton--right {
-      top: 57rem;
+      top: 68rem;
+    }
+
+    &__recipes {
+      display: block;
     }
   }
 }
@@ -60,10 +81,22 @@
 @media screen and (min-width: 1024px) {
   .carousel {
     &__scrollButton--left {
-      top: 57.3rem;
+      top: 68.3rem;
     }
     &__scrollButton--right {
-      top: 57.3rem;
+      top: 68.3rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1394px) {
+  .carousel {
+    justify-content: center;
+    &__scrollButton--left {
+      display: none;
+    }
+    &__scrollButton--right {
+      display: none;
     }
   }
 }
