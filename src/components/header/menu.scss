@@ -1,3 +1,5 @@
+@import "../../styles/global.scss";
+
 @keyframes MenuSlider {
     0% {
         transform: translateY(-100px);
@@ -99,7 +101,7 @@
     display: block;
     position: absolute;
     left: 0;
-    top: 8%;
+    top: 9%;
     font-size: 2rem;
     font-weight: 500;
     width: 100vw;
