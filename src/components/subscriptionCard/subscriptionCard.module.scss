@@ -10,7 +10,6 @@
   padding-right: 1rem;
   border-radius: 60px;
   overflow: hidden;
-  z-index: -2;
   &__title {
     font-size: 1.875rem;
     color: global.$primary-text-color;
@@ -19,7 +18,6 @@
     overflow-wrap: break-word;
   }
   &__description {
-    font-size: 1.125rem;
     color: rgba(0, 0, 0, 0.6);
     text-align: center;
     margin-right: auto;
@@ -30,30 +28,41 @@
   }
   &__backgroundImage {
     position: absolute;
-    z-index: -1;
     &--left {
       width: 400px;
-      left: -175px;
-      bottom: -175px;
+      left: -93px;
+      bottom: -95px;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
       transform: rotate(30deg);
+      @media screen and (max-width: 769px) {
+        width: 380px;
+        transform: translateX(-40%);
+        bottom: -200px;
+      }
     }
     &--right {
       height: 355px;
       right: -120px;
-      bottom: -120px;
+      bottom: -160px;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
       filter: drop-shadow(0px 10px 24px rgba(0, 0, 0, 0.1));
+      @media screen and (max-width: 769px) {
+        width: 380px;
+        transform: translateX(40%) rotate(-170deg);
+      }
     }
     &--float {
       height: 90px;
       right: 245px;
       bottom: 80px;
       transform: rotate(-31.51deg);
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
     }
   }
 }
@@ -72,6 +81,10 @@
     left: 50%;
     transform: translateX(-50%);
     width: Min(calc(100% - 1.5rem), 480px);
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1rem;
     &:focus {
       outline: none;
     }
@@ -79,7 +92,7 @@
       font-family: "Inter";
       font-style: normal;
       font-weight: 500;
-      font-size: 14px;
+      font-size: 1rem;
       line-height: 17px;
       letter-spacing: -0.02em;
       color: rgba(0, 0, 0, 0.4);
