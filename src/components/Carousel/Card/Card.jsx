@@ -1,6 +1,32 @@
+import { useEffect, useRef, useState } from "react";
+import { cards } from "../carousel";
 import styles from "./Card.module.scss";
 
 export default function Card({ card }) {
+  const heartIconRef = useRef();
+  const [like, setLike] = useState(false);
+
+  // const findId = () => {
+  //   cards.find((card) => card.id === card.id);
+  //   console.log(cards);
+  //   return setLike(true);
+  // };
+
+  useEffect(() => {
+    // heartIconRef.current.addEventListener("click", () => {
+    //   if (like) {
+    //     setLike(false);
+    //     heartIconRef.current.classList.add("card__heart--notLiked");
+    //     heartIconRef.current.classList.remove();
+    //   }
+    //   if (!like) {
+    //     setLike(true);
+    //     heartIconRef.current.classList.add("card__heart--notLiked");
+    //   }
+    // });
+    // findId();
+  }, [like]);
+
   return (
     <div className={styles["card"]}>
       <div className={styles["card__container"]}>
@@ -9,10 +35,11 @@ export default function Card({ card }) {
           alt="Mixed Tropical Fruit Salad with Superfood Boosts"
           className={styles["card__image"]}
         />
-        <div className={styles["card__heart"]}>
+        <div className={styles["card__heart"]} onClick={setLike}>
           <img
             src="./images/card-heart.svg"
-            className={styles["card__heart__svg"]}
+            className={styles["card__heart--notLiked"]}
+            ref={heartIconRef}
           />
         </div>
       </div>

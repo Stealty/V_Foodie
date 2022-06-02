@@ -5,7 +5,7 @@
   scroll-snap-align: start;
 }
 
-.card__heart{
+.card__heart {
   position: absolute;
   top: 18px;
   right: 16px;
@@ -16,10 +16,16 @@
   height: 48px;
   background-color: white;
   border-radius: 100%;
-  
-  &__svg {
+
+  &--liked {
     width: 20px;
     height: 18px;
+  }
+
+  &--notLiked {
+    width: 20px;
+    height: 18px;
+    filter: saturate(0%) opacity(30%);
   }
 }
 

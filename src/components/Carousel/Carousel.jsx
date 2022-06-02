@@ -1,27 +1,31 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useId } from "react";
 import Card from "./Card/Card";
 import styles from "./Carousel.module.scss";
 
-const cards = [
+export const cards = [
   {
+    id: 1,
     image: "/images/fruit-salad.png",
     title: "Mixed Tropical Fruit Salad with Superfood Boosts",
     time: "30 Minutes",
     type: "Healthy",
   },
   {
+    id: 2,
     image: "/images/beef.png",
     title: "Big and Juicy Wagyu Beef Cheeseburger",
     time: "30 Minutes",
     type: "Western",
   },
   {
+    id: 3,
     image: "/images/japanese.png",
     title: "Healthy Japanese Fried Rice with Asparagus",
     time: "30 Minutes",
     type: "Healthy",
   },
   {
+    id: 4,
     image: "/images/taco.png",
     title: "Cauliflower Walnut Vegetarian Taco Meat",
     time: "30 Minutes",
@@ -31,7 +35,6 @@ const cards = [
 
 export default function Carousel() {
   const carouselRef = useRef(null);
-  const element = carouselRef.current;
 
   function handleScrollRight() {
     carouselRef.current.scrollBy({
@@ -47,6 +50,7 @@ export default function Carousel() {
       behavior: "smooth",
     });
     console.log("scrolled");
+    console.log(cards);
   }
 
   return (
@@ -57,7 +61,7 @@ export default function Carousel() {
         className={styles["carousel__scrollButton--left"]}
       ></button>
       {cards.map((card) => (
-        <Card card={card} key={card.title} />
+        <Card card={card} key={card.id} />
       ))}
       <button
         type="button"
