@@ -9,11 +9,11 @@ const Menu = () => {
             <li className="Menu-Bottom"></li>
         </ul>
         <ul className="Menu">
-            <li className="">Home</li>
-            <li className="">Recipes</li>
-            <li className="">Blog</li>
-            <li className="">About Us</li>
-            <li className="">Contact</li>
+            <li className="Item">Home</li>
+            <li className="Item">Recipes</li>
+            <li className="Item">Blog</li>
+            <li className="Item">About Us</li>
+            <li className="Item">Contact</li>
         </ul>
     </nav>
   };
