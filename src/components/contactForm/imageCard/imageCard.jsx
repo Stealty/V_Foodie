@@ -9,6 +9,7 @@ const ImageCard = () => {
         className={styles["imageCard_image"]}
         src="images\chefSmiling.png"
         alt="chef smiling"
+        loading="lazy"
       />
     </div>
   );
