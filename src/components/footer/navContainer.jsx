@@ -1,21 +1,10 @@
 import React from "react";
 import styles from "./footer.module.scss";
 
-const NavContainer = () => {
-    return <nav className={styles.navContainer}>
-<a href="#" className={styles.navItem}>
-  Recipes
+const NavContainer = (props) => {
+    return <a href="#" className={styles.navItem}>
+ {props.text}
 </a>
-<a href="#" className={styles.navItem}>
-  Blog
-</a>
-<a href="#" className={styles.navItem}>
-  Contact
-</a>
-<a href="#" className={styles.navItem}>
-  About us
-</a>
-</nav>
 }
 
 export default NavContainer;

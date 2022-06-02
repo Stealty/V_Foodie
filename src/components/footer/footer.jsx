@@ -4,7 +4,9 @@ import Logo from "../logo/logo";
 import NavContainer from "./navContainer";
 import SocialMedia from "./SocialMedia";
 
-
+import facebookImg from "/images/facebook.svg";
+import instagramImg from "/images/instagram.svg";
+import twitterImg from "/images/twitter.svg";
 
 const Footer = () => {
   return (
@@ -15,7 +17,12 @@ const Footer = () => {
           Lorem ipsum dolor sit amet, consectetuipisicing elit
         </p>
 
-        <NavContainer></NavContainer>
+        <nav className={styles.navContainer}>
+          <NavContainer text="Recipes"></NavContainer>
+          <NavContainer text="Blog"></NavContainer>
+          <NavContainer text="Contact"></NavContainer>
+          <NavContainer text="About Us"></NavContainer>
+        </nav>
       </div>
 
       <div className={styles.divider}></div>
@@ -25,8 +32,11 @@ const Footer = () => {
           © 2020 Flowbase. Powered by
           <span className={styles.webflow}> Webflow</span>
         </p>
-
-      <SocialMedia></SocialMedia>
+        <div className={styles.socialMedia}>
+      <SocialMedia img = {facebookImg}></SocialMedia>
+      <SocialMedia img = {twitterImg}></SocialMedia>
+      <SocialMedia img = {instagramImg}></SocialMedia>
+      </div>
       </div>
     </footer>
   );
