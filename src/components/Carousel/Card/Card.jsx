@@ -1,26 +1,51 @@
+import { useEffect, useRef, useState } from "react";
+import { cards } from "../carousel";
 import styles from "./Card.module.scss";
 
-export default function Card() {
+export default function Card({ card }) {
+  const heartIconRef = useRef();
+  const [like, setLike] = useState(false);
+
+  // const findId = () => {
+  //   cards.find((card) => card.id === card.id);
+  //   console.log(cards);
+  //   return setLike(true);
+  // };
+
+  useEffect(() => {
+    // heartIconRef.current.addEventListener("click", () => {
+    //   if (like) {
+    //     setLike(false);
+    //     heartIconRef.current.classList.add("card__heart--notLiked");
+    //     heartIconRef.current.classList.remove();
+    //   }
+    //   if (!like) {
+    //     setLike(true);
+    //     heartIconRef.current.classList.add("card__heart--notLiked");
+    //   }
+    // });
+    // findId();
+  }, [like]);
+
   return (
     <div className={styles["card"]}>
       <div className={styles["card__container"]}>
         <img
-          src="./images/fruit-salad.png"
+          src={card.image}
           alt="Mixed Tropical Fruit Salad with Superfood Boosts"
           className={styles["card__image"]}
         />
-        <div className={styles["card__heart"]}>
+        <div className={styles["card__heart"]} onClick={setLike}>
           <img
             src="./images/card-heart.svg"
-            className={styles["card__heart__svg"]}
+            className={styles["card__heart--notLiked"]}
+            ref={heartIconRef}
           />
         </div>
       </div>
 
       <div className={styles["card__info"]}>
-        <h2 className={styles["card__info__title"]}>
-          Mixed Tropical Fruit Salad with Superfood Boosts
-        </h2>
+        <h2 className={styles["card__info__title"]}>{card.title}</h2>
         <div className={styles["card__info__text"]}>
           <p className={styles["card__info__text__time"]}>
             <span>
@@ -37,7 +62,7 @@ export default function Card() {
                 />
               </svg>
             </span>{" "}
-            30 Minutes
+            {card.time}
           </p>
           <p className={styles["card__info__text__type"]}>
             <span>
@@ -66,7 +91,7 @@ export default function Card() {
                 />
               </svg>
             </span>{" "}
-            Healthy
+            {card.type}
           </p>
         </div>
       </div>

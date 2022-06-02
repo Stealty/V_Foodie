@@ -1,49 +1,69 @@
 .carousel {
   display: flex;
   flex-direction: row;
-  position: relative;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   gap: 2.5rem;
-  margin-left: 4.7px;
   padding-right: 40px;
+
+  &:last-child {
+    margin: 0;
+  }
 
   &::-webkit-scrollbar {
     display: none;
   }
 
-   &__scrollButton--left {
-     z-index: 1;
-     position: sticky;
-     top: 5rem;
-     left: 0;
-     height: 46px;
-     width: 60px;
-     background-color: transparent;
-     background-image: url("/images/Union.png");
-     background-size: auto;
-     background-repeat: no-repeat;
-     border: none; 
-     margin: 0;
-     padding-right: 20px;
-     padding-left: 20px;
+  &__scrollButton--left {
+    z-index: 1;
+    position: absolute;
+    top: 67rem;
+    left: 4.7px;
+    height: 46px;
+    width: 31px;
+    background-color: transparent;
+    background-image: url("/images/Union.png");
+    background-size: auto;
+    background-repeat: no-repeat;
+    border: none;
+    margin: 0;
+    cursor: pointer;
+  }
 
-   }
+  &__scrollButton--right {
+    position: absolute;
+    top: 67rem;
+    right: 4.7px;
+    height: 46px;
+    width: 31px;
+    background-color: transparent;
+    background-image: url("/images/Union.png");
+    background-size: auto;
+    background-repeat: no-repeat;
+    border: none;
+    transform: rotate(180deg);
+    cursor: pointer;
+  }
+}
 
-   &__scrollButton--right {
-    position: sticky;
-     top: 5rem;
-     right: -40px;
-     height: 46px;
-     width: 31px;
-     background-color: transparent;
-     background-image: url("/images/Union.png");
-     background-size: auto;
-     background-repeat: no-repeat;
-     border: none;
-     transform: rotate(180deg);
-     margin: 0;
-     padding-right: 20px;
-     padding-left: 20px;
-   }
+@media screen and (min-width: 768px) {
+  .carousel {
+    &__scrollButton--left {
+      top: 57rem;
+    }
+    &__scrollButton--right {
+      top: 57rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .carousel {
+    &__scrollButton--left {
+      top: 57.3rem;
+    }
+    &__scrollButton--right {
+      top: 57.3rem;
+    }
+  }
 }
