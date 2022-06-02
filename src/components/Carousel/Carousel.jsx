@@ -1,4 +1,3 @@
-import { useRef, useEffect, useId } from "react";
 import Card from "./Card/Card";
 import styles from "./Carousel.module.scss";
 
@@ -34,23 +33,18 @@ export const cards = [
 ];
 
 export default function Carousel() {
-  const carouselRef = useRef(null);
-
-  function handleScrollRight() {
-    carouselRef.current.scrollBy({
+  function handleScrollRight(e) {
+    e.currentTarget.parentNode.scrollBy({
       left: 400,
       behavior: "smooth",
     });
-    console.log("scrolled");
   }
 
-  function handleScrollLeft() {
-    carouselRef.current.scrollBy({
+  function handleScrollLeft(e) {
+    e.currentTarget.parentNode.scrollBy({
       left: -400,
       behavior: "smooth",
     });
-    console.log("scrolled");
-    console.log(cards);
   }
 
   return (
@@ -58,7 +52,7 @@ export default function Carousel() {
       <h2 className={styles["carousel__recipes"]}>
         Check out the delicious recipe
       </h2>
-      <div ref={carouselRef} className={styles["carousel"]}>
+      <div className={styles["carousel"]}>
         <button
           type="button"
           onClick={handleScrollLeft}
