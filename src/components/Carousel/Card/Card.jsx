@@ -1,28 +1,46 @@
+import { useEffect, useRef, useState } from "react";
+import { cards } from "../carousel";
 import styles from "./Card.module.scss";
 
-export default function Card() {
+export default function Card({ card }) {
+  const heartIconRef = useRef();
+  const [like, setLike] = useState(false);
+
+  const findId = () => {
+    return cards.find((card) => card.id === card.id);
+  };
+
+  function handleLike() {
+    if (like) {
+      setLike(!like);
+      heartIconRef.current.classList.toggle(styles["card__heart--liked"]);
+    } else {
+      setLike(like);
+      heartIconRef.current.classList.toggle(styles["card__heart--notLiked"]);
+    }
+  }
+
   return (
-    <div className={styles["card-wrapper"]}>
-      <div className={styles["card-wrapper__image__container"]}>
+    <li className={styles["card"]}>
+      <div className={styles["card__container"]}>
         <img
-          src="./images/fruit-salad.png"
+          src={card.image}
           alt="Mixed Tropical Fruit Salad with Superfood Boosts"
-          className={styles["card-wrapper__image__container__image"]}
+          className={styles["card__image"]}
         />
-        <div className={styles["card-wrapper__image__container__heart"]}>
+        <div className={styles["card__heart"]} onClick={handleLike}>
           <img
             src="./images/card-heart.svg"
-            className={styles["card-wrapper__image__container__heart__svg"]}
+            className={styles["card__heart--notLiked"]}
+            ref={heartIconRef}
           />
         </div>
       </div>
 
-      <div className={styles["card-wrapper__info"]}>
-        <h2 className={styles["card-wrapper__info__title"]}>
-          Mixed Tropical Fruit Salad with Superfood Boosts
-        </h2>
-        <div className={styles["card-wrapper__info__text"]}>
-          <p className={styles["card-wrapper__info__text__time"]}>
+      <div className={styles["card__info"]}>
+        <h2 className={styles["card__info__title"]}>{card.title}</h2>
+        <div className={styles["card__info__text"]}>
+          <p className={styles["card__info__text__time"]}>
             <span>
               <svg
                 width="18"
@@ -37,9 +55,9 @@ export default function Card() {
                 />
               </svg>
             </span>{" "}
-            30 Minutes
+            {card.time}
           </p>
-          <p className={styles["card-wrapper__info__text__type"]}>
+          <p className={styles["card__info__text__type"]}>
             <span>
               <svg
                 width="9"
@@ -66,10 +84,10 @@ export default function Card() {
                 />
               </svg>
             </span>{" "}
-            Healthy
+            {card.type}
           </p>
         </div>
       </div>
-    </div>
+    </li>
   );
 }

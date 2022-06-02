@@ -5,10 +5,10 @@ import "./../styles/contact.scss";
 
 const Contact = () => {
   return (
-    <main className="main">
-     <ContactForm />
-     <Carousel />
-    </main>
+    <>
+      <ContactForm />
+      <Carousel />
+    </>
   );
 };
 
