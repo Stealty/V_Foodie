@@ -1,5 +1,14 @@
 @use "../../styles/global";
 
+$breakpoint-lg: 1024px;
+$breakpoint-md: 768px;
+
+@mixin breakpoint($breakpoint: $breakpoint-lg) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
 @mixin input_template {
   width: 100%;
   padding: 1rem;
@@ -28,7 +37,7 @@
   font-size: 3rem;
   line-height: 4.5625rem;
   letter-spacing: -0.04em;
-  @media screen and (min-width: 768px) {
+  @include breakpoint($breakpoint-md) {
     font-size: 4rem;
     line-height: 7.813rem;
     letter-spacing: -0.04em;
@@ -48,7 +57,7 @@
     "subject"
     "message"
     "button";
-  @media screen and (min-width: 768px) {
+  @include breakpoint($breakpoint-md) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 3fr min-content;
     grid-template-areas:
@@ -57,7 +66,7 @@
       "message message"
       "button .";
   }
-  @media screen and (min-width: 1024px) {
+  @include breakpoint($breakpoint-lg) {
     grid-template-columns: min-content 1fr 1fr;
     grid-template-rows: min-content min-content 1fr min-content;
     grid-template-areas:
@@ -118,4 +127,7 @@
 
 .submitButton_wrapper {
   grid-area: button;
+  @include breakpoint($breakpoint-lg) {
+    width: Max(40%, 180px);
+  }
 }
