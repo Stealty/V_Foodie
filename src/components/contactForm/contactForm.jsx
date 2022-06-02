@@ -47,10 +47,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section
-      aria-labelledby="Contact Us Form"
-      className={styles["contactUsSection"]}
-    >
+    <>
       <h1 className={styles.sectionTitle}>Contact Us</h1>
       <div className={styles.contactForm_wrapper}>
         <form className={styles.contactForm} onSubmit={handleSubmit}>
@@ -141,7 +138,7 @@ const ContactForm = () => {
           />
         </form>
       </div>
-    </section>
+    </>
   );
 };
 

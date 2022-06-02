@@ -40,7 +40,7 @@ const SubscriptionCard = () => {
     //make mock post request
     const postCallback = () => {
       console.table(dataObject);
-      dispatch({ type: "SENT", message: "Message sent successfully!" });
+      dispatch({ type: "SENT", message: "Email registered!" });
     };
     setTimeout(() => postCallback(), 2000);
   };
