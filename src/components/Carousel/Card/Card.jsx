@@ -1,23 +1,16 @@
-import { useEffect, useRef, useState } from "react";
-import { cards } from "../carousel";
+import { useState } from "react";
 import styles from "./Card.module.scss";
 
 export default function Card({ card }) {
-  const heartIconRef = useRef();
   const [like, setLike] = useState(false);
 
-  const findId = () => {
-    return cards.find((card) => card.id === card.id);
-  };
-
-  function handleLike() {
-    if (like) {
-      setLike(!like);
-      heartIconRef.current.classList.toggle(styles["card__heart--liked"]);
-    } else {
-      setLike(like);
-      heartIconRef.current.classList.toggle(styles["card__heart--notLiked"]);
-    }
+  function handleLike(e) {
+    let heartIcon = e.currentTarget.firstChild.classList.toggle(
+      styles["card__heart--notLiked"]
+    );
+    setLike(like);
+    console.log(card);
+    return heartIcon;
   }
 
   return (
@@ -32,7 +25,6 @@ export default function Card({ card }) {
           <img
             src="./images/card-heart.svg"
             className={styles["card__heart--notLiked"]}
-            ref={heartIconRef}
           />
         </div>
       </div>

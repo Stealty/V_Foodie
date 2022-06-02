@@ -4,9 +4,7 @@
   flex-direction: row;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
-
   padding-right: 40px;
-  margin-left: 40px;
 
   &__recipes {
     display: none;
@@ -60,7 +58,7 @@
 
 .card__list {
   display: flex;
-  gap: 2.5rem;
+  gap: 2.3rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -91,7 +89,9 @@
 
 @media screen and (min-width: 1394px) {
   .carousel {
+    overflow: hidden;
     justify-content: center;
+
     &__scrollButton--left {
       display: none;
     }
