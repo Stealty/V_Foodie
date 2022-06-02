@@ -6,36 +6,29 @@ export default function Card({ card }) {
   const heartIconRef = useRef();
   const [like, setLike] = useState(false);
 
-  // const findId = () => {
-  //   cards.find((card) => card.id === card.id);
-  //   console.log(cards);
-  //   return setLike(true);
-  // };
+  const findId = () => {
+    return cards.find((card) => card.id === card.id);
+  };
 
-  useEffect(() => {
-    // heartIconRef.current.addEventListener("click", () => {
-    //   if (like) {
-    //     setLike(false);
-    //     heartIconRef.current.classList.add("card__heart--notLiked");
-    //     heartIconRef.current.classList.remove();
-    //   }
-    //   if (!like) {
-    //     setLike(true);
-    //     heartIconRef.current.classList.add("card__heart--notLiked");
-    //   }
-    // });
-    // findId();
-  }, [like]);
+  function handleLike() {
+    if (like) {
+      setLike(!like);
+      heartIconRef.current.classList.toggle(styles["card__heart--liked"]);
+    } else {
+      setLike(like);
+      heartIconRef.current.classList.toggle(styles["card__heart--notLiked"]);
+    }
+  }
 
   return (
-    <div className={styles["card"]}>
+    <li className={styles["card"]}>
       <div className={styles["card__container"]}>
         <img
           src={card.image}
           alt="Mixed Tropical Fruit Salad with Superfood Boosts"
           className={styles["card__image"]}
         />
-        <div className={styles["card__heart"]} onClick={setLike}>
+        <div className={styles["card__heart"]} onClick={handleLike}>
           <img
             src="./images/card-heart.svg"
             className={styles["card__heart--notLiked"]}
@@ -95,6 +88,6 @@ export default function Card({ card }) {
           </p>
         </div>
       </div>
-    </div>
+    </li>
   );
 }
