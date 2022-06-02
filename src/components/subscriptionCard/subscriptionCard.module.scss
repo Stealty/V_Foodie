@@ -1,0 +1,25 @@
+@use "../../styles/global.scss";
+
+.card {
+  background-color: global.$card-background-color;
+  width: 100%;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  border-radius: 60px;
+  &__title {
+    font-size: 1.875rem;
+    color: global.$primary-text-color;
+    text-align: center;
+    margin-bottom: 1.55rem;
+  }
+  &__description {
+    font-size: 1.125rem;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: clamp(1rem, 5vw, 4rem);
+    width: Min(calc(100% - 4rem), 620px);
+    overflow-wrap: break-word;
+  }
+}
