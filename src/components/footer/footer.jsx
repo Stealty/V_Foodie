@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./footer.module.scss";
 import Logo from "../logo/logo";
+import NavContainer from "./navContainer";
+import SocialMedia from "./SocialMedia";
 
-import facebookImg from "/images/facebook.svg";
-import instagramImg from "/images/instagram.svg";
-import twitterImg from "/images/twitter.svg";
+
 
 const Footer = () => {
   return (
@@ -15,20 +15,7 @@ const Footer = () => {
           Lorem ipsum dolor sit amet, consectetuipisicing elit
         </p>
 
-        <nav className={styles.navContainer}>
-          <a href="#" className={styles.navItem}>
-            Recipes
-          </a>
-          <a href="#" className={styles.navItem}>
-            Blog
-          </a>
-          <a href="#" className={styles.navItem}>
-            Contact
-          </a>
-          <a href="#" className={styles.navItem}>
-            About us
-          </a>
-        </nav>
+        <NavContainer></NavContainer>
       </div>
 
       <div className={styles.divider}></div>
@@ -39,11 +26,7 @@ const Footer = () => {
           <span className={styles.webflow}> Webflow</span>
         </p>
 
-        <div className={styles.socialMedia}>
-          <img src={facebookImg} />
-          <img src={twitterImg} />
-          <img src={instagramImg} />
-        </div>
+      <SocialMedia></SocialMedia>
       </div>
     </footer>
   );
