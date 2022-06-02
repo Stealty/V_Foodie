@@ -1,17 +1,68 @@
-@keyframes MenuSlider{
-    0%{
+@keyframes MenuSlider {
+    0% {
         transform: translateY(-100px);
     }
-    100%{
+
+    100% {
         transform: translateY(0);
     }
 }
 
-@mixin Hamburguer {
-    width: 65%;
+@keyframes MenuHamburguerTop {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: translateY(11px) rotate(45deg);
+    }
+}
+
+@keyframes MenuHamburguerMid {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes MenuHamburguerBottom {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: translateY(-11px) rotate(-45deg);
+    }
+}
+
+@mixin Hamburguer () {
+    width: 50px;
     border-radius: 5px;
     background-color: black;
-    height: 15%;
+    height: 6px;
+    margin-bottom: 5px;
+}
+
+@mixin Rotation ($Type, $Deg, $op){
+    rotate: $Deg;
+    opacity: $op;
+    animation-name: $Type;
+    animation-duration: 2s;
+}
+
+.RotationTop{
+    @include Rotation(MenuHamburguerTop, -45deg, 1);
+}
+
+.RotationMid{
+    @include Rotation(MenuHamburguerMid, 0, 0)
+}
+
+.RotationBottom{
+    @include Rotation(MenuHamburguerBottom, 45deg, 1);
 }
 
 .Menu-Hamburguer {
@@ -21,38 +72,41 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     padding: 10%;
 
     .Menu-Top {
-        @include Hamburguer;
+        @include Hamburguer();
     }
 
     .Menu-Middle {
-        @include Hamburguer;
+        @include Hamburguer();
     }
 
     .Menu-Bottom {
-        @include Hamburguer;
+        @include Hamburguer();
     }
 }
 
-.Menu{
-    //display: none;
+.Menu {
+    display: none;
     text-align: left;
     list-style-type: none;
 }
 
-.Menu-Slider-On{
+.Slider-On {
     display: block;
     position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
     animation-name: MenuSlider;
     animation-duration: 2s;
 }
 
 @media(min-width:480px) {
     @mixin Hamburguer {
-        width: 40%;
+        width: 60px;
     }
 
     .Menu-Hamburguer {
@@ -70,8 +124,17 @@
     }
 }
 
-@media(min-width:1024px){
-    .Menu-Hamburguer{
+@media(min-width:1024px) {
+    .Menu-Hamburguer {
         display: none;
+    }
+
+    .Navigation {
+        display: flex;
+    }
+
+    .Menu {
+        display: flex;
+        position: static;
     }
 }
