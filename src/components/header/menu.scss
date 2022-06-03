@@ -110,6 +110,10 @@
     }
 }
 
+.disable-scroll{
+    overflow-y: hidden;
+  }
+
 .RotationTop{
     @include Rotation(MenuHamburguerTop, normal);
 }

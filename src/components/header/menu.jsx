@@ -4,9 +4,10 @@ import NavContainer from '../footer/navContainer'
 
 const Menu = () => {
     const [toggle, setActive] = useState("false");
-
+    const Body = document.querySelector("body");
     const OnClickHandler = () => {
         setActive(!toggle);
+        Body.classList.toggle("disable-scroll")
     }
     
     return <nav className="Navigation">
