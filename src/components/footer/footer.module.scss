@@ -10,8 +10,9 @@
 .top {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100px;
+  justify-content: space-around;
+  height: 105px;
+  padding-top: 4px;
 }
 
 .bottom {
