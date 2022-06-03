@@ -9,7 +9,6 @@ export default function Card({ card }) {
       styles["card__heart--notLiked"]
     );
     setLike(like);
-    console.log(card);
     return heartIcon;
   }
 
