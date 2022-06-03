@@ -4,6 +4,7 @@ import NavContainer from '../footer/navContainer'
 
 const Menu = () => {
     const [toggle, setActive] = useState("false");
+
     const OnClickHandler = () => {
         setActive(!toggle);
     }
@@ -11,7 +12,7 @@ const Menu = () => {
     return <nav className="Navigation">
         <ul onClick = {OnClickHandler} className="Menu-Hamburguer">
             <li className={`Menu-Top ${toggle ? "" : "RotationTop"}`}></li>
-            <li className={`Menu-Middle ${toggle ? "" : "RotationMid"}`}></li>
+            <li className={`Menu-Middle ${toggle ? "" : "RotationMid" }`}></li>
             <li className={`Menu-Bottom ${toggle ? "" : "RotationBottom"}`}></li>
         </ul>
         <nav className={`Menu ${toggle ? "" : "Slider-On"}`}>

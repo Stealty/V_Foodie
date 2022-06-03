@@ -25,6 +25,10 @@
         opacity: 1;
     }
 
+    50%{
+        opacity: 0;
+    }
+
     100% {
         opacity: 0;
     }
@@ -48,23 +52,11 @@
     margin-bottom: 5px;
 }
 
-@mixin Rotation ($Type, $trans, $Deg, $op){
-    transform: translateY($trans) rotate($Deg);
-    opacity: $op;
+@mixin Rotation ($Type, $Direction){
     animation-name: $Type;
-    animation-duration: 2s;
-}
-
-.RotationTop{
-    @include Rotation(MenuHamburguerTop, 11px, -45deg, 1);
-}
-
-.RotationMid{
-    @include Rotation(MenuHamburguerMid, 0, 0, 0)
-}
-
-.RotationBottom{
-    @include Rotation(MenuHamburguerBottom, -11px, 45deg, 1);
+    animation-duration: 1s;
+    animation-direction: $Direction;
+    animation-fill-mode: forwards;
 }
 
 .Menu-Hamburguer {
@@ -108,7 +100,7 @@
     background-color: white;
     padding-top: 5%;
     animation-name: MenuSlider;
-    animation-duration: 2s;
+    animation-duration: 1s;
     .Item{
         margin: 0 0 6% 6%;
         font-size: 1rem;
@@ -116,6 +108,34 @@
         text-decoration: none;;
         color: $primary-text-color;
     }
+}
+
+.RotationTop{
+    @include Rotation(MenuHamburguerTop, normal);
+}
+
+.RotationMid{
+    @include Rotation(MenuHamburguerMid, normal)
+}
+
+.RotationBottom{
+    @include Rotation(MenuHamburguerBottom, normal);
+}
+
+.UnRotationTop{
+    @include Rotation(MenuHamburguerTop, reverse);
+}
+
+.UnRotationMid{
+    @include Rotation(MenuHamburguerMid, reverse)
+}
+
+.UnRotationBottom{
+    @include Rotation(MenuHamburguerBottom, reverse);
+}
+
+.Slider-Off {
+    animation-direction: reverse;
 }
 
 @media(min-width:1024px) {
