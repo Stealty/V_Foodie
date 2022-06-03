@@ -1,3 +1,9 @@
+.carouselWrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
 .carousel {
   display: flex;
   align-items: center;
@@ -7,7 +13,7 @@
   padding-right: 40px;
 
   &__recipes {
-    display: none;
+    display: block;
     text-align: center;
     margin-top: 160px;
     margin-bottom: 32px;
@@ -27,7 +33,7 @@
   &__scrollButton--left {
     z-index: 1;
     position: absolute;
-    top: 67rem;
+    top: 50%;
     left: 4.7px;
     height: 46px;
     width: 31px;
@@ -36,13 +42,14 @@
     background-size: auto;
     background-repeat: no-repeat;
     border: none;
+    transform: translateY(50%);
     margin: 0;
     cursor: pointer;
   }
 
   &__scrollButton--right {
     position: absolute;
-    top: 67rem;
+    top: 50%;
     right: 4.7px;
     height: 46px;
     width: 31px;
@@ -51,40 +58,14 @@
     background-size: auto;
     background-repeat: no-repeat;
     border: none;
-    transform: rotate(180deg);
     cursor: pointer;
+    transform: translateY(50%) rotate(180deg);
   }
 }
 
 .card__list {
   display: flex;
   gap: 2.3rem;
-}
-
-@media screen and (min-width: 768px) {
-  .carousel {
-    &__scrollButton--left {
-      top: 68rem;
-    }
-    &__scrollButton--right {
-      top: 68rem;
-    }
-
-    &__recipes {
-      display: block;
-    }
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .carousel {
-    &__scrollButton--left {
-      top: 68.3rem;
-    }
-    &__scrollButton--right {
-      top: 68.3rem;
-    }
-  }
 }
 
 @media screen and (min-width: 1394px) {

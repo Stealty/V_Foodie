@@ -4,6 +4,9 @@
   margin-right: auto;
   margin-bottom: 3rem;
   &--nomargin {
-    margin: 0;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 3rem;
   }
 }
