@@ -3,6 +3,7 @@
   flex-direction: column;
   margin: 2% auto;
   height: 100%;
+  width: min(100% - 2.25rem, 1280px);
   max-width: 1280px;
 }
 
@@ -26,13 +27,12 @@
 
 .descriptionText {
   color: rgba(0, 0, 0, 0.6);
-
   font-size: clamp(1.05rem, 1.5vw, 1.5rem);
 }
 
 .navContainer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   font-weight: bold;
   width: 95%;
 }
@@ -72,11 +72,11 @@
   display: flex;
   width: 80%;
   margin: 0 auto;
-  justify-content: space-around;
+  justify-content: space-between;
   max-width: 310px;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 768px) {
   .divider {
     margin: 2% 0;
   }
