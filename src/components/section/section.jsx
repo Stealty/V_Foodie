@@ -3,10 +3,10 @@ import styles from "./section.module.scss";
 
 const Section = ({ arialabelledby, children, nomargin }) => {
   const className = nomargin
-    ? styles["section--nomargin"]
-    : styles["section section--nomargin"];
+    ? styles["section"] + " " + styles["section--nomargin"]
+    : styles["section"];
   return (
-    <section aria-labelledby={arialabelledby} className={styles.section}>
+    <section aria-labelledby={arialabelledby} className={className}>
       {children}
     </section>
   );
