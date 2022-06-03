@@ -17,7 +17,7 @@ export default function Card({ card }) {
       <div className={styles["card__container"]}>
         <img
           src={card.image}
-          alt="Mixed Tropical Fruit Salad with Superfood Boosts"
+          alt="Ilustration of the recipe"
           className={styles["card__image"]}
         />
         <div className={styles["card__heart"]} onClick={handleLike}>
