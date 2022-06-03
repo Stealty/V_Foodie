@@ -9,7 +9,6 @@ export default function Card({ card }) {
       styles["card__heart--notLiked"]
     );
     setLike(like);
-    console.log(card);
     return heartIcon;
   }
 
@@ -18,7 +17,7 @@ export default function Card({ card }) {
       <div className={styles["card__container"]}>
         <img
           src={card.image}
-          alt="Mixed Tropical Fruit Salad with Superfood Boosts"
+          alt={"Ilustration of  a " + card.alt}
           className={styles["card__image"]}
         />
         <div className={styles["card__heart"]} onClick={handleLike}>
