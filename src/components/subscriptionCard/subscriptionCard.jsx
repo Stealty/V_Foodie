@@ -79,7 +79,6 @@ const SubscriptionCard = () => {
         }
         src="images/avocado-salad.png"
         alt=""
-        loading="lazy"
       />
       <h2 className={styles["card__title"]}>Deliciousness to your inbox</h2>
       <p className={styles["card__description"]}>
