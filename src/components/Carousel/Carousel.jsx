@@ -48,7 +48,7 @@ export default function Carousel() {
   }
 
   return (
-    <>
+    <div className={styles["carouselWrapper"]}>
       <h2 className={styles["carousel__recipes"]}>
         Check out the delicious recipe
       </h2>
@@ -69,6 +69,6 @@ export default function Carousel() {
           className={styles["carousel__scrollButton--right"]}
         ></button>
       </div>
-    </>
+    </div>
   );
 }
