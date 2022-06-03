@@ -2,11 +2,11 @@
 
 @keyframes MenuSlider {
     0% {
-        transform: translateY(-100vh);
+        transform: translateX(-100vw);
     }
 
     100% {
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }
 
@@ -48,23 +48,23 @@
     margin-bottom: 5px;
 }
 
-@mixin Rotation ($Type, $Deg, $op){
-    rotate: $Deg;
+@mixin Rotation ($Type, $trans, $Deg, $op){
+    transform: translateY($trans) rotate($Deg);
     opacity: $op;
     animation-name: $Type;
     animation-duration: 2s;
 }
 
 .RotationTop{
-    @include Rotation(MenuHamburguerTop, -45deg, 1);
+    @include Rotation(MenuHamburguerTop, 11px, -45deg, 1);
 }
 
 .RotationMid{
-    @include Rotation(MenuHamburguerMid, 0, 0)
+    @include Rotation(MenuHamburguerMid, 0, 0, 0)
 }
 
 .RotationBottom{
-    @include Rotation(MenuHamburguerBottom, 45deg, 1);
+    @include Rotation(MenuHamburguerBottom, -11px, 45deg, 1);
 }
 
 .Menu-Hamburguer {
