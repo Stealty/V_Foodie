@@ -1,16 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 import './menu.scss'
 import NavContainer from '../footer/navContainer'
 
 const Menu = () => {
+    const [toggle, setActive] = useState("false");
+    const OnClickHandler = () => {
+        setActive(!toggle);
+    }
     
     return <nav className="Navigation">
-        <ul className="Menu-Hamburguer">
-            <li className="Menu-Top"></li>
-            <li className="Menu-Middle"></li>
-            <li className="Menu-Bottom"></li>
+        <ul onClick = {OnClickHandler} className="Menu-Hamburguer">
+            <li className={`Menu-Top ${toggle ? "" : "RotationTop"}`}></li>
+            <li className={`Menu-Middle ${toggle ? "" : "RotationMid"}`}></li>
+            <li className={`Menu-Bottom ${toggle ? "" : "RotationBottom"}`}></li>
         </ul>
-        <nav className="Menu">
+        <nav className={`Menu ${toggle ? "" : "Slider-On"}`}>
             <NavContainer classname = "Item" text="Home"></NavContainer>
             <NavContainer classname = "Item" text="Recipes"></NavContainer>
             <NavContainer classname = "Item" text="Blog"></NavContainer>

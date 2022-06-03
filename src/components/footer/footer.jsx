@@ -11,17 +11,26 @@ import twitterImg from "/images/twitter.svg";
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <Logo className={styles.logo} />
+      <Logo></Logo>
       <div className={styles.top}>
         <p className={styles.descriptionText}>
           Lorem ipsum dolor sit amet, consectetuipisicing elit
         </p>
 
         <nav className={styles.navContainer}>
-          <NavContainer classname = {styles.navItem} text="Recipes"></NavContainer>
-          <NavContainer classname = {styles.navItem} text="Blog"></NavContainer>
-          <NavContainer classname = {styles.navItem} text="Contact"></NavContainer>
-          <NavContainer classname = {styles.navItem} text="About Us"></NavContainer>
+          <NavContainer
+            classname={styles.navItem}
+            text="Recipes"
+          ></NavContainer>
+          <NavContainer classname={styles.navItem} text="Blog"></NavContainer>
+          <NavContainer
+            classname={styles.navItem}
+            text="Contact"
+          ></NavContainer>
+          <NavContainer
+            classname={styles.navItem}
+            text="About Us"
+          ></NavContainer>
         </nav>
       </div>
 
@@ -33,10 +42,10 @@ const Footer = () => {
           <span className={styles.webflow}> Webflow</span>
         </p>
         <div className={styles.socialMedia}>
-      <SocialMedia img = {facebookImg}></SocialMedia>
-      <SocialMedia img = {twitterImg}></SocialMedia>
-      <SocialMedia img = {instagramImg}></SocialMedia>
-      </div>
+          <SocialMedia img={facebookImg}></SocialMedia>
+          <SocialMedia img={twitterImg}></SocialMedia>
+          <SocialMedia img={instagramImg}></SocialMedia>
+        </div>
       </div>
     </footer>
   );
