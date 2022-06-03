@@ -39,11 +39,15 @@ const ContactForm = () => {
     const dataObject = Object.fromEntries(data.entries());
     dispatch({ type: "SENDING" });
     //make mock post request
-    const postCallback = () => {
+    const onSuccess = () => {
       console.table(dataObject);
       dispatch({ type: "SENT", message: "Message sent successfully!" });
+      form.reset();
     };
-    setTimeout(() => postCallback(), 2000);
+    const onFailure = () => {
+      dispatch({ type: "SENT", message: "Message failed to send!" });
+    };
+    setTimeout(() => onSuccess(), 2000);
   };
 
   return (

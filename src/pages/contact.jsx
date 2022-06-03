@@ -8,13 +8,13 @@ import "./../styles/contact.scss";
 const Contact = () => {
   return (
     <>
-      <Section arialabelledby="Contact Us Form">
+      <Section arialabel="Contact Us Form">
         <ContactForm />
       </Section>
-      <Section arialabelledby="Subscription Card">
+      <Section arialabel="Subscription Card">
         <SubscriptionCard />
       </Section>
-      <Section arialabelledby="Carousel" nomargin>
+      <Section arialabel="Carousel" nomargin>
         <Carousel />
       </Section>
     </>

@@ -1,0 +1,13 @@
+.skipToContentButton {
+  background-color: black;
+  color: white;
+  position: fixed;
+  padding: 2rem;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  &:focus {
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+  }
+}

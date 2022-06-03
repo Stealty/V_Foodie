@@ -13,10 +13,10 @@
   padding-right: 40px;
 
   &__recipes {
-    display: block;
+    display: none;
     text-align: center;
-    margin-top: 160px;
-    margin-bottom: 32px;
+    margin-top: -12px;
+    margin-bottom: 80px;
     letter-spacing: -0.04em;
     font-weight: 600;
     font-size: 36px;
@@ -33,7 +33,7 @@
   &__scrollButton--left {
     z-index: 1;
     position: absolute;
-    top: 50%;
+    top: 60px;
     left: 4.7px;
     height: 46px;
     width: 31px;
@@ -49,7 +49,7 @@
 
   &__scrollButton--right {
     position: absolute;
-    top: 50%;
+    top: 60px;
     right: 4.7px;
     height: 46px;
     width: 31px;
@@ -65,13 +65,17 @@
 
 .card__list {
   display: flex;
-  gap: 2.3rem;
+  gap: 2.5rem;
 }
 
 @media screen and (min-width: 1394px) {
   .carousel {
     overflow: hidden;
     justify-content: center;
+
+    &__recipes {
+      display: block;
+    }
 
     &__scrollButton--left {
       display: none;

@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./section.module.scss";
 
-const Section = ({ arialabelledby, children, nomargin }) => {
+const Section = ({ arialabel, children, nomargin }) => {
   const className = nomargin
     ? styles["section"] + " " + styles["section--nomargin"]
     : styles["section"];
   return (
-    <section aria-labelledby={arialabelledby} className={className}>
+    <section aria-label={arialabel} className={className}>
       {children}
     </section>
   );
