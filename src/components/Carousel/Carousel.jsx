@@ -48,27 +48,29 @@ export default function Carousel() {
   }
 
   return (
-    <div className={styles["carouselWrapper"]}>
+    <>
       <h2 className={styles["carousel__recipes"]}>
         Check out the delicious recipe
       </h2>
-      <div className={styles["carousel"]}>
-        <button
-          type="button"
-          onClick={handleScrollLeft}
-          className={styles["carousel__scrollButton--left"]}
-        ></button>
-        <ul className={styles["card__list"]}>
-          {cards.map((card) => (
-            <Card card={card} key={card.id} />
-          ))}
-        </ul>
-        <button
-          type="button"
-          onClick={handleScrollRight}
-          className={styles["carousel__scrollButton--right"]}
-        ></button>
+      <div className={styles["carouselWrapper"]}>
+        <div className={styles["carousel"]}>
+          <button
+            type="button"
+            onClick={handleScrollLeft}
+            className={styles["carousel__scrollButton--left"]}
+          ></button>
+          <ul className={styles["card__list"]}>
+            {cards.map((card) => (
+              <Card card={card} key={card.id} />
+            ))}
+          </ul>
+          <button
+            type="button"
+            onClick={handleScrollRight}
+            className={styles["carousel__scrollButton--right"]}
+          ></button>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
