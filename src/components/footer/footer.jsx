@@ -11,7 +11,7 @@ import twitterImg from "/images/twitter.svg";
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <Logo className={styles.logo}></Logo>
+      <Logo></Logo>
       <div className={styles.top}>
         <p className={styles.descriptionText}>
           Lorem ipsum dolor sit amet, consectetuipisicing elit
