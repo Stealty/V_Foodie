@@ -35,14 +35,14 @@ export const cards = [
 export default function Carousel() {
   function handleScrollRight(e) {
     e.currentTarget.parentNode.scrollBy({
-      left: 400,
+      left: e.currentTarget.offsetWidth,
       behavior: "smooth",
     });
   }
 
   function handleScrollLeft(e) {
     e.currentTarget.parentNode.scrollBy({
-      left: -400,
+      left: -e.currentTarget.offsetWidth,
       behavior: "smooth",
     });
   }
