@@ -4,19 +4,40 @@ import NavContainer from '../footer/navContainer'
 
 const Menu = () => {
     const [toggle, setActive] = useState("false");
+    const [classMenu, setClassMenu] = useState("");
     const Body = document.querySelector("body");
-    const OnClickHandler = () => {
+
+    const closeMenu = () => {
         setActive(!toggle);
-        Body.classList.toggle("disable-scroll")
-    }
+        setClassMenu("Slider-Off");
+    
+        setTimeout(() => {
+          setClassMenu("");
+        }, 1200);
+      };
+      
+      const OnClickHandler = () => {
+        if (!toggle) {
+          closeMenu();
+          setClassMenu("Slider-Off");
+          Body.classList.toggle("disable-scroll")
+    
+          setTimeout(() => {
+            setClassMenu("");
+          }, 1200);
+        } else {
+          setActive(!toggle);
+          setClassMenu("Slider-On");
+        }
+      }
     
     return <nav className="Navigation">
-        <ul onClick = {OnClickHandler} className="Menu-Hamburguer">
-            <li className={`Menu-Top ${toggle ? "" : "RotationTop"}`}></li>
-            <li className={`Menu-Middle ${toggle ? "" : "RotationMid" }`}></li>
-            <li className={`Menu-Bottom ${toggle ? "" : "RotationBottom"}`}></li>
+        <ul onClick = {OnClickHandler} className={`Menu-Hamburguer ${toggle ? "" : "Rotation"}`}>
+            <li className={`Menu-Top`}></li>
+            <li className={`Menu-Middle`}></li>
+            <li className={"Menu-Bottom"}></li>
         </ul>
-        <nav className={`Menu ${toggle ? "" : "Slider-On"}`}>
+        <nav className={`Menu ${classMenu}`}>
             <NavContainer classname = "Item" text="Home"></NavContainer>
             <NavContainer classname = "Item" text="Recipes"></NavContainer>
             <NavContainer classname = "Item" text="Blog"></NavContainer>

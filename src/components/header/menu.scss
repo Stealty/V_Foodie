@@ -10,37 +10,13 @@
     }
 }
 
-@keyframes MenuHamburguerTop {
+@keyframes MenuSliderOff {
     0% {
-        transform: rotate(0);
+        transform: translateX(0);
     }
 
     100% {
-        transform: translateY(11px) rotate(45deg);
-    }
-}
-
-@keyframes MenuHamburguerMid {
-    0% {
-        opacity: 1;
-    }
-
-    50%{
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes MenuHamburguerBottom {
-    0% {
-        transform: rotate(0);
-    }
-
-    100% {
-        transform: translateY(-11px) rotate(-45deg);
+        transform: translateX(-100vw);
     }
 }
 
@@ -50,13 +26,7 @@
     background-color: black;
     height: 6px;
     margin-bottom: 5px;
-}
-
-@mixin Rotation ($Type, $Direction){
-    animation-name: $Type;
-    animation-duration: 1s;
-    animation-direction: $Direction;
-    animation-fill-mode: forwards;
+    transition: 1s;
 }
 
 .Menu-Hamburguer {
@@ -80,6 +50,23 @@
     .Menu-Bottom {
         @include Hamburguer();
     }
+
+    &.Rotation{
+        .Menu-Top {
+            transition: 1s;
+            transform: translateY(11px) rotate(45deg);
+        }
+    
+        .Menu-Middle {
+            transition: 1s;
+            opacity: 0;
+        }
+    
+        .Menu-Bottom {
+            transition: 1s;
+            transform: translateY(-11px) rotate(-45deg);
+        }
+    }
 }
 
 .Menu {
@@ -87,10 +74,6 @@
     text-align: left;
     list-style-type: none;
     font-weight: 500;
-}
-
-.Slider-On {
-    display: flex;
     flex-direction: column;
     position: absolute;
     left: 0;
@@ -99,48 +82,32 @@
     height: 100vh;
     background-color: white;
     padding-top: 5%;
+    transform: translateX(-100vw);
     animation-name: MenuSlider;
     animation-duration: 1s;
-    .Item{
-        margin: 0 0 6% 6%;
-        font-size: 1rem;
-        font-weight: 500;
-        text-decoration: none;;
-        color: $primary-text-color;
+        .Item{
+            margin: 0 0 6% 6%;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;;
+            color: $primary-text-color;
     }
+
+}
+
+.Slider-On {
+    display: flex;
+    animation-fill-mode: forwards;
+}
+
+.Slider-Off {
+    display: flex;
+    animation-name: MenuSliderOff;
 }
 
 .disable-scroll{
     overflow-y: hidden;
   }
-
-.RotationTop{
-    @include Rotation(MenuHamburguerTop, normal);
-}
-
-.RotationMid{
-    @include Rotation(MenuHamburguerMid, normal)
-}
-
-.RotationBottom{
-    @include Rotation(MenuHamburguerBottom, normal);
-}
-
-.UnRotationTop{
-    @include Rotation(MenuHamburguerTop, reverse);
-}
-
-.UnRotationMid{
-    @include Rotation(MenuHamburguerMid, reverse)
-}
-
-.UnRotationBottom{
-    @include Rotation(MenuHamburguerBottom, reverse);
-}
-
-.Slider-Off {
-    animation-direction: reverse;
-}
 
 @media(min-width:1024px) {
     .Menu-Hamburguer {
