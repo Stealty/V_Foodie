@@ -67,6 +67,10 @@
         display: none;
     }
 
+    .disable-scroll{
+        overflow-y: scroll;
+    }
+
     .Navigation {
         display: flex;
     }
