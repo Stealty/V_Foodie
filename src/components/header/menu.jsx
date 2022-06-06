@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import './menu.scss'
-import NavContainer from '../footer/navContainer'
+import MenuSlider from "./menuslider";
 
 const Menu = () => {
     const [toggle, setActive] = useState("false");
@@ -10,6 +10,7 @@ const Menu = () => {
     const closeMenu = () => {
         setActive(!toggle);
         setClassMenu("Slider-Off");
+        Body.classList.remove("disable-scroll");
     
         setTimeout(() => {
           setClassMenu("");
@@ -20,7 +21,7 @@ const Menu = () => {
         if (!toggle) {
           closeMenu();
           setClassMenu("Slider-Off");
-          Body.classList.toggle("disable-scroll")
+          Body.classList.remove("disable-scroll");
     
           setTimeout(() => {
             setClassMenu("");
@@ -28,6 +29,7 @@ const Menu = () => {
         } else {
           setActive(!toggle);
           setClassMenu("Slider-On");
+          Body.classList.add("disable-scroll");
         }
       }
     
@@ -37,13 +39,7 @@ const Menu = () => {
             <li className={`Menu-Middle`}></li>
             <li className={"Menu-Bottom"}></li>
         </ul>
-        <nav className={`Menu ${classMenu}`}>
-            <NavContainer classname = "Item" text="Home"></NavContainer>
-            <NavContainer classname = "Item" text="Recipes"></NavContainer>
-            <NavContainer classname = "Item" text="Blog"></NavContainer>
-            <NavContainer classname = "Item" text="About Us"></NavContainer>
-            <NavContainer classname = "Item" text="Contact"></NavContainer>
-        </nav>
+        <MenuSlider class = {`Menu ${classMenu}`}/>
     </nav>
   };
 

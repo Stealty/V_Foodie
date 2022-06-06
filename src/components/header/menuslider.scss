@@ -1,0 +1,66 @@
+@import "../../styles/global.scss";
+
+@keyframes MenuSlider {
+    0% {
+        transform: translateX(-100vw);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes MenuSliderOff {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100vw);
+    }
+}
+
+.Menu {
+    display: none;
+    text-align: left;
+    list-style-type: none;
+    font-weight: 500;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 9%;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    padding-top: 5%;
+    transform: translateX(-100vw);
+    animation-name: MenuSlider;
+    animation-duration: 1s;
+
+    .Item {
+        margin: 0 0 6% 6%;
+        font-size: 1rem;
+        font-weight: 500;
+        text-decoration: none;
+        ;
+        color: $primary-text-color;
+    }
+
+}
+
+.Slider-On {
+    display: flex;
+    animation-fill-mode: forwards;
+}
+
+.Slider-Off {
+    display: flex;
+    animation-name: MenuSliderOff;
+}
+
+@media(min-width:1024px) {
+
+    .Menu {
+        display: none;
+    }
+}
