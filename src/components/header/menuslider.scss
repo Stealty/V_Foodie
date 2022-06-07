@@ -22,20 +22,7 @@
 
 .Menu {
     display: none;
-    text-align: left;
-    list-style-type: none;
-    font-weight: 500;
-    flex-direction: column;
-    position: absolute;
-    left: 0;
-    top: 9%;
-    width: 100vw;
-    height: 100vh;
-    background-color: white;
-    padding-top: 5%;
-    transform: translateX(-100vw);
-    animation-name: MenuSlider;
-    animation-duration: 1s;
+
 
     .Item {
         margin: 0 0 6% 6%;
@@ -50,17 +37,50 @@
 
 .Slider-On {
     display: flex;
+    text-align: left;
+    list-style-type: none;
+    font-weight: 500;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 9%;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    padding-top: 5%;
+    transform: translateX(-100vw);
+    animation-name: MenuSlider;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
 .Slider-Off {
     display: flex;
+    text-align: left;
+    list-style-type: none;
+    font-weight: 500;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 9%;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    padding-top: 5%;
+    transform: translateX(-100vw);
+    animation-duration: 1s;
     animation-name: MenuSliderOff;
 }
 
 @media(min-width:1024px) {
 
     .Menu {
-        display: none;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        .Item{
+            margin: 0;
+        }
     }
 }

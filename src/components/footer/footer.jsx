@@ -2,11 +2,7 @@ import React from "react";
 import styles from "./footer.module.scss";
 import Logo from "../logo/logo";
 import NavContainer from "./navContainer";
-import SocialMedia from "./SocialMedia";
-
-import facebookImg from "/images/facebook.svg";
-import instagramImg from "/images/instagram.svg";
-import twitterImg from "/images/twitter.svg";
+import SocialMedia from "./socialMedia";
 
 const Footer = () => {
   return (
@@ -41,11 +37,7 @@ const Footer = () => {
           © 2020 Flowbase. Powered by
           <span className={styles.webflow}> Webflow</span>
         </p>
-        <div className={styles.socialMedia}>
-          <SocialMedia img={facebookImg}></SocialMedia>
-          <SocialMedia img={twitterImg}></SocialMedia>
-          <SocialMedia img={instagramImg}></SocialMedia>
-        </div>
+        <SocialMedia class = {styles.socialMedia} />
       </div>
     </footer>
   );
