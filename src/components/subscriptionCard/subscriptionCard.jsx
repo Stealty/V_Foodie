@@ -1,34 +1,18 @@
-import React, { useReducer } from "react";
+import React from "react";
+import { useModal } from "../../hooks/useModal";
 import Modal from "../modal/modal";
 import SubmitButton from "../submitButton";
 import styles from "./subscriptionCard.module.scss";
 
-const initialState = {
-  sending: false,
-  message: "",
-  showModal: false,
-};
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "SENDING":
-      return { ...state, sending: true };
-    case "SENT":
-      return {
-        ...state,
-        sending: false,
-        message: action.message,
-        showModal: true,
-      };
-    case "CLOSE_MODAL":
-      return { ...state, showModal: false };
-    default:
-      return state;
-  }
-};
-
 const SubscriptionCard = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const {
+    message,
+    sending,
+    showModal,
+    setSendingTransition,
+    openModal,
+    closeModal,
+  } = useModal();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,15 +20,15 @@ const SubscriptionCard = () => {
     const form = e.target;
     const data = new FormData(form);
     const dataObject = Object.fromEntries(data.entries());
-    dispatch({ type: "SENDING" });
+    setSendingTransition();
     //make mock post request
     const onSuccess = () => {
       console.table(dataObject);
-      dispatch({ type: "SENT", message: "Message sent successfully!" });
+      openModal("Message sent successfully!");
       form.reset();
     };
     const onFailure = () => {
-      dispatch({ type: "SENT", message: "Message failed to send!" });
+      openModal("Message failed to send");
     };
     setTimeout(() => onSuccess(), 2000);
   };
@@ -94,17 +78,10 @@ const SubscriptionCard = () => {
           required
         />
         <div className={styles["form__button"]}>
-          <SubmitButton
-            sending={state.sending}
-            className={styles.SubmitButton}
-          />
+          <SubmitButton sending={sending} className={styles.SubmitButton} />
         </div>
       </form>
-      <Modal
-        show={state.showModal}
-        onClose={() => dispatch({ type: "CLOSE_MODAL" })}
-        message={state.message}
-      />
+      <Modal show={showModal} onClose={closeModal} message={message} />
     </div>
   );
 };
