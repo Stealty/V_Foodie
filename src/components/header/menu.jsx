@@ -18,7 +18,9 @@ const Menu = () => {
     }, 1200);
   };
 
-  const OnClickHandler = () => {
+  const OnClickHandler = (KeyEvent) => {
+    console.log(KeyEvent.key);
+    if(KeyEvent.key === "Enter" || KeyEvent.key === "Space" || KeyEvent.key == null){
     if (!toggle) {
       closeMenu();
       setClassMenu("Slider-Off");
@@ -32,6 +34,7 @@ const Menu = () => {
       setClassMenu("Slider-On");
       Body.classList.add("disable-scroll");
     }
+  }
   }
 
   return <nav className="Navigation">
