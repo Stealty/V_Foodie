@@ -15,19 +15,21 @@ export default function Card({ card }) {
   return (
     <li className={styles["card"]}>
       <div className={styles["card__container"]}>
-        <img
-          src={card.image}
-          alt={"Ilustration of  a " + card.alt}
-          className={styles["card__image"]}
-        />
-        <div className={styles["card__heart"]} onClick={handleLike}>
+        <button className={styles["card__button"]}>
+          <img
+            src={card.image}
+            alt={"Ilustration of  " + card.title}
+            className={styles["card__image"]}
+          />
+        </button>
+        <button className={styles["card__heart"]} onClick={handleLike}>
           <img
             src="./images/card-heart.svg"
             className={styles["card__heart--notLiked"]}
+            alt={"Like button for " + card.title}
           />
-        </div>
+        </button>
       </div>
-
       <div className={styles["card__info"]}>
         <h2 className={styles["card__info__title"]}>{card.title}</h2>
         <div className={styles["card__info__text"]}>

@@ -8,7 +8,6 @@ export const cards = [
     title: "Mixed Tropical Fruit Salad with Superfood Boosts",
     time: "30 Minutes",
     type: "Healthy",
-    alt: "Mixed tropical fruit salad with superfood boosts",
   },
   {
     id: 2,
@@ -16,7 +15,6 @@ export const cards = [
     title: "Big and Juicy Wagyu Beef Cheeseburger",
     time: "30 Minutes",
     type: "Western",
-    alt: "Big and juicy wagyu beef cheeseburger",
   },
   {
     id: 3,
@@ -24,7 +22,6 @@ export const cards = [
     title: "Healthy Japanese Fried Rice with Asparagus",
     time: "30 Minutes",
     type: "Healthy",
-    alt: "Healthy japanese fried rice with asparagus",
   },
   {
     id: 4,
@@ -32,7 +29,6 @@ export const cards = [
     title: "Cauliflower Walnut Vegetarian Taco Meat",
     time: "30 Minutes",
     type: "Eastern",
-    alt: "Cauliflower walnut vegetarian taco meat",
   },
 ];
 
