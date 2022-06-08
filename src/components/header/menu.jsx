@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './menu.scss'
+import "./menu.scss";
 import MenuSlider from "./menuslider";
 import MenuHamburguer from "./menuHamburguer";
 
@@ -9,7 +9,7 @@ const Menu = () => {
   const Body = document.querySelector("body");
 
   const closeMenu = () => {
-    setActive(!toggle);
+    setActive((currentToggle) => !currentToggle);
     setClassMenu("Slider-Off");
     Body.classList.remove("disable-scroll");
 
@@ -20,27 +20,36 @@ const Menu = () => {
 
   const OnClickHandler = (KeyEvent) => {
     console.log(KeyEvent.key);
-    if(KeyEvent.key === "Enter" || KeyEvent.key === "Space" || KeyEvent.key == null){
-    if (!toggle) {
-      closeMenu();
-      setClassMenu("Slider-Off");
-      Body.classList.remove("disable-scroll");
+    if (
+      KeyEvent.key === "Enter" ||
+      KeyEvent.key === "Space" ||
+      KeyEvent.key == null
+    ) {
+      if (!toggle) {
+        closeMenu();
+        setClassMenu("Slider-Off");
+        Body.classList.remove("disable-scroll");
 
-      setTimeout(() => {
-        setClassMenu("");
-      }, 1200);
-    } else {
-      setActive(!toggle);
-      setClassMenu("Slider-On");
-      Body.classList.add("disable-scroll");
+        setTimeout(() => {
+          setClassMenu("");
+        }, 1200);
+      } else {
+        setActive((currentToggle) => !currentToggle);
+        setClassMenu("Slider-On");
+        Body.classList.add("disable-scroll");
+      }
     }
-  }
-  }
+  };
 
-  return <nav className="Navigation">
-    <MenuHamburguer OnClickHandler = {OnClickHandler} class = {`Menu-Hamburguer ${toggle ? "" : "Rotation"}`}/>
-    <MenuSlider class={`Menu ${classMenu}`} />
-  </nav>
+  return (
+    <nav className="Navigation">
+      <MenuHamburguer
+        OnClickHandler={OnClickHandler}
+        class={`Menu-Hamburguer ${toggle ? "" : "Rotation"}`}
+      />
+      <MenuSlider class={`Menu ${classMenu}`} />
+    </nav>
+  );
 };
 
 export default Menu;
