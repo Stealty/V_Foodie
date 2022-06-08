@@ -1,9 +1,7 @@
 import React from "react";
-import Carousel from "../components/Carousel/Carousel";
-import ContactForm from "../components/contactForm";
-import Section from "../components/section";
-import SubscriptionCard from "../components/subscriptionCard";
-import "./../styles/contact.scss";
+import { Section } from "@/components";
+import { Carousel, ContactForm, SubscriptionCard } from "@/features";
+import "@/styles/contact.scss";
 
 const Contact = () => {
   return (
