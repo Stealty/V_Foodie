@@ -1,7 +1,6 @@
 import React from "react";
-import { useModal } from "../../hooks/useModal";
-import Modal from "../modal/modal";
-import SubmitButton from "../submitButton";
+import { useModal } from "@/hooks/useModal";
+import { Modal, SubmitButton } from "@/components";
 import styles from "./subscriptionCard.module.scss";
 
 const SubscriptionCard = () => {

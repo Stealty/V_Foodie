@@ -1,9 +1,8 @@
 import React from "react";
-import Modal from "../modal/modal";
-import SubmitButton from "../submitButton";
+import { Modal, SubmitButton } from "@/components";
 import styles from "./contactForm.module.scss";
 import ImageCard from "./imageCard";
-import { useModal } from "../../hooks/useModal";
+import { useModal } from "@/hooks/useModal";
 
 const ContactForm = () => {
   const {
