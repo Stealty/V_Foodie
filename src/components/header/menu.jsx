@@ -20,7 +20,7 @@ const Menu = () => {
 
   const OnClickHandler = (KeyEvent) => {
     console.log(KeyEvent.key);
-    if(KeyEvent.key === "Enter" || KeyEvent.key === "Space" || KeyEvent.key == null){
+    if(KeyEvent.key === "Enter" || KeyEvent.key === " " || KeyEvent.key == null){
     if (!toggle) {
       closeMenu();
       setClassMenu("Slider-Off");
