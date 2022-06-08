@@ -8,10 +8,10 @@ export default function useFetch(url) {
   const isFirstTime = useRef(true);
 
   useEffect(() => {
-    if (isFirstTime.current) {
-      isFirstTime.current = false;
+    if (!isFirstTime.current) {
       return;
     }
+    isFirstTime.current = false;
     const fetchData = async () => {
       try {
         const response = await fetch(url);
