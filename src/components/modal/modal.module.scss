@@ -1,9 +1,7 @@
-@import "../../styles/global.scss";
-
 .modalCard {
   padding: 2rem;
-  background-color: $primary-background-color;
-  color: $primary-text-color;
+  background-color: var(--global-background-color);
+  color: var(--global-text-color);
   position: fixed;
   top: 50%;
   left: 50%;

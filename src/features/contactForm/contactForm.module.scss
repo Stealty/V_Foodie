@@ -18,7 +18,7 @@ $breakpoint-md: 768px;
   border-radius: 16px;
   &:focus {
     outline: none;
-    border-color: global.$accent-color-logo;
+    border-color: var(--accent-color);
   }
   ::placeholder {
     color: rgba(0, 0, 0, 0.6);

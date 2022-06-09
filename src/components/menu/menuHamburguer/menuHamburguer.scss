@@ -1,9 +1,7 @@
-@import "@/styles/global.scss";
-
 @mixin Hamburguer() {
   width: 40px;
   border-radius: 5px;
-  background-color: $primary-text-color;
+  background-color: var(--global-text-color);
   height: 6px;
   margin-bottom: 5px;
   transition: 1s;
