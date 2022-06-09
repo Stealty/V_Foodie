@@ -1,25 +1,5 @@
 @import "@/styles/global.scss";
 
-@keyframes MenuSlider {
-  0% {
-    transform: translateX(-100vw);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes MenuSliderOff {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-100vw);
-  }
-}
-
 .Menu {
   display: none;
 
@@ -32,41 +12,42 @@
   }
 }
 
-.Slider-On {
-  display: flex;
-  text-align: left;
-  list-style-type: none;
-  font-weight: 500;
-  flex-direction: column;
-  position: absolute;
-  left: 0;
-  top: 9%;
-  width: 100vw;
-  height: 100vh;
-  background-color: white;
-  padding-top: 5%;
-  transform: translateX(-100vw);
-  animation-name: MenuSlider;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-}
+@media screen and (max-width: 1024px) {
+  .Slider-On {
+    display: flex;
+    text-align: left;
+    list-style-type: none;
+    font-weight: 500;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 9%;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    padding-top: 5%;
+    transform: translateX(0);
+    transition-duration: 1s;
+    z-index: 1;
+  }
 
-.Slider-Off {
-  display: flex;
-  text-align: left;
-  list-style-type: none;
-  font-weight: 500;
-  flex-direction: column;
-  position: absolute;
-  left: 0;
-  top: 9%;
-  width: 100vw;
-  height: 100vh;
-  background-color: white;
-  padding-top: 5%;
-  transform: translateX(-100vw);
-  animation-duration: 1s;
-  animation-name: MenuSliderOff;
+  .Slider-Off {
+    display: flex;
+    text-align: left;
+    list-style-type: none;
+    font-weight: 500;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 9%;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    padding-top: 5%;
+    transform: translateX(-100vw);
+    transition-duration: 1s;
+    z-index: 1;
+  }
 }
 
 @media (min-width: 1024px) {
