@@ -20,9 +20,9 @@
     font-weight: 500;
     position: fixed;
     left: 0;
-    top: Min(9%, 68px);
+    bottom: 0;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - Max(40px, 9vh));
     background-color: white;
     padding-top: 5%;
 
