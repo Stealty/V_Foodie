@@ -11,7 +11,7 @@
     color: $primary-text-color;
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1023px) {
     z-index: 1;
     transition-duration: 1s;
     flex-direction: column;
