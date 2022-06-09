@@ -19,6 +19,9 @@
     text-decoration: none;
     color: var(--global-text-color);
   }
+  &--footer {
+    margin: 3px 0;
+  }
   @media (min-width: 1024px) {
     &--header {
       margin: 0;

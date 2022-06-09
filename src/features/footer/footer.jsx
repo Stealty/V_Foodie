@@ -7,12 +7,12 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <Logo></Logo>
-      <div className={styles.top}>
-        <p className={styles.descriptionText}>
+      <div className={styles.footer__topWrapper}>
+        <p className={styles.footer__topWrapper__descriptionText}>
           Lorem ipsum dolor sit amet, consectetuipisicing elit
         </p>
 
-        <nav className={styles.navContainer}>
+        <nav className={styles.footer__topWrapper__navContainer}>
           <NavItem classname={"--footer"} text="Recipes"></NavItem>
           <NavItem classname={"--footer"} text="Blog"></NavItem>
           <NavItem classname={"--footer"} text="Contact"></NavItem>
@@ -20,14 +20,14 @@ const Footer = () => {
         </nav>
       </div>
 
-      <div className={styles.divider}></div>
+      <div className={styles.footer__divider}></div>
 
-      <div className={styles.bottom}>
-        <p className={styles.copy}>
+      <div className={styles.footer__bottom}>
+        <p className={styles.footer__bottom__copy}>
           © 2020 Flowbase. Powered by
-          <span className={styles.webflow}> Webflow</span>
+          <span className={styles.footer__bottom__webflow}> Webflow</span>
         </p>
-        <SocialMedia class={styles.socialMedia} />
+        <SocialMedia class="--footer" />
       </div>
     </footer>
   );
