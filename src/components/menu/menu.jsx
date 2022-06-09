@@ -4,50 +4,43 @@ import MenuSlider from "./menuSlider/menuslider";
 import MenuHamburguer from "./menuHamburguer/menuHamburguer";
 
 const Menu = () => {
-  const [toggle, setActive] = useState("false");
-  const [classMenu, setClassMenu] = useState("");
+  const [active, setActive] = useState("false");
+  const [menuState, setMenuState] = useState(false);
   const Body = document.querySelector("body");
 
   const closeMenu = () => {
-    setActive(!toggle);
-    setClassMenu("Slider-Off");
+    setActive((currentActive) => !currentActive);
+    setMenuState(false);
     Body.classList.remove("disable-scroll");
-
-    setTimeout(() => {
-      setClassMenu("");
-    }, 1200);
   };
 
   const OnClickHandler = (KeyEvent) => {
-    console.log(KeyEvent.key);
+    //console.log(KeyEvent.key);
     if (
       KeyEvent.key === "Enter" ||
       KeyEvent.key === "Space" ||
       KeyEvent.key == null
     ) {
-      if (!toggle) {
+      if (!active) {
         closeMenu();
-        setClassMenu("Slider-Off");
+        setMenuState(false);
         Body.classList.remove("disable-scroll");
-
-        setTimeout(() => {
-          setClassMenu("");
-        }, 1200);
       } else {
-        setActive(!toggle);
-        setClassMenu("Slider-On");
+        setActive((currentActive) => !currentActive);
+        setMenuState(true);
         Body.classList.add("disable-scroll");
       }
     }
   };
 
+  const classMenu = menuState ? "menuSlider--on" : "menuSlider--off";
   return (
     <nav className="Navigation">
       <MenuHamburguer
         OnClickHandler={OnClickHandler}
-        class={`Menu-Hamburguer ${toggle ? "" : "Rotation"}`}
+        class={`Menu-Hamburguer ${active ? "" : "Rotation"}`}
       />
-      <MenuSlider class={`Menu ${classMenu}`} />
+      <MenuSlider class={`menuSlider ${classMenu}`} />
     </nav>
   );
 };
