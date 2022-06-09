@@ -3,7 +3,7 @@ import styles from "./menu.module.scss";
 import MenuSlider from "./menuSlider/menuslider";
 import MenuHamburguer from "./menuHamburguer/menuHamburguer";
 
-const Menu = () => {
+const Menu = ({ onExpand }) => {
   const [active, setActive] = useState("false");
   const [menuState, setMenuState] = useState(false);
   const Body = document.querySelector("body");
@@ -15,6 +15,7 @@ const Menu = () => {
   };
 
   const OnClickHandler = (KeyEvent) => {
+    onExpand();
     if (
       KeyEvent.key === "Enter" ||
       KeyEvent.key === "Space" ||
