@@ -5,12 +5,12 @@ import MenuHamburguer from "./menuHamburguer/menuHamburguer";
 
 const Menu = () => {
   const [active, setActive] = useState("false");
-  const [classMenu, setClassMenu] = useState("Slider-Off");
+  const [menuState, setMenuState] = useState(false);
   const Body = document.querySelector("body");
 
   const closeMenu = () => {
     setActive((currentActive) => !currentActive);
-    setClassMenu("Slider-Off");
+    setMenuState(false);
     Body.classList.remove("disable-scroll");
   };
 
@@ -23,23 +23,24 @@ const Menu = () => {
     ) {
       if (!active) {
         closeMenu();
-        setClassMenu("Slider-Off");
+        setMenuState(false);
         Body.classList.remove("disable-scroll");
       } else {
         setActive((currentActive) => !currentActive);
-        setClassMenu("Slider-On");
+        setMenuState(true);
         Body.classList.add("disable-scroll");
       }
     }
   };
 
+  const classMenu = menuState ? "menuSlider--on" : "menuSlider--off";
   return (
     <nav className="Navigation">
       <MenuHamburguer
         OnClickHandler={OnClickHandler}
         class={`Menu-Hamburguer ${active ? "" : "Rotation"}`}
       />
-      <MenuSlider class={`Menu ${classMenu}`} />
+      <MenuSlider class={`menuSlider ${classMenu}`} />
     </nav>
   );
 };

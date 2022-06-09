@@ -1,7 +1,7 @@
 @import "@/styles/global.scss";
 
-.Menu {
-  display: none;
+.menuSlider {
+  display: flex;
 
   .Item {
     margin: 0 0 6% 6%;
@@ -10,49 +10,34 @@
     text-decoration: none;
     color: $primary-text-color;
   }
-}
 
-@media screen and (max-width: 1024px) {
-  .Slider-On {
-    display: flex;
+  @media screen and (max-width: 1024px) {
+    z-index: 1;
+    transition-duration: 1s;
+    flex-direction: column;
     text-align: left;
     list-style-type: none;
     font-weight: 500;
-    flex-direction: column;
     position: fixed;
     left: 0;
-    top: 9%;
+    top: Min(9%, 68px);
     width: 100vw;
     height: 100vh;
     background-color: white;
     padding-top: 5%;
-    transform: translateX(0);
-    transition-duration: 1s;
-    z-index: 1;
-  }
 
-  .Slider-Off {
-    display: flex;
-    text-align: left;
-    list-style-type: none;
-    font-weight: 500;
-    flex-direction: column;
-    position: fixed;
-    left: 0;
-    top: 9%;
-    width: 100vw;
-    height: 100vh;
-    background-color: white;
-    padding-top: 5%;
-    transform: translateX(-100vw);
-    transition-duration: 1s;
-    z-index: 1;
+    &--on {
+      transform: translateX(0);
+    }
+
+    &--off {
+      transform: translateX(-100vw);
+    }
   }
 }
 
 @media (min-width: 1024px) {
-  .Menu {
-    display: flex;
+  .menuSlider {
     justify-content: space-around;
     align-items: center;
     width: 100%;
