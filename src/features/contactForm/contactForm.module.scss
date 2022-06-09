@@ -21,7 +21,7 @@ $breakpoint-md: 768px;
     border-color: var(--accent-color);
   }
   ::placeholder {
-    color: rgba(0, 0, 0, 0.6);
+    color: var(--muted-text-color);
     letter-spacing: -0.02rem;
     font-family: "Inter", sans-serif;
     font-size: 0.875rem;
@@ -103,7 +103,7 @@ $breakpoint-md: 768px;
   text-transform: uppercase;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--muted-text-color);
 }
 
 .contactForm_group {

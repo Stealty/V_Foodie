@@ -1,13 +1,16 @@
 .navItem {
   text-decoration: none;
-  color: #000;
+  color: var(--global-text-color);
   font-weight: bold;
   margin: 3px 0;
   font-size: clamp(1.05rem, 1.3vw, 1.5rem);
 
   &:hover {
     cursor: pointer;
-    color: #ff7967;
+    color: var(--accent-color);
+  }
+  &:focus {
+    outline-color: var(--accent-color);
   }
   &--header {
     margin: 0 0 6% 6%;

@@ -11,9 +11,21 @@ $primary-button-background-color: #000;
   --global-text-color: #000;
   --global-background-color: #fff;
   --card-background-color: #e7f9fd;
-  --accent-color: rgb(255, 166, 38);
+  --accent-color: #ff7426;
+  --muted-text-color: rgba(0, 0, 0, 0.6);
 }
 
+/*
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --global-text-color: rgb(200, 200, 200);
+    --global-background-color: #000;
+    --card-background-color: #1d1d1d;
+    --accent-color: #ff7426;
+    --muted-text-color: rgba(255, 255, 255, 0.6);
+  }
+}
+*/
 *,
 *:before,
 *:after {

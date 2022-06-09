@@ -19,7 +19,7 @@
     overflow-wrap: break-word;
   }
   &__description {
-    color: rgba(0, 0, 0, 0.6);
+    color: var(--muted-text-color);
     text-align: center;
     margin-right: auto;
     margin-left: auto;
