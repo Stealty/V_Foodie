@@ -1,10 +1,11 @@
 import React from "react";
 import { NavItem } from "@/components";
-import "./menuslider.scss";
+import styles from "./menuslider.module.scss";
 
 const MenuSlider = (props) => {
+  const classMenu = props.menuState ? "menuSlider--on" : "menuSlider--off";
   return (
-    <nav className={props.class}>
+    <nav className={`${styles["menuSlider"]} ${styles[classMenu]}`}>
       <NavItem classname="--header" text="Home"></NavItem>
       <NavItem classname="--header" text="Recipes"></NavItem>
       <NavItem classname="--header" text="Blog"></NavItem>

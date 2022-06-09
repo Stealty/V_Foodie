@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./menu.scss";
+import styles from "./menu.module.scss";
 import MenuSlider from "./menuSlider/menuslider";
 import MenuHamburguer from "./menuHamburguer/menuHamburguer";
 
@@ -15,7 +15,6 @@ const Menu = () => {
   };
 
   const OnClickHandler = (KeyEvent) => {
-    //console.log(KeyEvent.key);
     if (
       KeyEvent.key === "Enter" ||
       KeyEvent.key === "Space" ||
@@ -33,14 +32,10 @@ const Menu = () => {
     }
   };
 
-  const classMenu = menuState ? "menuSlider--on" : "menuSlider--off";
   return (
-    <nav className="Navigation">
-      <MenuHamburguer
-        OnClickHandler={OnClickHandler}
-        class={`Menu-Hamburguer ${active ? "" : "Rotation"}`}
-      />
-      <MenuSlider class={`menuSlider ${classMenu}`} />
+    <nav className={styles["menu"]}>
+      <MenuHamburguer OnClickHandler={OnClickHandler} rotate={menuState} />
+      <MenuSlider menuState={menuState} />
     </nav>
   );
 };
