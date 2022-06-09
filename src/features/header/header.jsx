@@ -8,7 +8,7 @@ const Header = () => {
     <header className={styles["Header"]}>
       <Logo />
       <Menu />
-      <SocialMedia class={styles["Social"]} />
+      <SocialMedia class={"--header"} />
     </header>
   );
 };

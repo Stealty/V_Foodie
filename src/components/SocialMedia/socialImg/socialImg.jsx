@@ -1,7 +1,11 @@
 import React from "react";
 
 const SocialImg = (props) => {
-  return <img src={props.img} />;
+  return (
+    <a href="#">
+      <img src={props.img} />
+    </a>
+  );
 };
 
 export default SocialImg;
