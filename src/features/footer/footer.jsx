@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./footer.module.scss";
-import { Logo } from "@/components";
-import NavContainer from "@/components/navContainer/navContainer";
+import { Logo, NavItem } from "@/components";
 import SocialMedia from "@/components/SocialMedia/SocialMedia";
 
 const Footer = () => {
@@ -14,19 +13,10 @@ const Footer = () => {
         </p>
 
         <nav className={styles.navContainer}>
-          <NavContainer
-            classname={styles.navItem}
-            text="Recipes"
-          ></NavContainer>
-          <NavContainer classname={styles.navItem} text="Blog"></NavContainer>
-          <NavContainer
-            classname={styles.navItem}
-            text="Contact"
-          ></NavContainer>
-          <NavContainer
-            classname={styles.navItem}
-            text="About Us"
-          ></NavContainer>
+          <NavItem classname={"--footer"} text="Recipes"></NavItem>
+          <NavItem classname={"--footer"} text="Blog"></NavItem>
+          <NavItem classname={"--footer"} text="Contact"></NavItem>
+          <NavItem classname={"--footer"} text="About Us"></NavItem>
         </nav>
       </div>
 

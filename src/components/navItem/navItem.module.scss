@@ -1,0 +1,26 @@
+@import "@/styles/global.scss";
+
+.navItem {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  margin: 3px 0;
+  font-size: clamp(1.05rem, 1.3vw, 1.5rem);
+
+  &:hover {
+    cursor: pointer;
+    color: #ff7967;
+  }
+  &--header {
+    margin: 0 0 6% 6%;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: $primary-text-color;
+  }
+  @media (min-width: 1024px) {
+    &--header {
+      margin: 0;
+    }
+  }
+}
