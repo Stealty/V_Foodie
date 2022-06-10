@@ -23,11 +23,11 @@ const SubscriptionCard = () => {
     //make mock post request
     const onSuccess = () => {
       console.table(dataObject);
-      openModal("Message sent successfully!");
+      openModal(`Email ${dataObject.email} subscribed!`);
       form.reset();
     };
     const onFailure = () => {
-      openModal("Message failed to send");
+      openModal("Failed to subscribe email");
     };
     setTimeout(() => onSuccess(), 2000);
   };
