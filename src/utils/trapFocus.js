@@ -24,4 +24,15 @@ const trapFocus = (container, firstFocusable, lastFocusable) => {
   lastFocusable.addEventListener("keydown", handleLastTab);
 };
 
+export const removeTrapFocus = (
+  firstFocusable,
+  lastFocusable,
+  handleFirstTab,
+  handleLastTab
+) => {
+  firstFocusable.removeEventListener("keydown", handleFirstTab);
+  lastFocusable.removeEventListener("keydown", handleLastTab);
+  //lastFocusable.addEvent
+};
+
 export default trapFocus;
