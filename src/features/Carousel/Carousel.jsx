@@ -1,48 +1,20 @@
 import Card from "./Card/Card";
 import styles from "./Carousel.module.scss";
-
-export const cards = [
-  {
-    id: 1,
-    image: "/images/fruit-salad.png",
-    title: "Mixed Tropical Fruit Salad with Superfood Boosts",
-    time: "30 Minutes",
-    type: "Healthy",
-  },
-  {
-    id: 2,
-    image: "/images/beef.png",
-    title: "Big and Juicy Wagyu Beef Cheeseburger",
-    time: "30 Minutes",
-    type: "Western",
-  },
-  {
-    id: 3,
-    image: "/images/japanese.png",
-    title: "Healthy Japanese Fried Rice with Asparagus",
-    time: "30 Minutes",
-    type: "Healthy",
-  },
-  {
-    id: 4,
-    image: "/images/taco.png",
-    title: "Cauliflower Walnut Vegetarian Taco Meat",
-    time: "30 Minutes",
-    type: "Eastern",
-  },
-];
+import useFetch from "../../hooks/useFetch";
 
 export default function Carousel() {
-  function handleScrollRight(e) {
-    e.currentTarget.parentNode.scrollBy({
-      left: e.currentTarget.parentNode.offsetWidth / 2,
+  const [data, loading, error] = useFetch("@/../data.json");
+
+  function handleScrollRight(event) {
+    event.currentTarget.parentNode.scrollBy({
+      left: event.currentTarget.parentNode.offsetWidth / 2,
       behavior: "smooth",
     });
   }
 
-  function handleScrollLeft(e) {
-    e.currentTarget.parentNode.scrollBy({
-      left: -e.currentTarget.parentNode.offsetWidth / 2,
+  function handleScrollLeft(event) {
+    event.currentTarget.parentNode.scrollBy({
+      left: -event.currentTarget.parentNode.offsetWidth / 2,
       behavior: "smooth",
     });
   }
@@ -60,9 +32,7 @@ export default function Carousel() {
             className={styles["carousel__scrollButton--left"]}
           ></button>
           <ul className={styles["card__list"]}>
-            {cards.map((card) => (
-              <Card card={card} key={card.id} />
-            ))}
+            {!loading && data.map((card) => <Card card={card} key={card.id} />)}
           </ul>
           <button
             type="button"
