@@ -14,7 +14,11 @@ const ModalDialog = ({ message, onClose }) => {
       aria-modal="true"
     >
       <p id={descriptionID}>{message}</p>
-      <button className={styles.modalCloseButton} onClick={onClose}>
+      <button
+        className={styles.modalCloseButton}
+        onClick={onClose}
+        title="Close"
+      >
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
