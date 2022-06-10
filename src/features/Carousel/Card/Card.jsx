@@ -15,7 +15,12 @@ export default function Card({ card }) {
   return (
     <li className={styles["card"]}>
       <div className={styles["card__container"]}>
-        <a className={styles["card__button"]} tabIndex="0">
+        <a
+          className={styles["card__button"]}
+          tabIndex="0"
+          href=""
+          target="__blank"
+        >
           <img
             src={card.image}
             alt={"Ilustration of  " + card.title}
