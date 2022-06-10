@@ -1,9 +1,19 @@
 import React, { useEffect, useId } from "react";
 import ReactDOM from "react-dom";
 import styles from "./modal.module.scss";
+import trapFocus from "@/utils/trapFocus";
 
 const ModalDialog = ({ message, onClose }) => {
+  const modalId = useId();
   const descriptionID = useId();
+  const closeID = useId();
+
+  useEffect(() => {
+    const modal = document.getElementById(modalId);
+    const closeButton = document.getElementById(closeID);
+    trapFocus(modal, closeButton, closeButton);
+    closeButton.focus();
+  }, [modalId, closeID]);
 
   return (
     <div
@@ -12,12 +22,14 @@ const ModalDialog = ({ message, onClose }) => {
       aria-label="Request result"
       aria-describedby={descriptionID}
       aria-modal="true"
+      id={modalId}
     >
       <p id={descriptionID}>{message}</p>
       <button
         className={styles.modalCloseButton}
         onClick={onClose}
         title="Close"
+        id={closeID}
       >
         <span aria-hidden="true">&times;</span>
       </button>
@@ -38,6 +50,8 @@ function Modal({ message, onClose, show }) {
       }
     };
     window.addEventListener("keyup", closeOnEsc);
+    if (show) {
+    }
     return () => {
       window.removeEventListener("keyup", closeOnEsc);
     };
@@ -52,7 +66,7 @@ function Modal({ message, onClose, show }) {
         )}
       {show &&
         ReactDOM.createPortal(
-          <Backdrop onClick={onClose}></Backdrop>,
+          <Backdrop onClose={onClose}></Backdrop>,
           document.getElementById("backdrop-root")
         )}
     </>

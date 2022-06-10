@@ -33,4 +33,7 @@
   &:hover {
     background-color: var(--accent-color);
   }
+  &:focus {
+    outline-color: var(--accent-color);
+  }
 }
