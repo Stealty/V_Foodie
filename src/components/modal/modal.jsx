@@ -2,7 +2,7 @@ import React, { useEffect, useId } from "react";
 import ReactDOM from "react-dom";
 import styles from "./modal.module.scss";
 
-const ModalDialog = ({ message, onClose, show }) => {
+const ModalDialog = ({ message, onClose }) => {
   const descriptionID = useId();
 
   return (
@@ -29,7 +29,7 @@ function Modal({ message, onClose, show }) {
   //add an event listener to the window to close the modal on any button press
   useEffect(() => {
     const closeOnEsc = (e) => {
-      if (e.keyCode === 27) {
+      if (e.key === "Escape") {
         onClose();
       }
     };
@@ -43,7 +43,7 @@ function Modal({ message, onClose, show }) {
     <>
       {show &&
         ReactDOM.createPortal(
-          <ModalDialog message={message} onClose={onClose} show={show} />,
+          <ModalDialog message={message} onClose={onClose} />,
           document.getElementById("modal-root")
         )}
       {show &&
