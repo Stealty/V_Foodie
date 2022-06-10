@@ -1,15 +1,5 @@
-@import "@/styles/global.scss";
-
 .menuSlider {
   display: flex;
-
-  .Item {
-    margin: 0 0 6% 6%;
-    font-size: 1rem;
-    font-weight: 500;
-    text-decoration: none;
-    color: $primary-text-color;
-  }
 
   @media screen and (max-width: 1023px) {
     z-index: 1;
@@ -23,7 +13,7 @@
     bottom: 0;
     width: 100vw;
     height: calc(100vh - Max(40px, 9vh));
-    background-color: white;
+    background-color: var(--global-background-color);
     padding-top: 5%;
 
     &--on {
@@ -41,8 +31,5 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    .Item {
-      margin: 0;
-    }
   }
 }

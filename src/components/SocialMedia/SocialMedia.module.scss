@@ -1,0 +1,22 @@
+.socialMedia {
+  margin: 7% 0;
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-between;
+  max-width: 310px;
+  @media (min-width: 768px) {
+    &--footer {
+      max-height: 2rem;
+    }
+  }
+  &--header {
+    display: none;
+  }
+  @media (min-width: 1024px) {
+    &--header {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 .skipToContentButton {
-  background-color: black;
-  color: white;
+  background-color: var(--global-text-color);
+  color: var(--global-background-color);
   position: fixed;
   padding: 2rem;
   top: 0;
