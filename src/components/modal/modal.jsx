@@ -1,9 +1,31 @@
 import React, { useEffect, useId } from "react";
+import ReactDOM from "react-dom";
 import styles from "./modal.module.scss";
 
-function Modal({ message, onClose, show }) {
+const ModalDialog = ({ message, onClose, show }) => {
   const descriptionID = useId();
 
+  return (
+    <div
+      className={styles.modalCard}
+      role="dialog"
+      aria-label="Request result"
+      aria-describedby={descriptionID}
+      aria-modal="true"
+    >
+      <p id={descriptionID}>{message}</p>
+      <button className={styles.modalCloseButton} onClick={onClose}>
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  );
+};
+
+const Backdrop = ({ onClose }) => (
+  <div className={styles.modalBackdrop} onClick={onClose}></div>
+);
+
+function Modal({ message, onClose, show }) {
   //add an event listener to the window to close the modal on any button press
   useEffect(() => {
     const closeOnEsc = (e) => {
@@ -19,19 +41,16 @@ function Modal({ message, onClose, show }) {
 
   return (
     <>
-      {show && (
-        <div
-          className={styles.modalCard}
-          onClick={onClose}
-          aria-label="Request result"
-          aria-describedby={descriptionID}
-          aria-modal="true"
-          role="dialog"
-        >
-          <p id={descriptionID}>{message}</p>
-        </div>
-      )}
-      {show && <div className={styles.modalBackdrop} onClick={onClose}></div>}
+      {show &&
+        ReactDOM.createPortal(
+          <ModalDialog message={message} onClose={onClose} show={show} />,
+          document.getElementById("modal-root")
+        )}
+      {show &&
+        ReactDOM.createPortal(
+          <Backdrop onClick={onClose}></Backdrop>,
+          document.getElementById("backdrop-root")
+        )}
     </>
   );
 }

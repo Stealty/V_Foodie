@@ -1,5 +1,5 @@
 .modalCard {
-  padding: 2rem;
+  padding: 4rem;
   background-color: var(--global-background-color);
   color: var(--global-text-color);
   position: fixed;
@@ -18,4 +18,19 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.553);
   z-index: 3;
+}
+
+.modalCloseButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  font-size: 2rem;
+  background-color: var(--global-background-color);
+  color: var(--global-text-color);
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--accent-color);
+  }
 }
