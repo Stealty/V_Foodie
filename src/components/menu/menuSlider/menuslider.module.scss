@@ -1,0 +1,35 @@
+.menuSlider {
+  display: flex;
+
+  @media screen and (max-width: 1023px) {
+    z-index: 1;
+    transition-duration: 1s;
+    flex-direction: column;
+    text-align: left;
+    list-style-type: none;
+    font-weight: 500;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: calc(100vh - Max(40px, 9vh));
+    background-color: var(--global-background-color);
+    padding-top: 5%;
+
+    &--on {
+      transform: translateX(0);
+    }
+
+    &--off {
+      transform: translateX(-100vw);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .menuSlider {
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+}

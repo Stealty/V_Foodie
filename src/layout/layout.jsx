@@ -1,10 +1,24 @@
-import React from "react";
-import Header from "../components/header";
-import Footer from "../components/footer";
+import React, { useEffect } from "react";
+import { SkipToContentButton } from "@/components";
+import { Footer, Header } from "@/features";
 import "./layout.scss";
-import SkipToContentButton from "../components/skipToContentButton";
 
 function Layout({ children }) {
+  useEffect(() => {
+    const body = document.querySelector("body");
+    //stop transition on resize
+    const onResize = () => {
+      body.classList.add("stopTransition");
+      setTimeout(() => {
+        body.classList.remove("stopTransition");
+      }, 100);
+    };
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("resize", onResize);
+    };
+  }, []);
+
   return (
     <>
       <SkipToContentButton />

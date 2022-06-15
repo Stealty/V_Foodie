@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 $primary-text-color: #000;
 $primary-background-color: #fff;
@@ -7,6 +7,25 @@ $accent-color-logo: rgb(255, 166, 38);
 $primary-button-color: #fff;
 $primary-button-background-color: #000;
 
+:root {
+  --global-text-color: #000;
+  --global-background-color: #fff;
+  --card-background-color: #e7f9fd;
+  --accent-color: #ff7426;
+  --muted-text-color: rgba(0, 0, 0, 0.6);
+}
+
+/*
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --global-text-color: rgb(200, 200, 200);
+    --global-background-color: #000;
+    --card-background-color: #1d1d1d;
+    --accent-color: #ff7426;
+    --muted-text-color: rgba(255, 255, 255, 0.6);
+  }
+}
+*/
 *,
 *:before,
 *:after {
@@ -15,8 +34,8 @@ $primary-button-background-color: #000;
 }
 
 body {
-  color: $primary-text-color;
-  background-color: $primary-background-color;
+  color: var(--global-text-color);
+  background-color: var(--global-background-color);
   font-family: "Inter", sans-serif;
 }
 
@@ -24,5 +43,22 @@ body {
   * {
     animation: none !important;
     transition: none !important;
+  }
+}
+
+body.stopTransition {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.disable-scroll {
+  overflow-y: hidden;
+}
+
+@media (min-width: 1024px) {
+  .disable-scroll {
+    overflow-y: scroll;
   }
 }
