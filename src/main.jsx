@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 import Layout from "./layout/layout";
 import Contact from "./pages/contact";
 import BlogList from "./pages/bloglist";
+import NotFoundPage from "./pages/notfoundpage";
 import "./styles/global.scss";
 
 //aqui será configurada as rotas do site
@@ -14,6 +15,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Routes>
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Blog" element={<BlogList />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>
