@@ -10,7 +10,7 @@ const NavItem = (props) => {
     (props.classname ? styles["navItem" + props.classname] : "");
   return (
     <a
-      href="#"
+      href={props.linkto}
       className={className}
       tabIndex={props.nonFocusable ? "-1" : "0"}
     >
