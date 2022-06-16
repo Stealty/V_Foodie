@@ -9,13 +9,13 @@ import "./styles/global.scss";
 //aqui será configurada as rotas do site
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Layout>
-      <BrowserRouter>
-      <Routes>
-        <Route path="/Contact" element={<Contact />} />
-        <Route path="/Blog" element={<BlogList />} />
-      </Routes>
-      </BrowserRouter>
-    </Layout>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/Blog" element={<BlogList />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   </React.StrictMode>
 );
