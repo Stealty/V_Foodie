@@ -13,10 +13,10 @@ const Footer = () => {
         </p>
 
         <nav className={styles.footer__topWrapper__navContainer}>
-          <NavItem classname={"--footer"} text="Recipes"></NavItem>
-          <NavItem classname={"--footer"} text="Blog"></NavItem>
-          <NavItem classname={"--footer"} text="Contact"></NavItem>
-          <NavItem classname={"--footer"} text="About Us"></NavItem>
+          <NavItem classname={"--footer"} linkto="/" text="Recipes"></NavItem>
+          <NavItem classname={"--footer"} linkto="/blog" text="Blog"></NavItem>
+          <NavItem classname={"--footer"} linkto="/contact" text="Contact"></NavItem>
+          <NavItem classname={"--footer"} linkto="/" text="About Us"></NavItem>
         </nav>
       </div>
 
