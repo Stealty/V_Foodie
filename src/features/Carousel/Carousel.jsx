@@ -1,9 +1,9 @@
+import { useData } from "../../context/useDataContext";
 import Card from "./Card/Card";
 import styles from "./Carousel.module.scss";
-import useFetch from "../../hooks/useFetch";
 
 export default function Carousel() {
-  const [data, loading, error] = useFetch("@/../data.json");
+  const { data, loading } = useData();
 
   function handleScrollRight(event) {
     event.currentTarget.parentNode.scrollBy({
