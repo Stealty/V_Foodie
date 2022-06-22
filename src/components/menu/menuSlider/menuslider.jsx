@@ -25,26 +25,31 @@ const MenuSlider = (props) => {
     <nav className={`${styles["menuSlider"]} ${styles[classMenu]}`}>
       <NavItem
         classname="--header"
+        linkto="/"
         text="Home"
         nonFocusable={nonFocusable}
       ></NavItem>
       <NavItem
         classname="--header"
+        linkto="/"
         text="Recipes"
         nonFocusable={nonFocusable}
       ></NavItem>
       <NavItem
         classname="--header"
+        linkto="/blog"
         text="Blog"
         nonFocusable={nonFocusable}
       ></NavItem>
       <NavItem
         classname="--header"
+        linkto="/"
         text="About Us"
         nonFocusable={nonFocusable}
       ></NavItem>
       <NavItem
         classname="--header"
+        linkto="/contact"
         text="Contact"
         nonFocusable={nonFocusable}
       ></NavItem>
