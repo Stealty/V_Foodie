@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { SkipToContentButton } from "@/components";
 import { Footer, Header } from "@/features";
 import "./layout.scss";
+import { DataProvider } from "../context/useDataContext";
 
 function Layout({ children }) {
   useEffect(() => {
@@ -23,9 +24,11 @@ function Layout({ children }) {
     <>
       <SkipToContentButton />
       <Header />
-      <main className="main" id="maincontent">
-        {children}
-      </main>
+      <DataProvider>
+        <main className="main" id="maincontent">
+          {children}
+        </main>
+      </DataProvider>
       <Footer />
     </>
   );
