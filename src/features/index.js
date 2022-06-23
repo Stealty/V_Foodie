@@ -1,3 +1,4 @@
+export { default as Articles } from "./articles/articles";
 export { default as Carousel } from "./Carousel/Carousel";
 export { default as ContactForm } from "./contactForm/contactForm";
 export { default as Footer } from "./footer/footer";
