@@ -1,0 +1,72 @@
+.articleItemContainer {
+  display: grid;
+  margin: 1rem 0;
+  max-width: 340px;
+
+  justify-items: stretch;
+  grid-template-areas:
+    "articleImg articleImg"
+    "articleTitle articleTitle"
+    "articleText articleText"
+    "articleAuthor articleDate";
+}
+
+.articleImg {
+  grid-area: articleImg;
+  margin-left: 1%;
+  /* justify-self: center; */
+
+  max-height: 200px;
+  max-width: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.articleTitle {
+  grid-area: articleTitle;
+
+  letter-spacing: -0.04em;
+  margin: 0.5rem 0;
+  font-size: 20px;
+}
+
+.articleText {
+  grid-area: articleText;
+
+  font-size: clamp(0.8rem, 1.5vw, 1.5rem);
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 28px;
+  margin: 0.5rem 0;
+}
+
+.articleAuthor {
+  grid-area: articleAuthor;
+
+  display: flex;
+  align-items: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.articleDate {
+  grid-area: articleDate;
+
+  align-self: center;
+  font-size: clamp(0.8rem, 1.5vw, 1.5rem);
+  color: rgba(0, 0, 0, 0.6);
+  text-indent: 20px;
+}
+
+@media (min-width: 625px) {
+  .articleItemContainer {
+    grid-template-areas:
+      "articleImg articleTitle articleTitle"
+      "articleImg articleText articleText"
+      "articleImg articleAuthor articleDate";
+
+    max-width: fit-content;
+  }
+
+  .articleImg {
+    margin-right: 1.5rem;
+  }
+}

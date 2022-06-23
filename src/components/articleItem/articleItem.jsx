@@ -1,18 +1,19 @@
 import ArticleAuthor from "./articleAuthor/articleAuthor";
 import styles from "./articleItem.module.scss";
 
-const ArticleItem = () => {
+const ArticleItem = (props) => {
   return (
-    <div>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYOU8KqNFnoM3XOAT0bR66229KlXDTzeIPSw&usqp=CAU" />
-      <h2>Crochet Projects for Noodle Lovers</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqut enim{" "}
-      </p>
-      <ArticleAuthor />
+    <div className={styles.articleItemContainer}>
+      <img src={props.data.articleImg} className={styles.articleImg} />
+      <h2 className={styles.articleTitle}>{props.data.articleTitle}</h2>
+      <p className={styles.articleText}>{props.data.articleText} </p>
+      <ArticleAuthor
+        className={styles.articleAuthor}
+        authorImg={props.data.authorImg}
+        articleAuthor={props.data.articleAuthor}
+      />
       {/* <Divider /> */}
-      <p>12 November 2021</p>
+      <p className={styles.articleDate}>{props.data.articleDate}</p>
     </div>
   );
 };
