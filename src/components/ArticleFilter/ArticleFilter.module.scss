@@ -14,7 +14,7 @@
 
 .article__input {
   min-width: 315px;
-  width: 70%;
+  width: 0%;
   height: 55px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 24px;
@@ -30,16 +30,28 @@
   height: 34px;
   border: none;
   background-color: transparent;
-  transform: translateX(440%);
+  transform: translateX(115px);
+  opacity: 0.8;
   cursor: pointer;
+}
+
+.article__button:hover {
+  opacity: 1;
+}
+
+@media screen and (min-width: 500px) {
+  .article__input {
+    width: 100%;
+  }
+
+  .article__button {
+    right: 140px;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .article__buttonImage {
     display: none;
-  }
-
-  .article__button {
   }
 
   .article__input {
