@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./blogArticles.module.scss";
+import { ArticleFilter } from "@/components";
 
 const BlogArticles = () => {
   return (
@@ -10,7 +11,9 @@ const BlogArticles = () => {
         tempor incididunt ut labore et dolore
       </p>
       <div className={styles["blogArticles__wrapper"]}>
-        <div className={styles["blogArticles__searchBar"]}>Search Bar</div>
+        <div className={styles["blogArticles__searchBar"]}>
+          <ArticleFilter />
+        </div>
         <div className={styles["blogArticles__articlesStack"]}>
           Article Stack
         </div>
