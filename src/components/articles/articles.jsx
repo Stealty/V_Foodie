@@ -1,4 +1,4 @@
-import ArticleItem from "../../components/articleItem/articleItem";
+import { ArticleItem } from "@/components";
 import styles from "./articles.module.scss";
 
 const Articles = () => {

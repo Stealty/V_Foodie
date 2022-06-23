@@ -6,3 +6,5 @@ export { default as SkipToContentButton } from "./skipToContentButton/skipToCont
 export { default as SubmitButton } from "./submitButton/submitButton";
 export { default as NavItem } from "./navItem/navItem";
 export { default as ArticleFilter } from "./ArticleFilter/ArticleFilter";
+export { default as Articles } from "./articles/articles";
+export { default as ArticleItem } from "./articleItem/articleItem";

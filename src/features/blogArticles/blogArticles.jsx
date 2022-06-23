@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./blogArticles.module.scss";
-import { ArticleFilter } from "@/components";
+import { ArticleFilter, Articles } from "@/components";
 
 const BlogArticles = () => {
   return (
@@ -15,7 +15,7 @@ const BlogArticles = () => {
           <ArticleFilter />
         </div>
         <div className={styles["blogArticles__articlesStack"]}>
-          Article Stack
+          <Articles />
         </div>
         <div className={styles["blogArticles__recipesStack"]}>
           Recipes Stack
