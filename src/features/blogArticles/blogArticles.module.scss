@@ -1,0 +1,66 @@
+.blogArticles__title {
+  font-size: clamp(2rem, calc(1rem + 5vw), 4rem);
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.blogArticles__subtitle {
+  margin: 1rem auto;
+  text-align: center;
+  color: var(--muted-text-color);
+}
+
+.blogArticles__wrapper {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-areas:
+    "searchbar"
+    "articles"
+    "pages"
+    "ads"
+    "recipes";
+  @media screen and (min-width: 786px) {
+    grid-template-columns: 2.1fr 1fr;
+    grid-template-rows: min-content min-content 1fr;
+    grid-template-areas:
+      "searchbar searchbar"
+      "articles recipes"
+      "articles ads"
+      "pages pages";
+  }
+}
+
+.blogArticles__searchBar {
+  width: 100%;
+  background-color: green;
+  height: 80px;
+  grid-area: searchbar;
+}
+
+.blogArticles__articlesStack {
+  width: 100%;
+  background-color: red;
+  height: 500px;
+  grid-area: articles;
+}
+
+.blogArticles__recipesStack {
+  width: 100%;
+  background-color: grey;
+  height: 200px;
+  grid-area: recipes;
+}
+
+.blogArticles__ads {
+  width: 100%;
+  background-color: yellow;
+  height: 100px;
+  grid-area: ads;
+}
+
+.blogArticles__pageSelector {
+  width: 100%;
+  background-color: magenta;
+  height: 80px;
+  grid-area: pages;
+}
