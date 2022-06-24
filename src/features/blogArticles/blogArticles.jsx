@@ -1,6 +1,12 @@
 import React from "react";
 import styles from "./blogArticles.module.scss";
-import { ArticleFilter, Articles, RecipeCard, CardStack } from "@/components";
+import {
+  ArticleFilter,
+  Articles,
+  RecipeCard,
+  CardStack,
+  SiteBanner,
+} from "@/components";
 
 import { useState } from "react";
 import useFetch from "../../hooks/useFetch";
@@ -8,7 +14,9 @@ import { useEffect } from "react";
 
 const BlogArticles = () => {
   const [data, loading, error] = useFetch("@/../articles.json");
-
+  const [recipes, recipesLoading, recipesFetchError] =
+    useFetch("@/../data.json");
+  console.log(recipes);
   const [articles, setArticles] = useState();
 
   useEffect(() => {
@@ -41,9 +49,19 @@ const BlogArticles = () => {
           <Articles articles={articles} loading={loading} />
         </div>
         <div className={styles["blogArticles__recipesStack"]}>
-          Recipes Stack
+          <h2 className={styles["blogArticles__recipesStack__title"]}>
+            Tasty Recipes
+          </h2>
+          <CardStack>
+            {!recipesLoading &&
+              recipes.map((recipe) => (
+                <RecipeCard key={recipe.id} {...recipe} />
+              ))}
+          </CardStack>
         </div>
-        <div className={styles["blogArticles__ads"]}>Ads</div>
+        <div className={styles["blogArticles__ads"]}>
+          <SiteBanner />
+        </div>
         <div className={styles["blogArticles__pageSelector"]}>
           Page Selector
         </div>
