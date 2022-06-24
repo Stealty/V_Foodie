@@ -17,14 +17,13 @@
   /* justify-self: center; */
 
   max-height: 200px;
-  width: 290px;
+  width: 100%;
   object-fit: cover;
   border-radius: 20px;
 }
 
 .articleTitle {
   grid-area: articleTitle;
-
   letter-spacing: -0.04em;
   margin: 0.5rem 0;
   font-size: 20px;
@@ -64,6 +63,7 @@
       "articleImg articleAuthor articleDate";
 
     max-width: fit-content;
+    min-width: 700px;
   }
 
   .articleImg {

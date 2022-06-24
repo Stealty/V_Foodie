@@ -27,8 +27,10 @@ const BlogArticles = () => {
 
   const handleSearch = (text) => {
     const searchValue = text.toLowerCase();
-    const filteredArticles = data.filter((article) =>
-      article.articleTitle.toLowerCase().includes(searchValue)
+    const filteredArticles = data.filter(
+      (article) =>
+        article.articleTitle.toLowerCase().includes(searchValue) ||
+        article.articleText.toLowerCase().includes(searchValue)
     );
 
     setArticles(filteredArticles.slice(0, maximumNumberArticlesShown));
