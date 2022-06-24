@@ -16,11 +16,11 @@ const BlogArticles = () => {
 
   const handleSearch = (text) => {
     const searchValue = text.toLowerCase();
-    const filter = data.filter((article) =>
+    const filteredArticles = data.filter((article) =>
       article.articleTitle.toLowerCase().includes(searchValue)
     );
 
-    setArticles(filter);
+    setArticles(filteredArticles);
   };
 
   return (
