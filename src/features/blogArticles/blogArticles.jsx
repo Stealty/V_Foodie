@@ -1,6 +1,12 @@
 import React from "react";
 import styles from "./blogArticles.module.scss";
-import { ArticleFilter, Articles, RecipeCard, CardStack } from "@/components";
+import {
+  ArticleFilter,
+  Articles,
+  RecipeCard,
+  CardStack,
+  SiteBanner,
+} from "@/components";
 import { useDataContext } from "@/context/useDataContext";
 import { useContext } from "react";
 import { useState } from "react";
@@ -77,7 +83,9 @@ const BlogArticles = () => {
             ))}
           </CardStack>
         </div>
-        <div className={styles["blogArticles__ads"]}>Ads</div>
+        <div className={styles["blogArticles__ads"]}>
+          <AdBanner />
+        </div>
         <div className={styles["blogArticles__pageSelector"]}>
           Page Selector
         </div>
