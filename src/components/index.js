@@ -8,3 +8,5 @@ export { default as NavItem } from "./navItem/navItem";
 export { default as ArticleFilter } from "./ArticleFilter/ArticleFilter";
 export { default as Articles } from "./articles/articles";
 export { default as ArticleItem } from "./articleItem/articleItem";
+export { default as RecipeCard } from "./recipeCard/recipeCard";
+export { default as CardStack } from "./cardStack/cardStack";
