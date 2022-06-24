@@ -7,12 +7,17 @@ export default function ArticleFilter(props) {
       <form
         action=""
         className={styles.article__form}
-        onChange={props.handleSearch}
+        onSubmit={(event) => {
+          event.preventDefault();
+          props.handleSearch(event.target.search.value.trim());
+        }}
       >
         <input
           type="text"
+          name="search"
           className={styles.article__input}
           placeholder="Search article, news or recipe..."
+          onChange={(e) => props.handleSearch(e.target.value.trim())}
         />
         <button type="submit" className={styles["article__button--mobile"]}>
           <img

@@ -11,6 +11,13 @@ const Articles = (props) => {
       </div>
     );
   }
+  if (articles == "") {
+    return (
+      <div className={styles.articlesContainer}>
+        <h2>No articles found</h2>
+      </div>
+    );
+  }
   if (articles) {
     return (
       <div className={styles.articlesContainer}>

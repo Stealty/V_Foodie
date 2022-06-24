@@ -1,29 +1,56 @@
 [
   {
     "id": 1,
-    "articleImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYOU8KqNFnoM3XOAT0bR66229KlXDTzeIPSw&usqp=CAU",
+    "articleImg": "images/crochet.png",
     "articleTitle": "Crochet Projects for Noodle Lovers",
     "articleText": "Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim",
     "articleAuthor": "Wade Warren",
-    "authorImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHTfj4rpfo35KCLe8P_QUcy_EThBOWFRo42w&usqp=CAU",
+    "authorImg": "images/Wade Warren.png",
     "articleDate": "12 November 2021"
   },
   {
     "id": 2,
-    "articleImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYOU8KqNFnoM3XOAT0bR66229KlXDTzeIPSw&usqp=CAU",
-    "articleTitle": "Crochet Projects for Noodle Lovers",
+    "articleImg": "images/fruit-salad.png",
+    "articleTitle": "10 Vegetarian Recipes To Eat This Month",
     "articleText": "Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim",
-    "articleAuthor": "Wade Warren",
-    "authorImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHTfj4rpfo35KCLe8P_QUcy_EThBOWFRo42w&usqp=CAU",
+    "articleAuthor": "Robert Fox",
+    "authorImg": "images/Robert Fox.png",
     "articleDate": "12 November 2021"
   },
   {
     "id": 3,
-    "articleImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYOU8KqNFnoM3XOAT0bR66229KlXDTzeIPSw&usqp=CAU",
-    "articleTitle": "Crochet Projects  Noodle Lovers",
+    "articleImg": "images/profissionalChef.png",
+    "articleTitle": "Full Guide to Becoming a Professional Chef",
     "articleText": "Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim",
-    "articleAuthor": "Wade Warren",
-    "authorImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHTfj4rpfo35KCLe8P_QUcy_EThBOWFRo42w&usqp=CAU",
+    "articleAuthor": "Dianne Russell",
+    "authorImg": "images/Dianne Russel.png",
+    "articleDate": "12 November 2021"
+  },
+  {
+    "id": 4,
+    "articleImg": "images/vegLasagna.png",
+    "articleTitle": "Simple & Delicious Vegetarian Lasagna",
+    "articleText": "Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim",
+    "articleAuthor": "Leslie Alexander",
+    "authorImg": "images/Leslie Alexander.png",
+    "articleDate": "12 November 2021"
+  },
+  {
+    "id": 5,
+    "articleImg": "images/ajiVerde.png",
+    "articleTitle": "Plantain and Pinto Stew with Aji Verde",
+    "articleText": "Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim",
+    "articleAuthor": "Courtney Henry",
+    "authorImg": "images/Courtney Henry.png",
+    "articleDate": "12 November 2021"
+  },
+  {
+    "id": 6,
+    "articleImg": "images/hiringAssistant.png",
+    "articleTitle": "We’re Hiring a Communications Assistant!",
+    "articleText": "Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim",
+    "articleAuthor": "Albert Flores",
+    "authorImg": "images/Albert Flores.png",
     "articleDate": "12 November 2021"
   }
 ]
