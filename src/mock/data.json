@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "articleImg": "/images/fruit-salad.png",
+    "articleTitle": "Crochet Projects for Noodle Lovers",
+    "articleText": "Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim",
+    "articleAuthor": "Wade Warren",
+    "authorImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHTfj4rpfo35KCLe8P_QUcy_EThBOWFRo42w&usqp=CAU",
+    "articleDate": "12 November 2021"
+  },
+  {
+    "id": "2",
+    "articleImg": "/images/beef.png",
+    "articleTitle": "Crochet Projects for Noodle Lovers",
+    "articleText": "Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim",
+    "articleAuthor": "Wade Warren",
+    "authorImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHTfj4rpfo35KCLe8P_QUcy_EThBOWFRo42w&usqp=CAU",
+    "articleDate": "12 November 2021"
+  },
+  {
+    "id": "3",
+    "articleImg": "/images/japanese.png",
+    "articleTitle": "Crochet Projects for Noodle Lovers",
+    "articleText": "Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim",
+    "articleAuthor": "Wade Warren",
+    "authorImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHTfj4rpfo35KCLe8P_QUcy_EThBOWFRo42w&usqp=CAU",
+    "articleDate": "12 November 2021"
+  },
+  {
+    "id": "4",
+    "articleImg": "/images/taco.png",
+    "articleTitle": "Crochet Projects for Noodle Lovers",
+    "articleText": "Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim",
+    "articleAuthor": "Wade Warren",
+    "authorImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHTfj4rpfo35KCLe8P_QUcy_EThBOWFRo42w&usqp=CAU",
+    "articleDate": "12 November 2021"
+  }
+]
