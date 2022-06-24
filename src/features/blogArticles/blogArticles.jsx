@@ -15,16 +15,16 @@ import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 
 const maximumNumberRecipesShown = 3;
+const maximumNumberArticlesShown = 6;
 
 const BlogArticles = () => {
   const [data, loading, error] = useFetch("@/../articles.json");
   const [recipes, recipesLoading, recipesFetchError] =
     useFetch("@/../data.json");
-  console.log(recipes);
   const [articles, setArticles] = useState();
 
   useEffect(() => {
-    setArticles(data);
+    setArticles(data.slice(0, maximumNumberArticlesShown));
   }, [data]);
 
   const handleSearch = (text) => {
@@ -33,7 +33,7 @@ const BlogArticles = () => {
       article.articleTitle.toLowerCase().includes(searchValue)
     );
 
-    setArticles(filteredArticles);
+    setArticles(filteredArticles.slice(0, maximumNumberArticlesShown));
   };
 
   return (

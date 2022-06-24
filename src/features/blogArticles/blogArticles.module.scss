@@ -20,8 +20,17 @@
     "ads"
     "recipes";
   @media screen and (min-width: 768px) {
-    grid-template-columns: 2.1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: min-content min-content 1fr;
+    grid-template-areas:
+      "searchbar searchbar"
+      "articles articles"
+      "articles articles"
+      "pages pages"
+      "ads recipes";
+  }
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: 2.1fr 1fr;
     grid-template-areas:
       "searchbar searchbar"
       "articles recipes"
