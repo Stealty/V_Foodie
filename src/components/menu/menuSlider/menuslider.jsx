@@ -37,7 +37,7 @@ const MenuSlider = (props) => {
       ></NavItem>
       <NavItem
         classname="--header"
-        linkto="/blog/1"
+        linkto="/blog"
         text="Blog"
         nonFocusable={nonFocusable}
       ></NavItem>
