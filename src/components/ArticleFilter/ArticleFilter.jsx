@@ -7,7 +7,7 @@ export default function ArticleFilter(props) {
       <form
         action=""
         className={styles.article__form}
-        onSubmit={props.handleSearch}
+        onChange={props.handleSearch}
       >
         <input
           type="text"
