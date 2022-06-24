@@ -1,19 +1,15 @@
 import styles from "./ArticleFilter.module.scss";
 import SubmitButton from "../submitButton/submitButton";
-import { useEffect } from "react";
+import useFetch from "../../hooks/useFetch";
+import { useState } from "react";
 
-export default function ArticleFilter() {
-  function searchArticles(event) {
-    event.preventDefault();
-    console.log("searching articles");
-  }
-
+export default function ArticleFilter(props) {
   return (
     <div className={styles.article__filter}>
       <form
         action=""
         className={styles.article__form}
-        onSubmit={searchArticles}
+        onSubmit={props.handleSearch}
       >
         <input
           type="text"
