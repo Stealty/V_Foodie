@@ -12,6 +12,7 @@ import {
 import { useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import { useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
 
 const maximumNumberRecipesShown = 3;
 
@@ -50,7 +51,7 @@ const BlogArticles = () => {
           <Articles articles={articles} loading={loading} />
         </div>
         <div className={styles["blogArticles__recipesStack"]}>
-          <h2 className={styles["blogArticles__recipesStack__title"]}>
+          <h2 className={styles["blogArticles__recipesStackTitle"]}>
             Tasty Recipes
           </h2>
           <CardStack>
