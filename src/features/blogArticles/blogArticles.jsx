@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./blogArticles.module.scss";
-import { ArticleFilter, Articles } from "@/components";
 import { ArticleFilter, Articles, RecipeCard, CardStack } from "@/components";
 
 import { useState } from "react";
