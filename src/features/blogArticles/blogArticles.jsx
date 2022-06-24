@@ -12,6 +12,8 @@ import { useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import { useEffect } from "react";
 
+const maximumNumberRecipesShown = 3;
+
 const BlogArticles = () => {
   const [data, loading, error] = useFetch("@/../articles.json");
   const [recipes, recipesLoading, recipesFetchError] =
@@ -52,9 +54,9 @@ const BlogArticles = () => {
           </h2>
           <CardStack>
             {!recipesLoading &&
-              recipes.map((recipe) => (
-                <RecipeCard key={recipe.id} {...recipe} />
-              ))}
+              recipes
+                .slice(0, maximumNumberRecipesShown)
+                .map((recipe) => <RecipeCard key={recipe.id} {...recipe} />)}
           </CardStack>
         </div>
         <div className={styles["blogArticles__ads"]}>
