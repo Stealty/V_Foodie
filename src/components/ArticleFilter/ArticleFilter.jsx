@@ -1,7 +1,5 @@
 import styles from "./ArticleFilter.module.scss";
 import SubmitButton from "../submitButton/submitButton";
-import useFetch from "../../hooks/useFetch";
-import { useState } from "react";
 
 export default function ArticleFilter(props) {
   return (

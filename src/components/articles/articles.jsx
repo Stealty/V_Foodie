@@ -2,10 +2,7 @@ import { ArticleItem } from "@/components";
 import styles from "./articles.module.scss";
 
 const Articles = (props) => {
-  const { data, filteredData, loading } = props;
-
-  const articles = data;
-  const fiteredArticles = filteredData;
+  const { articles, loading } = props;
 
   if (loading) {
     return (

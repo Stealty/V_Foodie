@@ -1,32 +1,28 @@
 import React from "react";
 import styles from "./blogArticles.module.scss";
 import { ArticleFilter, Articles } from "@/components";
-import { useDataContext } from "@/context/useDataContext";
-import { useContext } from "react";
 import { useState } from "react";
+import useFetch from "../../hooks/useFetch";
+import { useEffect } from "react";
 
 const BlogArticles = () => {
-  const { data, loading, error } = useContext(useDataContext);
-  const [articles, setArticles] = useState();
-  console.log(data);
+  const [data, loading, error] = useFetch("@/../articles.json");
 
-  function handleData() {
-    if (!loading) {
-      setArticles(data);
-    }
-  }
+  const [articles, setArticles] = useState();
+
+  useEffect(() => {
+    setArticles(data);
+  }, [data]);
 
   const handleSearch = (event) => {
     event.preventDefault();
-    data.filter((article) => {
-      if (
-        article.articleTitle
-          .toLowerCase()
-          .includes(event.target.value.toLowerCase())
-      ) {
-        return setArticles(article);
-      }
-    });
+    const searchValue = event.target.value.toLowerCase();
+
+    const filter = data.filter((article) =>
+      article.articleTitle.toLowerCase().includes(searchValue)
+    );
+
+    setArticles(filter);
   };
 
   return (
@@ -41,7 +37,7 @@ const BlogArticles = () => {
           <ArticleFilter handleSearch={handleSearch} />
         </div>
         <div className={styles["blogArticles__articlesStack"]}>
-          <Articles data={data} filteredData={articles} loading={loading} />
+          <Articles articles={articles} loading={loading} />
         </div>
         <div className={styles["blogArticles__recipesStack"]}>
           Recipes Stack
