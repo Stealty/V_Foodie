@@ -14,10 +14,8 @@ const BlogArticles = () => {
     setArticles(data);
   }, [data]);
 
-  const handleSearch = (event) => {
-    event.preventDefault();
-
-    const searchValue = event.target.value.toLowerCase();
+  const handleSearch = (text) => {
+    const searchValue = text.toLowerCase();
     const filter = data.filter((article) =>
       article.articleTitle.toLowerCase().includes(searchValue)
     );
