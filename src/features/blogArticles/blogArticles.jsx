@@ -84,7 +84,7 @@ const BlogArticles = () => {
           </CardStack>
         </div>
         <div className={styles["blogArticles__ads"]}>
-          <AdBanner />
+          <SiteBanner />
         </div>
         <div className={styles["blogArticles__pageSelector"]}>
           Page Selector

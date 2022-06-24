@@ -1,4 +1,4 @@
-export { default as AdBanner } from "./siteBanner/siteBanner";
+export { default as SiteBanner } from "./siteBanner/siteBanner";
 export { default as ArticleFilter } from "./ArticleFilter/ArticleFilter";
 export { default as ArticleItem } from "./articleItem/articleItem";
 export { default as Articles } from "./articles/articles";
