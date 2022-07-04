@@ -6,11 +6,13 @@ import {
   RecipeCard,
   CardStack,
   SiteBanner,
+  Navigation,
 } from "@/components";
 
 import { useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import { useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
 
 const maximumNumberRecipesShown = 3;
 const maximumNumberArticlesShown = 6;
@@ -51,7 +53,7 @@ const BlogArticles = () => {
           <Articles articles={articles} loading={loading} />
         </div>
         <div className={styles["blogArticles__recipesStack"]}>
-          <h2 className={styles["blogArticles__recipesStack__title"]}>
+          <h2 className={styles["blogArticles__recipesStackTitle"]}>
             Tasty Recipes
           </h2>
           <CardStack>
@@ -64,9 +66,7 @@ const BlogArticles = () => {
         <div className={styles["blogArticles__ads"]}>
           <SiteBanner />
         </div>
-        <div className={styles["blogArticles__pageSelector"]}>
-          Page Selector
-        </div>
+        <Navigation />
       </div>
     </>
   );

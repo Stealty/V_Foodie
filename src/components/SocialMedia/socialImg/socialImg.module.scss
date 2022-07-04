@@ -1,0 +1,16 @@
+.Svg {
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .Link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            fill: orange;
+        }
+    }
+}
