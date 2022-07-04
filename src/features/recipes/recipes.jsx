@@ -1,9 +1,9 @@
 import React from "react";
 import { Card } from "@/components";
 import { useData } from "../../context/useDataContext";
-import styles from "./tryrecipes.module.scss";
+import styles from "./recipes.module.scss";
 
-const TryRecipes = () => {
+const Recipes = () => {
     const {data, loading} = useData();
     const DUMMY_RECIPES = [
         {
@@ -55,4 +55,4 @@ const TryRecipes = () => {
     </>
 }
 
-export default TryRecipes;
+export default Recipes;
