@@ -7,8 +7,8 @@ const Navigation = (props) => {
 
     return <nav className={styles.Navigation}>
     {NavItems.map((Item) => (
-        <Link to={`/blog`} className={styles.Navigation__NavItem} key={Item}>
-            <li >{Item}</li>
+        <Link to={`/blog/:Page`} className={styles.Navigation__NavItem} key={Item}>
+            <li>{Item}</li>
         </Link>
     ))}
     </nav>
