@@ -27,7 +27,7 @@ export default function ArticleFilter(props) {
           />
         </button>
         <div className={styles["article__button--desktop"]}>
-          <SubmitButton />
+          <SubmitButton text="Search" type="submit" />
         </div>
       </form>
     </div>

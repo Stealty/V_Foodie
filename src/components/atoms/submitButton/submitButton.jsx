@@ -11,6 +11,7 @@ const SubmitButton = (props) => {
       disabled={props.sending}
     >
       {props.text}
+      {props.icon}
       {props.sending && "ting..."}
     </button>
   );
