@@ -1,0 +1,15 @@
+.card__info__text {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+
+  &__type {
+    display: flex;
+    justify-content: space-between;
+    width: 80px;
+  }
+}
