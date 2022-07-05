@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom/client";
-import Layout from "./layout/layout";
-import { Router } from "@/features";
+import Layout from "@templates/layout";
+import { Router } from "@organisms";
 import "./styles/global.scss";
 
 //aqui será configurada as rotas do site

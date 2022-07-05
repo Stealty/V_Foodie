@@ -1,6 +1,6 @@
 import React from "react";
-import { Section } from "@/components";
-import { SubscriptionCard, BlogArticles } from "@/features";
+import { Section } from "@molecules";
+import { SubscriptionCard, BlogArticles } from "@organisms";
 
 const BlogList = () => {
   return (
