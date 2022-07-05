@@ -1,6 +1,8 @@
 import styles from "./highlightInfo.module.scss";
 import TimeInfo from "@molecules/timeInfo/TimeInfo";
 import TypeInfo from "@molecules/typeInfo/TypeInfo";
+import HighlightAuthor from "../highlightAuthor/highlightAuthor";
+import SubmitButton from "@atoms/submitButton/SubmitButton";
 
 export default function HighlightInfo() {
   return (
@@ -19,10 +21,14 @@ export default function HighlightInfo() {
         Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqut enim ad minim{" "}
       </p>
-
       <div className={styles.hightlightInfo__details}>
         <TimeInfo time="30 Minutes" background="rgba(0, 0, 0, 0.05)" />
         <TypeInfo type="Chicken" background="rgba(0, 0, 0, 0.05)" />
+      </div>
+
+      <HighlightAuthor />
+      <div className={styles.highlightInfo__buttonWrapper}>
+        <SubmitButton type="button" text="View Recipes" />
       </div>
     </div>
   );
