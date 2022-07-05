@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./navigation.module.scss";
 
 const Navigation = (props) => {
-  const NavItems = [1];
+  const NavItems = [props.list];
 
   return (
     <nav className={styles.Navigation}>
       {NavItems.map((Item) => (
         <Link
-          to={`/blog/:Page`}
+          to={`/blog`}
           className={styles.Navigation__NavItem}
           key={Item}
         >

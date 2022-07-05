@@ -4,46 +4,87 @@ $lg: 1250px;
 $md: 1000px;
 $sm: 620px;
 
-@mixin breakpoint($breakpoint: $lg) {
-  @media screen and (min-width: $breakpoint) {
-    @content;
-  }
+@mixin breakpoint($breakpoint) {
+    @media screen and (min-width: $breakpoint) {
+        @content;
+    }
 }
 
-.Container{
+@mixin List() {
+    display: grid;
+    grid-template-columns: 50%;
+    padding: 0;
+    width: 100%;
+    justify-content: center;
+}
+
+.Container {
     display: grid;
     grid-template-columns: 50% 50%;
     margin-bottom: 50px;
 
-    &__Title{
+    &__Title {
         width: 80%;
         display: flex;
         flex-wrap: wrap;
         font-size: 2.3rem;
     }
 
-    &__Description{
+    &__Description {
         color: var(--muted-text-color);
         font-size: 0.8rem;
     }
 }
 
-.Recipes{
+.Recipes {
 
-    &__List{
-        display: grid;
-        grid-template-columns: 50%;
-        padding: 0;
-        width: 100%;
-        justify-content: center;
-        @include breakpoint($sm){
+    &__List {
+
+        @include breakpoint($sm) {
             grid-template-columns: 50% 50%;
         }
-        @include breakpoint($md){
+
+        @include breakpoint($md) {
             grid-template-columns: 30% 30% 30%;
         }
-        @include breakpoint($lg){
+
+        @include breakpoint($lg) {
             grid-template-columns: 25% 25% 25% 25%;
+        }
+
+        &Desktop {
+            @include List();
+            display: none;
+
+            @include breakpoint($sm) {
+                display: none;
+            }
+
+            @include breakpoint($md) {
+                display: grid;
+                grid-template-columns: 30% 30% 30%;
+            }
+
+            @include breakpoint($lg) {
+                display: grid;
+                grid-template-columns: 25% 25% 25% 25%;
+            }
+        }
+
+        &Mobile {
+            @include List();
+
+            @include breakpoint($sm) {
+                grid-template-columns: 50% 50%;
+            }
+
+            @include breakpoint($md) {
+                display: none;
+            }
+
+            @include breakpoint($lg) {
+                display: none;
+            }
         }
     }
 }

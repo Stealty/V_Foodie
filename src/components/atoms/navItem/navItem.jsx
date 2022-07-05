@@ -9,8 +9,10 @@ const NavItem = (props) => {
     styles.navItem +
     " " +
     (props.classname ? styles["navItem" + props.classname] : "");
+    const OnClickHandler = !props.OnClickHandler ? "" : props.OnClickHandler;
   return (
     <Link
+      onClick = {OnClickHandler}
       to={props.linkto}
       className={className}
       tabIndex={props.nonFocusable ? "-1" : "0"}

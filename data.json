@@ -30,5 +30,37 @@
     "time": "30 Minutes",
     "type": "Eastern",
     "author": "Pedro Cal"
+  },
+  {
+    "id": 5,
+    "image": "/images/rainbow-chicken.png",
+    "title": "Rainbow Chicken Salad with Almond Honey Mustard Dressing",
+    "time": "30 Minutes",
+    "type": "Healthy",
+    "author": "Jane Wilson"
+  },
+  {
+    "id": 6,
+    "image": "/images/sandwich.png",
+    "title": "Barbeque Spicy Sandwiches with Chips ",
+    "time": "30 Minutes",
+    "type": "Snack",
+    "author": "Oscar Lame"
+  },
+  {
+    "id": 7,
+    "image": "/images/lettuce-wraps.png",
+    "title": "Firecracker Vegan Lettuce Wraps - Spicy! ",
+    "time": "30 Minutes",
+    "type": "Seafood",
+    "author": "Gil Bert"
+  },
+  {
+    "id": 8,
+    "image": "/images/chicken-ramen.png",
+    "title": "Chicken Ramen Soup with Mushroom",
+    "time": "30 Minutes",
+    "type": "Japanese",
+    "author": "Pedro Cal"
   }
 ]

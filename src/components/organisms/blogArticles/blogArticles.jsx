@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import styles from "./blogArticles.module.scss";
+import { Routes, Route } from "react-router-dom";
 import {
   ArticleFilter,
   Articles,
@@ -64,7 +65,7 @@ const BlogArticles = () => {
         <div className={styles["blogArticles__ads"]}>
           <SiteBanner />
         </div>
-        <Navigation />
+        <Navigation list={[1]} />
       </div>
     </>
   );
