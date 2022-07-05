@@ -2,7 +2,10 @@ import styles from "./typeInfo.module.scss";
 
 export default function TypeInfo(props) {
   return (
-    <p className={styles["card__info__text__type"]}>
+    <p
+      className={styles["cardInfo__textType"]}
+      style={{ backgroundColor: props.background }}
+    >
       <span>
         <svg
           width="9"
@@ -28,7 +31,7 @@ export default function TypeInfo(props) {
             fill="black"
           />
         </svg>
-      </span>{" "}
+      </span>
       {props.type}
     </p>
   );
