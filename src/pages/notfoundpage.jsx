@@ -1,7 +1,7 @@
-import { NotFound } from "@/features";
+import { NotFound } from "@organisms";
 
 const NotFoundPage = () => {
-    return <NotFound />
-}
+  return <NotFound />;
+};
 
 export default NotFoundPage;

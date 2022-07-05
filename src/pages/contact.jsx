@@ -1,6 +1,6 @@
 import React from "react";
-import { Section } from "@/components";
-import { Carousel, ContactForm, SubscriptionCard } from "@/features";
+import { Section } from "@molecules";
+import { Carousel, ContactForm, SubscriptionCard } from "@organisms";
 import "@/styles/contact.scss";
 
 const Contact = () => {

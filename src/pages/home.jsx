@@ -1,11 +1,13 @@
 import React from "react";
-import { Section } from "@/components";
-import { SubscriptionCard } from "@/features";
+import { Section } from "@molecules";
+import { SubscriptionCard } from "@organisms";
 
 const Home = () => {
-    return <Section arialabel="Subscription Card">
-        <SubscriptionCard />
+  return (
+    <Section arialabel="Subscription Card">
+      <SubscriptionCard />
     </Section>
-}
+  );
+};
 
 export default Home;
