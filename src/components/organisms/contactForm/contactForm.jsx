@@ -114,7 +114,12 @@ const ContactForm = () => {
             />
           </div>
           <div className={styles["submitButton_wrapper"]}>
-            <SubmitButton sending={sending} className={styles.SubmitButton} />
+            <SubmitButton
+              sending={sending}
+              className={styles.SubmitButton}
+              text="Submit"
+              type="submit"
+            />
           </div>
           <Modal
             show={showModal}
