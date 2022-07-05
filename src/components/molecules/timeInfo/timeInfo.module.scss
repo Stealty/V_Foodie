@@ -1,25 +1,12 @@
-.card__info__text {
-  position: relative;
+.cardInfo__textTime {
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 11px 16px 12px 19px;
+  margin-right: 28px;
+  gap: 8px;
   color: rgba(0, 0, 0, 0.6);
   font-size: 14px;
-  letter-spacing: -0.02em;
-  font-weight: 600;
-
-  &__time {
-    display: flex;
-    justify-content: space-between;
-    width: 99px;
-    margin-right: 28px;
-
-    &::before {
-      position: absolute;
-      top: -18px;
-      left: 6px;
-      display: flex;
-      content: "_";
-      font-weight: bold;
-    }
-  }
+  font-weight: 500;
+  border-radius: 30px;
 }
