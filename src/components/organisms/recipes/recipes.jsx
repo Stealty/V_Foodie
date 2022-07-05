@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "../Carousel/Card/Card";
+import Card from "../Carousel/Card";
 import { useData } from "../../../context/useDataContext";
 import styles from "./recipes.module.scss";
 

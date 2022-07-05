@@ -2,7 +2,6 @@ export { default as SiteBanner } from "./siteBanner/siteBanner";
 export { default as ArticleFilter } from "./ArticleFilter/ArticleFilter";
 export { default as ArticleItem } from "./articleItem/articleItem";
 export { default as Articles } from "./articles/articles";
-export { default as Card } from "./Card/Card";
 export { default as CardStack } from "./cardStack/cardStack";
 export { default as Logo } from "./logo/logo";
 export { default as Menu } from "./menu/menu";
