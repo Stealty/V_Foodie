@@ -8,7 +8,7 @@ const Recipes = () => {
     const DUMMY_RECIPES = [
         {
           "id": 5,
-          "image": "/images/rainbow-chicken",
+          "image": "/images/rainbow-chicken.png",
           "title": "Rainbow Chicken Salad with Almond Honey Mustard Dressing",
           "time": "30 Minutes",
           "type": "Healthy",
