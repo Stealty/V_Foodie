@@ -78,7 +78,12 @@ const SubscriptionCard = () => {
           required
         />
         <div className={styles["form__button"]}>
-          <SubmitButton sending={sending} className={styles.SubmitButton} />
+          <SubmitButton
+            sending={sending}
+            className={styles.SubmitButton}
+            text="Subscribe"
+            type="submit"
+          />
         </div>
       </form>
       <Modal show={showModal} onClose={closeModal} message={message} />

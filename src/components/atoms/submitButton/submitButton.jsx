@@ -1,14 +1,16 @@
 import React from "react";
 import styles from "./submitButton.module.scss";
 
-const SubmitButton = ({ sending }) => {
+const SubmitButton = (props, { sending }) => {
   return (
     <button
-      type="submit"
+      type={props.type}
       className={!sending ? styles.submitButton : styles.submitButton__disabled}
       disabled={sending}
     >
-      Submit{sending && "ting..."}
+      {props.text}
+      {props.icon}
+      {sending && "ting..."}
     </button>
   );
 };
