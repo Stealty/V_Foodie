@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styles from "./blogArticles.module.scss";
 import {
   ArticleFilter,
@@ -21,21 +21,21 @@ const BlogArticles = () => {
   const [data, loading, error] = useFetch("@/../articles.json");
   const [recipes, recipesLoading, recipesFetchError] =
     useFetch("@/../data.json");
-  const [articles, setArticles] = useState();
+  const [filter, setFilter] = useState(() => () => true);
 
-  useEffect(() => {
-    setArticles(data.slice(0, maximumNumberArticlesShown));
-  }, [data]);
+  //const articles = data?.slice(0, maximumNumberArticlesShown) || [];
+  const articles = useMemo(
+    () => data?.filter(filter).slice(0, maximumNumberArticlesShown) || [],
+    [data, filter]
+  );
 
   const handleSearch = (text) => {
     const searchValue = text.toLowerCase();
-    const filteredArticles = data.filter(
-      (article) =>
+    setFilter(
+      () => (article) =>
         article.articleTitle.toLowerCase().includes(searchValue) ||
         article.articleText.toLowerCase().includes(searchValue)
     );
-
-    setArticles(filteredArticles.slice(0, maximumNumberArticlesShown));
   };
 
   return (
