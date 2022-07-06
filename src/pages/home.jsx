@@ -1,13 +1,17 @@
 import React from "react";
-import { Section, HighlightCard } from "@molecules";
-import { SubscriptionCard } from "@organisms";
+import { Section } from "@molecules";
+import { SubscriptionCard, ChefSection } from "@organisms";
 
 const Home = () => {
   return (
-    <Section arialabel="Subscription Card">
-      <HighlightCard />
-      <SubscriptionCard />
-    </Section>
+    <>
+      <Section arialabel="Chef Section">
+        <ChefSection />
+      </Section>
+      <Section arialabel="Subscription Card">
+        <SubscriptionCard />
+      </Section>
+    </>
   );
 };
 

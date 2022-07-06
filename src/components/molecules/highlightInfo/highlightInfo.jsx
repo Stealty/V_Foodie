@@ -2,19 +2,9 @@ import styles from "./highlightInfo.module.scss";
 import TimeInfo from "@molecules/timeInfo/TimeInfo";
 import TypeInfo from "@molecules/typeInfo/TypeInfo";
 import HighlightAuthor from "../highlightAuthor/highlightAuthor";
-import SubmitButton from "@atoms/submitButton/SubmitButton";
+import PrimaryButton from "@atoms/primaryButton/PrimaryButton";
 
 export default function HighlightInfo() {
-  const iframe = document.getElementById("iFramePlayer");
-  function iframeClick(event) {
-    iframe.contentWindow.postMessage(
-      {
-        type: "play",
-      },
-      "*"
-    );
-  }
-
   return (
     <div className={styles.highlightInfo}>
       <span className={styles.highlightInfo__hotAlert}>
@@ -35,11 +25,10 @@ export default function HighlightInfo() {
         <TimeInfo time="30 Minutes" background="rgba(0, 0, 0, 0.05)" />
         <TypeInfo type="Chicken" background="rgba(0, 0, 0, 0.05)" />
       </div>
-      <div className={styles.HighlightAuthor__wrapper}>
-        <HighlightAuthor />
-      </div>
-      {/* <div className={styles.highlightInfo__buttonWrapper}>
-        <SubmitButton
+
+      <HighlightAuthor />
+      <div className={styles.highlightInfo__buttonWrapper}>
+        <PrimaryButton
           type="button"
           text="View Recipes"
           icon={
@@ -57,7 +46,7 @@ export default function HighlightInfo() {
             </svg>
           }
         />
-      </div> */}
+      </div>
     </div>
   );
 }

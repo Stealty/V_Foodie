@@ -19,3 +19,4 @@ export { default as HighlightInfo } from "./highlightInfo/highlightInfo";
 export { default as TypeInfo } from "./typeInfo/typeInfo";
 export { default as TimeInfo } from "./timeInfo/timeInfo";
 export { default as HighlightAuthor } from "./highlightAuthor/highlightAuthor";
+export { default as ChefIllustration } from "./chefIllustration/chefIllustration";
