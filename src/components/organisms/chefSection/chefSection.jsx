@@ -1,4 +1,4 @@
-import { Heading, Paragraph, SubmitButton } from "@atoms";
+import { Heading, Paragraph, PrimaryButton } from "@atoms";
 import { ChefIllustration } from "@molecules";
 import styles from "./chefSection.module.scss";
 
@@ -15,7 +15,7 @@ const ChefSection = () => {
         </Paragraph>
       </div>
       <div className={styles["chefSection__button"]}>
-        <SubmitButton text="Learn More" type="button" />
+        <PrimaryButton text="Learn More" type="button" />
       </div>
       <div className={styles["chefSection__image"]}>
         <ChefIllustration />

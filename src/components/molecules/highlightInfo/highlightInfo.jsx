@@ -2,7 +2,7 @@ import styles from "./highlightInfo.module.scss";
 import TimeInfo from "@molecules/timeInfo/TimeInfo";
 import TypeInfo from "@molecules/typeInfo/TypeInfo";
 import HighlightAuthor from "../highlightAuthor/highlightAuthor";
-import SubmitButton from "@atoms/submitButton/SubmitButton";
+import PrimaryButton from "@atoms/primaryButton/PrimaryButton";
 
 export default function HighlightInfo() {
   return (
@@ -28,7 +28,7 @@ export default function HighlightInfo() {
 
       <HighlightAuthor />
       <div className={styles.highlightInfo__buttonWrapper}>
-        <SubmitButton
+        <PrimaryButton
           type="button"
           text="View Recipes"
           icon={

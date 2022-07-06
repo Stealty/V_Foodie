@@ -1,4 +1,4 @@
-.submitButton {
+.primaryButton {
   display: flex;
   background-color: var(--global-text-color);
   color: var(--global-background-color);
@@ -14,19 +14,19 @@
   gap: 1rem;
 }
 
-.submitButton:hover {
+.primaryButton:hover {
   background-color: var(--accent-color);
   color: var(--global-text-color);
   transform: scale(1.01);
 }
 
-.submitButton:focus {
+.primaryButton:focus {
   outline: none;
   background-color: var(--accent-color);
   color: var(--global-text-color);
 }
 
-.submitButton__disabled {
+.primaryButton__disabled {
   background-color: rgba(0, 0, 0, 0.553);
   color: var(--global-background-color);
   padding: 1rem;
