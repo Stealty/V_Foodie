@@ -9,7 +9,7 @@ const ChefSection = () => {
         <Heading level="1" className={styles["chefSection__text__heading"]}>
           Everyone can be a chef in their own kitchen
         </Heading>
-        <Paragraph>
+        <Paragraph muted>
           Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqut enim ad minim{" "}
         </Paragraph>
