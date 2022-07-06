@@ -1,23 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styles from "./navigation.module.scss";
 
 const Navigation = (props) => {
-  const NavItems = [props.list];
+  const NavItems = props.list;
 
-  return (
-    <nav className={styles.Navigation}>
+  return <ul className={styles.Navigation}>
       {NavItems.map((Item) => (
-        <Link
-          to={`/blog`}
-          className={styles.Navigation__NavItem}
+        <li className={styles.Navigation__NavItem}
           key={Item}
-        >
-          <li>{Item}</li>
-        </Link>
+          onClick = {props.onClick}
+        >{Item}</li>
       ))}
-    </nav>
-  );
+      </ul>
 };
 
 export default Navigation;

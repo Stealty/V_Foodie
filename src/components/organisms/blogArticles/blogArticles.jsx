@@ -48,6 +48,7 @@ const BlogArticles = () => {
         <div className={styles["blogArticles__searchBar"]}>
           <ArticleFilter handleSearch={handleSearch} />
         </div>
+        
         <div className={styles["blogArticles__articlesStack"]}>
           <Articles articles={articles} loading={loading} />
         </div>
@@ -65,7 +66,7 @@ const BlogArticles = () => {
         <div className={styles["blogArticles__ads"]}>
           <SiteBanner />
         </div>
-        <Navigation list={[1]} />
+        <Navigation list={[1]} location="/blog"/>
       </div>
     </>
   );

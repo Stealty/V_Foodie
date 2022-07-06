@@ -7,7 +7,7 @@ import NotFoundPage from "@pages/notfoundpage";
 
 const Router = () => {
   const Route = useRoutes([
-    { path: "/home", element: <Home /> },
+    { path: "/home/*", element: <Home /> },
     { path: "/", element: <Home /> },
     { path: "/blog", element: <BlogList />},
     { path: "/contact", element: <Contact /> },
