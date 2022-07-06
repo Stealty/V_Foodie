@@ -43,6 +43,7 @@
   border-bottom-right-radius: 40px;
   transform: translateX(0);
   animation: stopPlaying 1s ease-in-out;
+  pointer-events: none;
 }
 
 .iFramePlayer__containerPlaying {

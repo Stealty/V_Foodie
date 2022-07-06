@@ -1,8 +1,7 @@
 import styles from "./iFramePlayer.module.scss";
 import React, { useState } from "react";
-import SubmitButton from "@atoms/SubmitButton/SubmitButton";
 import { useRef } from "react";
-import { useEffect } from "react";
+import PrimaryButton from "../primaryButton/primaryButton";
 
 export default function IFramePlayer(props) {
   const [playing, setPlaying] = useState(false);
@@ -31,7 +30,7 @@ export default function IFramePlayer(props) {
         }
       />
       <div className={styles.iFramePlayer__buttonWrapperPlaying}>
-        <SubmitButton
+        <PrimaryButton
           type="button"
           text="View Recipes"
           icon={
@@ -56,7 +55,6 @@ export default function IFramePlayer(props) {
             } else {
               event.currentTarget.style = "position: none; left: 0; bottom: 0";
             }
-
             setPlaying(!playing);
           }}
         />
