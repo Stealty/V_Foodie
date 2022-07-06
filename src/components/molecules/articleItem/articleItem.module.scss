@@ -2,7 +2,7 @@
   display: grid;
   margin: 1rem 0;
   max-width: 340px;
-
+  gap: 1rem;
   justify-items: stretch;
   grid-template-areas:
     "articleImg articleImg"
@@ -13,11 +13,9 @@
 
 .articleImg {
   grid-area: articleImg;
-  margin-left: 1%;
-  /* justify-self: center; */
-
   max-height: 200px;
   width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 20px;
 }
@@ -33,7 +31,7 @@
   grid-area: articleText;
 
   font-size: clamp(0.8rem, 1.5vw, 1.5rem);
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--muted-text-color);
   line-height: 28px;
   margin: 0.5rem 0;
 }
@@ -61,7 +59,7 @@
       "articleImg articleTitle articleTitle"
       "articleImg articleText articleText"
       "articleImg articleAuthor articleDate";
-
+    max-width: -moz-fit-content;
     max-width: fit-content;
     min-width: 700px;
   }
