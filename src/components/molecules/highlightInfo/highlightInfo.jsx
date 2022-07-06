@@ -5,6 +5,16 @@ import HighlightAuthor from "../highlightAuthor/highlightAuthor";
 import SubmitButton from "@atoms/submitButton/SubmitButton";
 
 export default function HighlightInfo() {
+  const iframe = document.getElementById("iFramePlayer");
+  function iframeClick(event) {
+    iframe.contentWindow.postMessage(
+      {
+        type: "play",
+      },
+      "*"
+    );
+  }
+
   return (
     <div className={styles.highlightInfo}>
       <span className={styles.highlightInfo__hotAlert}>
@@ -25,9 +35,10 @@ export default function HighlightInfo() {
         <TimeInfo time="30 Minutes" background="rgba(0, 0, 0, 0.05)" />
         <TypeInfo type="Chicken" background="rgba(0, 0, 0, 0.05)" />
       </div>
-
-      <HighlightAuthor />
-      <div className={styles.highlightInfo__buttonWrapper}>
+      <div className={styles.HighlightAuthor__wrapper}>
+        <HighlightAuthor />
+      </div>
+      {/* <div className={styles.highlightInfo__buttonWrapper}>
         <SubmitButton
           type="button"
           text="View Recipes"
@@ -46,7 +57,7 @@ export default function HighlightInfo() {
             </svg>
           }
         />
-      </div>
+      </div> */}
     </div>
   );
 }
