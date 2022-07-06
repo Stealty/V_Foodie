@@ -9,6 +9,7 @@ const SubmitButton = (props) => {
         !props.sending ? styles.submitButton : styles.submitButton__disabled
       }
       disabled={props.sending}
+      onClick={props.onClick}
     >
       {props.text}
       {props.icon}
