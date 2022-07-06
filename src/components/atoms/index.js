@@ -3,3 +3,4 @@ export { default as SkipToContentButton } from "./skipToContentButton/skipToCont
 export { default as SubmitButton } from "./submitButton/submitButton";
 export { default as IllustrativeImage } from "./illustrativeImage/illustrativeImage";
 export { default as CardBackdrop } from "./cardBackdrop/cardBackdrop";
+export { default as Paragraph } from "./paragraph/paragraph";
