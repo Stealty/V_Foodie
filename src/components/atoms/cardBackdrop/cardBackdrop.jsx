@@ -7,7 +7,6 @@ const CardBackdrop = ({ children, className, gradient, ...props }) => {
     styles["cardBackdrop"] +
     " " +
     (gradient ? styles["cardBackdrop--gradient"] : "");
-  console.log(classes);
   return (
     <div className={classes} {...props}>
       {children}

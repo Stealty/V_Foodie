@@ -1,12 +1,8 @@
 .chefIllustration {
-  display: none;
   width: 100%;
-  width: 660px;
-  height: 597px;
+  //height: 597px;
+  height: Min(50vw, 597px);
   position: relative;
-  @media screen and (min-width: 768px) {
-    display: block;
-  }
   &__backdrop {
     width: 90%;
     height: 500px;
@@ -22,8 +18,11 @@
     object-fit: cover;
     &--chef {
       width: 92%;
+      height: 100%;
       left: 0;
       bottom: 0;
+      object-fit: contain;
+      object-position: bottom;
     }
     &--meat {
       top: 10%;
