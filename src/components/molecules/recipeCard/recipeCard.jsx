@@ -7,10 +7,8 @@ const RecipeCard = ({ author, image, title }) => {
       <div className={style["recipeCard__imageWrapper"]}>
         <img src={image} className={style["recipeCard__image"]} />
       </div>
-      <div className={style["recipeCard__body"]}>
-        <h3 className={style["recipeCard__body__title"]}>{title}</h3>
-        <p className={style["recipeCard__body__author"]}>By {author}</p>
-      </div>
+      <h3 className={style["recipeCard__body__title"]}>{title}</h3>
+      <p className={style["recipeCard__body__author"]}>By {author}</p>
     </a>
   );
 };
