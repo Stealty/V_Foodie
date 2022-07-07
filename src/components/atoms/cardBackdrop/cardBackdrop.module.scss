@@ -1,6 +1,27 @@
 .cardBackdrop {
-  background: #e7f9fd;
+  --backdrop-color: #e7f9fd;
+  &--red {
+    --backdrop-color: rgba(204, 38, 27, 0.1);
+  }
+  &--green {
+    --backdrop-color: rgba(108, 198, 63, 0.1);
+  }
+  &--yellow {
+    --backdrop-color: rgba(240, 158, 0, 0.1);
+  }
+  &--gray {
+    --backdrop-color: rgba(112, 130, 70, 0.1);
+  }
+  &--neutral {
+    --backdrop-color: rgba(0, 0, 0, 0.05);
+  }
+  background: var(--backdrop-color);
 }
+
 .cardBackdrop--gradient {
-  background: linear-gradient(180deg, rgba(231, 249, 253, 0) 0%, #e7f9fd 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(231, 249, 253, 0) 0%,
+    var(--backdrop-color) 100%
+  );
 }
