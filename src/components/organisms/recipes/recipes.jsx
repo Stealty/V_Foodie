@@ -8,7 +8,7 @@ import styles from "./recipes.module.scss";
 const Recipes = () => {
     const { data, loading } = useData();
     const [page, setPage] = useState("1");
-    const [pageNumbers, pageContent] = usePages();
+    const [pageNumbers, pageContent] = usePages(4);
 
     const OnClickHandler = (Item) => {
         setPage(Item.target.innerHTML);
