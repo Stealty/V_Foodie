@@ -1,5 +1,5 @@
 import React from "react";
-import { SubmitButton } from "@atoms";
+import { PrimaryButton } from "@atoms";
 import { Modal } from "@molecules";
 import styles from "./contactForm.module.scss";
 import ImageCard from "./imageCard";
@@ -113,8 +113,14 @@ const ContactForm = () => {
               required
             />
           </div>
-          <div className={styles["submitButton_wrapper"]}>
-            <SubmitButton sending={sending} className={styles.SubmitButton} />
+          <div className={styles["primaryButton_wrapper"]}>
+            <PrimaryButton
+              sending={sending}
+              className={styles.PrimaryButton}
+              text="Submit"
+              sendingText="Submitting"
+              type="submit"
+            />
           </div>
           <Modal
             show={showModal}

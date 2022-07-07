@@ -125,7 +125,7 @@ $breakpoint-md: 768px;
   height: 100%;
 }
 
-.submitButton_wrapper {
+.primaryButton_wrapper {
   grid-area: button;
   @include breakpoint($breakpoint-lg) {
     width: Max(40%, 180px);

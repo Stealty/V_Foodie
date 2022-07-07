@@ -1,6 +1,6 @@
 import React from "react";
 import { useModal } from "@hooks/useModal";
-import { SubmitButton } from "@atoms";
+import { PrimaryButton } from "@atoms";
 import { Modal } from "@molecules";
 import styles from "./subscriptionCard.module.scss";
 
@@ -78,7 +78,13 @@ const SubscriptionCard = () => {
           required
         />
         <div className={styles["form__button"]}>
-          <SubmitButton sending={sending} className={styles.SubmitButton} />
+          <PrimaryButton
+            sending={sending}
+            className={styles.PrimaryButton}
+            text="Subscribe"
+            sendingText="Subscribing"
+            type="submit"
+          />
         </div>
       </form>
       <Modal show={showModal} onClose={closeModal} message={message} />

@@ -1,16 +1,25 @@
 import React from "react";
 import { Section } from "@molecules";
-import { SubscriptionCard, Recipes } from "@organisms";
+import { SubscriptionCard, ChefSection } from "@organisms";
+import { HighlightCard } from "@molecules";
 
 const Home = () => {
-    return <>
-    <Section arialabel="Recipes">
+  return (
+    <>
+      <Section arialabel="Highlights Section">
+        <HighlightCard />
+      </Section>
+      <Section arialabel="Chef Section">
+        <ChefSection />
+      </Section>
+      <Section arialabel="Recipes">
         <Recipes />
     </Section>
-    <Section arialabel="Subscription Card">
+      <Section arialabel="Subscription Card">
         <SubscriptionCard />
-    </Section>
+      </Section>
     </>
-}
+  );
+};
 
 export default Home;
