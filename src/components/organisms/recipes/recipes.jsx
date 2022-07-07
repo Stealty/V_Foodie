@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import Card from "../Carousel/Card";
 import { useData } from "@context/useDataContext";
-import { Navigation, SetPages } from "@molecules"
+import { usePages } from "@hooks/usePages";
+import { Navigation } from "@molecules"
 import styles from "./recipes.module.scss";
 
 const Recipes = () => {
     const { data, loading } = useData();
     const [page, setPage] = useState("1");
-    const [pageNumbers, pageContent] = SetPages();
+    const [pageNumbers, pageContent] = usePages();
 
     const OnClickHandler = (Item) => {
         setPage(Item.target.innerHTML);

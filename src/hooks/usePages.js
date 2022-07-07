@@ -1,6 +1,6 @@
 import { useData } from "@context/useDataContext";
 
-const SetPages = () => {
+export const usePages = () => {
     const {data, loading} = useData();
     if (!loading) {
         const pages = data.slice(0, data.length / 4).map((Item) => Item.id);
@@ -10,5 +10,3 @@ const SetPages = () => {
         return [[], [{}]];
     }
 };
-
-export default SetPages;

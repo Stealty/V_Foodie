@@ -8,7 +8,6 @@ export { default as Menu } from "./menu/menu";
 export { default as Modal } from "./modal/modal";
 export { default as Navigation } from "./navigation/navigation";
 export { default as Section } from "./section/section";
-export { default as SetPages } from "./navigation/setpages";
 export { default as RecipeCard } from "./recipeCard/recipeCard";
 export { default as SocialMedia } from "./SocialMedia/SocialMedia";
 export { default as MenuHamburguer } from "./menuHamburguer/menuHamburguer";
