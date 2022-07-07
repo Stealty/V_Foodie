@@ -1,6 +1,6 @@
 import React from "react";
 import { Section } from "@molecules";
-import { SubscriptionCard, ChefSection } from "@organisms";
+import { SubscriptionCard, ChefSection, Recipes } from "@organisms";
 import { HighlightCard } from "@molecules";
 
 const Home = () => {
