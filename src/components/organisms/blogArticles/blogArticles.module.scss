@@ -20,7 +20,7 @@
     "ads"
     "recipes";
   @media screen and (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.3fr;
     grid-template-rows: min-content min-content 1fr;
     grid-template-areas:
       "searchbar searchbar"
@@ -30,7 +30,7 @@
       "ads recipes";
   }
   @media screen and (min-width: 1024px) {
-    grid-template-columns: 2.1fr 1fr;
+    grid-template-columns: 1.8fr 1fr;
     grid-template-areas:
       "searchbar searchbar"
       "articles recipes"
@@ -51,19 +51,21 @@
 
 .blogArticles__recipesStack {
   width: 100%;
-  max-width: 280px;
   margin-left: auto;
   margin-right: auto;
-  @media screen and (min-width: 768px) {
-    max-width: none;
-  }
   align-self: center;
   grid-area: recipes;
+  max-width: 220px;
+  @media (min-width: 768px) {
+    max-width: none;
+    text-align: left;
+  }
 }
 
 .blogArticles__ads {
   width: 100%;
   grid-area: ads;
+  align-self: center;
 }
 
 .blogArticles__pageSelector {
