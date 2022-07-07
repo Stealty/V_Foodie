@@ -1,13 +1,12 @@
 import styles from "./highlightCard.module.scss";
 import HighlightInfo from "@molecules/highlightInfo/highlightInfo";
+import IFramePlayer from "../../atoms/iFramePlayer/iFramePlayer";
 
-function HighlightCard() {
+export default function HighlightCard() {
   return (
-    <div>
+    <div className={styles.HighLightCard__container}>
       <HighlightInfo />
-      <div className={styles.highlightMovie}></div>
+      <IFramePlayer movieId="c35V0sCNadw" />
     </div>
   );
 }
-
-export default HighlightCard;
