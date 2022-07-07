@@ -38,7 +38,7 @@
 
 @keyframes onPlayButton {
   0% {
-    transform: translateY(-110px) translateX(-100%);
+    transform: translateY(-110px) translateX(-40%);
   }
 
   100% {
@@ -48,7 +48,7 @@
 
 @keyframes onStopButton {
   0% {
-    transform: translateY(110px) translateX(100%);
+    transform: translateY(110px) translateX(40%);
   }
 
   100% {
@@ -57,38 +57,63 @@
 }
 
 .IFramePlayer__container {
+  position: relative;
+  overflow: hidden;
   width: 100%;
-  height: 640px;
+  padding-top: 56.25%;
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
-  transform: translateX(0);
-  animation: stopPlaying 1s ease-in-out;
-  pointer-events: none;
 }
 
 .iFramePlayer__containerPlaying {
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
   width: 100%;
   height: 371px;
-  border-radius: 30px;
-  animation: startPlaying 1s ease-in-out;
-  transform: translateX(-48%) translateY(36%) scale3d(1.93, 1.73, 1.5);
-  pointer-events: none;
+  border-radius: 40px;
 }
 
-.iFramePlayer__buttonWrapperPlaying {
-  display: flex;
-  width: 200px;
+.IFramePlayer__iframe {
   position: absolute;
-  bottom: 210px;
-  left: 310px;
-  animation: onStopButton 1s ease-in-out;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 79.8%;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.iFramePlayer__iframePlaying {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 80%;
+  border-radius: 40px;
 }
 
 .iFramePlayer__buttonWrapper {
   display: flex;
   width: 200px;
   position: absolute;
+  bottom: 210px;
+  left: 310px;
+  animation: onStopButton 0.8s ease-out;
+}
+
+.iFramePlayer__buttonWrapperPlaying {
+  display: flex;
+  width: 200px;
+  position: absolute;
   bottom: 100px;
-  left: 40%;
-  animation: onPlayButton 1s ease-in-out;
+  left: 42%;
+  animation: onPlayButton 0.8s ease-out;
+}
+
+@media screen and (min-width: 1024px) {
 }

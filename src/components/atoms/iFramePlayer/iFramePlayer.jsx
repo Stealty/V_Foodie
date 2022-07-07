@@ -9,27 +9,35 @@ export default function IFramePlayer(props) {
 
   return (
     <>
-      <iframe
-        ref={movieRef}
-        id="iFramePlayer"
-        loading="lazy"
-        src={
-          "https://www.youtube.com/embed/" +
-          props.movieId +
-          "?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=" +
-          props.movieId +
-          "&enablejsapi=1"
-        }
-        title="BEST COOK ASMR FOOD COOKING 🤤🤤🤤 - Hamburger and Cream Cheese"
-        frameBorder="0"
-        allowFullScreen
+      <div
         className={
           playing
             ? styles.iFramePlayer__containerPlaying
             : styles.IFramePlayer__container
         }
-      />
-      <div className={styles.iFramePlayer__buttonWrapperPlaying}>
+      >
+        <iframe
+          ref={movieRef}
+          id="iFramePlayer"
+          loading="lazy"
+          src={
+            "https://www.youtube.com/embed/" +
+            props.movieId +
+            "?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=" +
+            props.movieId +
+            "&enablejsapi=1"
+          }
+          title="BEST COOK ASMR FOOD COOKING 🤤🤤🤤 - Hamburger and Cream Cheese"
+          frameBorder="0"
+          allowFullScreen
+          className={
+            playing
+              ? styles.iFramePlayer__iframePlaying
+              : styles.IFramePlayer__iframe
+          }
+        />
+      </div>
+      <div className={styles.iFramePlayer__buttonWrapper}>
         <PrimaryButton
           type="button"
           text="View Recipes"
@@ -51,10 +59,10 @@ export default function IFramePlayer(props) {
           onClick={(event) => {
             if (playing) {
               event.target.parentNode.className =
-                styles.iFramePlayer__buttonWrapperPlaying;
+                styles.iFramePlayer__buttonWrapper;
             } else {
               event.target.parentNode.className =
-                styles.iFramePlayer__buttonWrapper;
+                styles.iFramePlayer__buttonWrapperPlaying;
             }
             setPlaying(!playing);
           }}
