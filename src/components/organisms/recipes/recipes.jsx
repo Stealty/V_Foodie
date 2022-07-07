@@ -1,24 +1,13 @@
 import React, { useState } from "react";
 import Card from "../Carousel/Card";
 import { useData } from "@context/useDataContext";
-import { Navigation } from "@molecules"
+import { Navigation, SetPages } from "@molecules"
 import styles from "./recipes.module.scss";
 
 const Recipes = () => {
     const { data, loading } = useData();
     const [page, setPage] = useState("1");
-
-    const setpageNumbers = () => {
-        if (!loading) {
-            const pages = data.slice(0, data.length / 4).map((Item) => Item.id);
-            const pagecontent = pages.map((element) => data.slice(4*(element-1) , 4*element).map((data) => data));
-            return [pages, pagecontent];
-        } else {
-            return [[], [{}]];
-        }
-    };
-
-    const [pageNumbers, pageContent] = setpageNumbers();
+    const [pageNumbers, pageContent] = SetPages();
 
     const OnClickHandler = (Item) => {
         setPage(Item.target.innerHTML);
