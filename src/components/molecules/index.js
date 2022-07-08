@@ -21,3 +21,5 @@ export { default as TypeInfo } from "./typeInfo/typeInfo";
 export { default as TimeInfo } from "./timeInfo/timeInfo";
 export { default as HighlightAuthor } from "./highlightAuthor/highlightAuthor";
 export { default as ChefIllustration } from "./chefIllustration/chefIllustration";
+export { default as Categories } from "./categories/categories";
+export { default as CategoryCard } from "./categoryCard/categoryCard";
