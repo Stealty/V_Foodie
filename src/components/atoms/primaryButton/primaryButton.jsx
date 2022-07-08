@@ -8,13 +8,17 @@ const PrimaryButton = ({
   text = "Submit",
   sendingText,
   icon,
+  variant,
+  className,
 }) => {
+  const classes = [styles["primaryButton"]];
+  if (sending) classes.push(styles["primaryButton--disabled"]);
+  if (variant) classes.push(styles[`primaryButton--${variant}`]);
+  classes.push(className);
   return (
     <button
       type={type}
-      className={
-        !sending ? styles.primaryButton : styles.primaryButton__disabled
-      }
+      className={classes.join(" ")}
       disabled={sending}
       onClick={onClick}
     >
