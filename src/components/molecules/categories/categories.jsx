@@ -25,11 +25,6 @@ const Categories = () => {
   return (
     <div className={styles["categories"]}>
       <Heading className={styles["categories__heading"]}>Categories</Heading>
-      <PrimaryButton
-        text="View All Categories"
-        variant="light"
-        className={styles["categories__button"]}
-      ></PrimaryButton>
       <ul className={styles["categories__list"]}>
         {categoriesNames.map((category) => (
           <li className={styles["categories__list__item"]} key={category}>
@@ -37,6 +32,11 @@ const Categories = () => {
           </li>
         ))}
       </ul>
+      <PrimaryButton
+        text="View All Categories"
+        variant="light"
+        className={styles["categories__button"]}
+      ></PrimaryButton>
     </div>
   );
 };
