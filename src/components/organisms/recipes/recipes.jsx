@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Card from "../Carousel/Card";
+import { Card } from "@molecules";
 import { useData } from "@context/useDataContext";
 import { usePages } from "@hooks/usePages";
 import { Navigation } from "@molecules"
@@ -24,7 +24,7 @@ const Recipes = () => {
         </ul>
         <ul className={styles.Recipes__ListMobile}>
             {!loading && pageNumbers.map((pageNumber) => 
-             page == pageNumber && pageContent[pageNumber-1].map((Item) => <Card card={Item} key={Item.id} /> ))}
+             page == pageNumber && pageContent[pageNumber-1].map((Item) => <Card card={Item} key={Item.id} background={false} /> ))}
         </ul>
         <div className={styles.Navigation}>
             <Navigation list={pageNumbers} onClick={OnClickHandler} />

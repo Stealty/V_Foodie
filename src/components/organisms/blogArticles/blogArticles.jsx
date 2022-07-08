@@ -66,7 +66,7 @@ const BlogArticles = () => {
         <div className={styles["blogArticles__ads"]}>
           <SiteBanner />
         </div>
-        <Navigation list={[1]} location="/blog"/>
+        <Navigation list={[1]}/>
       </div>
     </>
   );
