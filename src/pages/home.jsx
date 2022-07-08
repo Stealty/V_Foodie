@@ -2,7 +2,7 @@ import React from "react";
 import { Section } from "@molecules";
 import { SubscriptionCard, ChefSection, Recipes } from "@organisms";
 import { HighlightCard } from "@molecules";
-import { Categories } from "@molecules";
+import { Categories, RecipesGrid } from "@molecules";
 
 const Home = () => {
   return (
@@ -12,6 +12,7 @@ const Home = () => {
       </Section> */}
       <Section arialabel="Categories Section">
         <Categories />
+        <RecipesGrid />
       </Section>
       <Section arialabel="Chef Section">
         <ChefSection />
