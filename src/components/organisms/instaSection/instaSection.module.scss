@@ -1,0 +1,26 @@
+.instaCardsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3% 0;
+  background: linear-gradient(180deg, rgba(231, 249, 253, 0) 0%, #e7f9fd 100%);
+}
+
+.instaCardsContainer_title {
+  font-size: 2.5rem;
+  margin: 2% 0;
+}
+
+.instaCardsContainer_description {
+  color: rgba(0, 0, 0, 0.6);
+  width: 75%;
+}
+
+.postsContainer {
+  display: flex;
+  margin: 5% 0;
+}
+
+.buttonWrapper {
+  margin-bottom: 7%;
+}
