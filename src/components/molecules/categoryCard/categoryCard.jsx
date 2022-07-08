@@ -11,6 +11,10 @@ const CategoryCard = ({ category = "category", color = "neutral" }) => {
       />
       <IllustrativeImage
         src={`images/categories/${category}.png`}
+        className={styles["categoryCard__shadow"]}
+      />
+      <IllustrativeImage
+        src={`images/categories/${category}.png`}
         className={styles["categoryCard__image"]}
       />
       <Paragraph className={styles["categoryCard__title"]}>
