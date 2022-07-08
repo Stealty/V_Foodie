@@ -1,0 +1,15 @@
+.recipesGrid__list {
+  display: grid;
+  grid-template-areas:
+    "recipeA recipeB recipeC"
+    "recipeD recipeE banner"
+    "recipeS recipeG recipeF";
+  grid-template-columns: auto auto auto;
+  gap: 1rem;
+  place-content: space-between;
+  width: 100%;
+}
+
+.recipesGrid__banner {
+  grid-area: banner;
+}
