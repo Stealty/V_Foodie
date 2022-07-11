@@ -1,0 +1,9 @@
+.Description {
+    color: var(--muted-text-color);
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: clamp(1rem, 5vw, 4rem);
+    width: Min(calc(100% - 4rem), 620px);
+    overflow-wrap: break-word;
+}

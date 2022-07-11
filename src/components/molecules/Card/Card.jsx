@@ -5,7 +5,6 @@ import styles from "./Card.module.scss";
 
 export default function Card({card, ...props}) {
   const [like, setLike] = useState(false);
-  console.log(props.background);
   function handleLike(event) {
     let heartIcon = event.currentTarget.firstChild.classList.toggle(
       styles["card__heart--notLiked"]

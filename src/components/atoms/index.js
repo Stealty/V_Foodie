@@ -5,3 +5,5 @@ export { default as IllustrativeImage } from "./illustrativeImage/illustrativeIm
 export { default as CardBackdrop } from "./cardBackdrop/cardBackdrop";
 export { default as Paragraph } from "./paragraph/paragraph";
 export { default as Heading } from "./heading/heading";
+export { default as Title } from "./title/Title";
+export { default as Description } from "./description/Description";
