@@ -8,4 +8,8 @@
   font-weight: 500;
   gap: 8px;
   border-radius: 30px;
+  .cardInfo__Image{
+    display: flex;
+    flex-direction: row;
+  }
 }

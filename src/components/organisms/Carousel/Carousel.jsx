@@ -1,5 +1,5 @@
 import { useData } from "@context/useDataContext";
-import Card from "./Card";
+import { Card } from "@molecules";
 import styles from "./Carousel.module.scss";
 
 export default function Carousel() {

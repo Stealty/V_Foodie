@@ -6,7 +6,7 @@ export default function TypeInfo(props) {
       className={styles["cardInfo__textType"]}
       style={{ backgroundColor: props.background }}
     >
-      <span>
+      <span className={styles.cardInfo__Image}>
         <svg
           width="9"
           height="20"

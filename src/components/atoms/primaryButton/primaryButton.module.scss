@@ -1,6 +1,8 @@
 .primaryButton {
+  --button-background-color: var(--global-text-color);
+  --button-color: var(--global-background-color);
   display: flex;
-  background-color: var(--global-text-color);
+  background-color: var(--button-background-color);
   color: var(--global-background-color);
   padding: 1rem;
   border: 0;
@@ -12,28 +14,30 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-}
-
-.primaryButton:hover {
-  background-color: var(--accent-color);
-  color: var(--global-text-color);
-  transform: scale(1.01);
-}
-
-.primaryButton:focus {
-  outline: none;
-  background-color: var(--accent-color);
-  color: var(--global-text-color);
-}
-
-.primaryButton__disabled {
-  background-color: rgba(0, 0, 0, 0.553);
-  color: var(--global-background-color);
-  padding: 1rem;
-  border: 0;
-  border-radius: 16px;
-  width: 100%;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.5rem;
+  &:hover {
+    background-color: var(--accent-color);
+    color: var(--global-text-color);
+    transform: scale(1.01);
+  }
+  &:focus {
+    outline: none;
+    background-color: var(--accent-color);
+    color: var(--global-text-color);
+  }
+  &--disabled {
+    --button-background-color: rgba(0, 0, 0, 0.553);
+    &:hover {
+      background-color: var(--button-background-color);
+      color: var(--global-background-color);
+    }
+    &:focus {
+      outline: none;
+      background-color: var(--button-background-color);
+      color: var(--global-background-color);
+    }
+  }
+  &--light {
+    background-color: var(--card-background-color);
+    color: var(--global-text-color);
+  }
 }

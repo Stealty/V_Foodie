@@ -4,6 +4,12 @@
   position: relative;
   scroll-snap-align: center;
   list-style-type: none;
+  padding: 0 10px;
+  border-radius: 20px;
+
+  &.Background{
+    background: linear-gradient(180deg, rgba(231, 249, 253, 0) 0%, #E7F9FD 100%);
+  }
 }
 
 .card__heart {
@@ -33,7 +39,7 @@
 }
 
 .card__button {
-  width: 290px;
+  width: 100%;
   height: 200px;
   border: 0px;
   padding: 0;
@@ -42,7 +48,7 @@
 }
 
 .card__container {
-  width: 290px;
+  width: 100%;
   height: 200px;
 }
 
