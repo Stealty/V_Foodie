@@ -9,7 +9,7 @@ const CategoriesSection = () => {
         <Categories />
       </div>
       <div className={styles.recipes}>
-        <Heading className={styles["recipes__heading"]}>
+        <Heading className={styles["recipes__heading"]} level="2">
           Simple and tasty recipes
         </Heading>
         <Paragraph className={styles["recipes__paragraph"]} muted>
