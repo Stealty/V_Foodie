@@ -12,9 +12,7 @@ export default function HighlightCard() {
     <div className={styles.HighLightCard__container}>
       <HighlightInfo isPlaying={playing} setIsPlaying={setPlaying} />
       <HighlightImage
-        bgImage={`url(
-            "./images/baked-chicken-wings-asian-style-tomatoes-sauce-plate 1.png"
-          )`}
+        bgImage="./images/baked-chicken-wings-asian-style-tomatoes-sauce-plate 1.png"
         alt="Ilustration of a baked chiken wings asian"
       />
       {playing && <IFramePlayer movieId="c35V0sCNadw" isPlaying={playing} />}
