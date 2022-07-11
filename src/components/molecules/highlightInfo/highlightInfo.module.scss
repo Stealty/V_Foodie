@@ -1,20 +1,26 @@
 @keyframes onPlayButton {
   0% {
-    transform: translateY(-110px) translateX(-40%);
+    transform: translateX(-350%);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
   }
 
   100% {
-    transform: translateY(0);
+    transform: translateX(0%);
+    opacity: 1;
   }
 }
 
 @keyframes onStopButton {
   0% {
-    transform: translateY(110px) translateX(40%);
+    opacity: 0;
   }
 
   100% {
-    transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -29,6 +35,7 @@
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   padding: 50px;
+  position: relative;
 
   @media screen and(max-width: 1024px) {
     width: 100%;
@@ -90,7 +97,10 @@
   width: 200px;
   height: 60px;
   position: absolute;
-  bottom: 100px;
-  left: 42%;
+  bottom: -120px;
+  left: 0%;
   animation: onPlayButton 0.8s ease-out;
+
+  @media screen and (max-width: 1024px) {
+  }
 }
