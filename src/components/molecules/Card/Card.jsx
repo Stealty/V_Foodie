@@ -3,9 +3,8 @@ import TimeInfo from "@molecules/timeInfo/timeInfo";
 import TypeInfo from "@molecules/typeInfo/typeInfo";
 import styles from "./Card.module.scss";
 
-export default function Card({card, ...props}) {
+export default function Card({ card, background, full }) {
   const [like, setLike] = useState(false);
-  console.log(props.background);
   function handleLike(event) {
     let heartIcon = event.currentTarget.firstChild.classList.toggle(
       styles["card__heart--notLiked"]
@@ -14,8 +13,13 @@ export default function Card({card, ...props}) {
     return heartIcon;
   }
 
+  const classes = [styles["card"]];
+  if (background) classes.push(styles["card--background"]);
+  if (full) classes.push(styles["card--full"]);
+  console.log(styles["card--full"]);
+
   return (
-    <li className={!props.background ? styles["card"] : `${styles["card"]} ${styles["Background"]}`}>
+    <li className={classes.join(" ")}>
       <div className={styles["card__container"]}>
         <a
           className={styles["card__button"]}

@@ -1,13 +1,59 @@
 .recipesGrid__list {
   display: grid;
   grid-template-areas:
-    "recipeA recipeB recipeC"
-    "recipeD recipeE banner"
-    "recipeS recipeG recipeF";
-  grid-template-columns: auto auto auto;
-  gap: 1rem;
-  place-content: space-between;
+    "."
+    "banner"
+    ".";
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 2.5rem;
+  place-content: center;
   width: 100%;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  & li {
+    max-width: 350px;
+  }
+  & li:nth-child(3),
+  & li:nth-child(4),
+  & li:nth-child(5),
+  & li:nth-child(6),
+  & li:nth-child(7),
+  & li:nth-child(8) {
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    & li {
+      max-width: none;
+    }
+    place-content: space-between;
+    & li:nth-child(3),
+    & li:nth-child(4),
+    & li:nth-child(5) {
+      display: list-item;
+    }
+    grid-template-areas:
+      ". ."
+      ". banner"
+      ". .";
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  @media screen and (min-width: 1024px) {
+    & li:nth-child(6),
+    & li:nth-child(7),
+    & li:nth-child(8) {
+      display: list-item;
+    }
+    grid-template-areas:
+      "recipeA recipeB recipeC"
+      "recipeD recipeE banner"
+      "recipeS recipeG recipeF";
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  padding: 0;
 }
 
 .recipesGrid__banner {

@@ -10,7 +10,7 @@ const RecipesGrid = () => {
       <ul className={styles["recipesGrid__list"]}>
         {!loading &&
           data.map((recipe) => (
-            <Card key={recipe.id} card={recipe} background></Card>
+            <Card key={recipe.id} card={recipe} background full></Card>
           ))}
         <div className={styles["recipesGrid__banner"]}>
           <SiteBanner />
