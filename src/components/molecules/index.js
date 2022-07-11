@@ -23,3 +23,4 @@ export { default as InstaCard } from "./instaCard/instaCard";
 export { default as InstaCardHeader } from "./instaCardHeader/instaCardHeader";
 export { default as InstaCardMedia } from "./instaCardMedia/instaCardMedia";
 export { default as InstaCardInfo } from "./InstaCardInfo/InstaCardInfo";
+export { default as InstaCardActions } from "./instaCardActions/instaCardActions";

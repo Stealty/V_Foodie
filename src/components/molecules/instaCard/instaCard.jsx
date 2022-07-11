@@ -1,3 +1,4 @@
+import InstaCardActions from "../instaCardActions/instaCardActions";
 import InstaCardHeader from "../instaCardHeader/instaCardHeader";
 import InstaCardInfo from "../instaCardInfo/instaCardInfo";
 import InstaCardMedia from "../instaCardMedia/instaCardMedia";
@@ -17,9 +18,10 @@ const InstaCard = (props) => {
         mediaType={props.postInfo.media_type}
         mediaLink={props.postInfo.media_url}
       />
+      <InstaCardActions />
       <InstaCardInfo
-        caption={props.postInfo.caption}
         username={props.postInfo.username}
+        caption={props.postInfo.caption}
         date={props.postInfo.timestamp}
       />
     </a>
