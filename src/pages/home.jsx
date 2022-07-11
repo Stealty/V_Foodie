@@ -21,9 +21,7 @@ const Home = () => {
       <Section arialabel="Chef Section">
         <ChefSection />
       </Section>
-      <Section arialabel="Recipes">
-        <Recipes />
-      </Section>
+      <Section arialabel="Recipes">{/* <Recipes /> */}</Section>
       <Section arialabel="Subscription Card">
         <SubscriptionCard />
       </Section>
