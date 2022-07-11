@@ -8,3 +8,4 @@ export { default as Router } from "./Router/Router";
 export { default as SubscriptionCard } from "./subscriptionCard/subscriptionCard";
 export { default as Recipes } from "./recipes/recipes";
 export { default as ChefSection } from "./chefSection/chefSection";
+export { default as CategoriesSection } from "./categoriesSection/categoriesSection";
