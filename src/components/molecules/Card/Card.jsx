@@ -16,7 +16,6 @@ export default function Card({ card, background, full }) {
   const classes = [styles["card"]];
   if (background) classes.push(styles["card--background"]);
   if (full) classes.push(styles["card--full"]);
-  console.log(styles["card--full"]);
 
   return (
     <li className={classes.join(" ")}>
