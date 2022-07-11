@@ -82,6 +82,12 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  gap: 1rem;
+
+  @media screen and(max-width: 572px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .iFramePlayer__buttonWrapper {
@@ -91,10 +97,7 @@
   animation: onStopButton 0.8s ease-out;
 }
 
-.iFramePlayer__buttonWrapperPlaying {
-  display: flex;
-  width: 200px;
-  height: 60px;
+.iFramePlayer__buttonWrapper--playing {
   position: absolute;
   left: 0%;
   bottom: -70px;
