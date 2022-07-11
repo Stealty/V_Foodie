@@ -15,9 +15,6 @@ const Home = () => {
       <Section arialabel="Highlights Section">
         <HighlightCard />
       </Section>
-      <Section arialabel="Categories Section">
-        <Categories />
-      </Section>
       <Section arialabel="Categories">
         <CategoriesSection />
       </Section>
