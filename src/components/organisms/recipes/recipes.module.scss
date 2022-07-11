@@ -1,0 +1,96 @@
+@use "@/styles/global";
+
+$lg: 1250px;
+$md: 1000px;
+$sm: 620px;
+
+@mixin breakpoint($breakpoint) {
+    @media screen and (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin List() {
+    display: grid;
+    grid-template-columns: 50%;
+    row-gap: 50px;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.Container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.Recipes {
+
+    &__List {
+
+        @include breakpoint($sm) {
+            grid-template-columns: 50% 50%;
+        }
+
+        @include breakpoint($md) {
+            grid-template-columns: 30% 30% 30%;
+        }
+
+        @include breakpoint($lg) {
+            grid-template-columns: 25% 25% 25% 25%;
+        }
+
+        &Desktop {
+            @include List();
+            display: none;
+
+            @include breakpoint($sm) {
+                display: none;
+            }
+
+            @include breakpoint($md) {
+                display: grid;
+                grid-template-columns: 30% 30% 30%;
+            }
+
+            @include breakpoint($lg) {
+                display: grid;
+                grid-template-columns: 25% 25% 25% 25%;
+            }
+        }
+
+        &Mobile {
+            @include List();
+
+            @include breakpoint($sm) {
+                grid-template-columns: 50% 50%;
+            }
+
+            @include breakpoint($md) {
+                display: none;
+            }
+
+            @include breakpoint($lg) {
+                display: none;
+            }
+        }
+    }
+}
+
+.Navigation{
+    @include breakpoint($sm) {
+        display: flex;
+        justify-content: center;
+    }
+    
+    @include breakpoint($md){
+        display: none;
+    }
+
+    @include breakpoint($lg){
+        display: none;
+    }
+}

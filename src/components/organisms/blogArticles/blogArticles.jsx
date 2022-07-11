@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import styles from "./blogArticles.module.scss";
+import { Routes, Route } from "react-router-dom";
 import {
   ArticleFilter,
   Articles,
@@ -47,6 +48,7 @@ const BlogArticles = () => {
         <div className={styles["blogArticles__searchBar"]}>
           <ArticleFilter handleSearch={handleSearch} />
         </div>
+        
         <div className={styles["blogArticles__articlesStack"]}>
           <Articles articles={articles} loading={loading} />
         </div>
@@ -64,7 +66,7 @@ const BlogArticles = () => {
         <div className={styles["blogArticles__ads"]}>
           <SiteBanner />
         </div>
-        <Navigation />
+        <Navigation list={[1]}/>
       </div>
     </>
   );

@@ -1,18 +1,19 @@
-import { useEffect, useState } from "react";
 import useFetch from "@hooks/useFetch";
 import InstaCard from "@molecules/instaCard/instaCard";
-import SubmitButton from "@atoms/submitButton/SubmitButton";
+import { PrimaryButton } from "@atoms";
 import styles from "./instaSection.module.scss";
 
+const token = import.meta.env.VITE_TOKEN_INSTA;
+const fields =
+  "caption,id,media_type,media_url,permalink,thumbnail_url,username,timestamp,children{media_type,media_url,thumbnail_url}";
+const url = `https://graph.instagram.com/me/media?access_token=${token}&fields=${fields}`;
+
 const InstaSection = () => {
-  const [postsList, setPostsList] = useState([]);
+  const [data, loading, error] = useFetch(url);
+  console.log(data);
+  const { data: postList } = data || { data: [] };
 
-  const getInstaPosts = async () => {
-    const token = import.meta.env.VITE_TOKEN_INSTA;
-    const fields =
-      "caption,id,media_type,media_url,permalink,thumbnail_url,username,timestamp,children{media_type,media_url,thumbnail_url}";
-    const url = `https://graph.instagram.com/me/media?access_token=${token}&fields=${fields}`;
-
+  /* const getInstaPosts = async () => {
     try {
       const req = await fetch(url);
       const { data } = await req.json();
@@ -25,7 +26,7 @@ const InstaSection = () => {
 
   useEffect(() => {
     getInstaPosts();
-  }, []);
+  }, []); */
 
   return (
     <section className={styles.instaCardsContainer}>
@@ -38,9 +39,8 @@ const InstaSection = () => {
       </p>
 
       <div className={styles.postsContainer}>
-        {postsList.map((item) => (
-          <InstaCard key={item.id} postInfo={item} />
-        ))}
+        {!loading &&
+          postList.map((item) => <InstaCard key={item.id} postInfo={item} />)}
       </div>
 
       <a
@@ -48,7 +48,7 @@ const InstaSection = () => {
         target="blank"
         className={styles.buttonWrapper}
       >
-        <SubmitButton
+        <PrimaryButton
           type="button"
           text="Visit Our Instagram"
           icon={

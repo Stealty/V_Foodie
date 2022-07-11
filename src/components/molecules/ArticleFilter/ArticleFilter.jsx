@@ -1,5 +1,5 @@
 import styles from "./ArticleFilter.module.scss";
-import { SubmitButton } from "@atoms";
+import { PrimaryButton } from "@atoms";
 
 export default function ArticleFilter(props) {
   return (
@@ -27,7 +27,7 @@ export default function ArticleFilter(props) {
           />
         </button>
         <div className={styles["article__button--desktop"]}>
-          <SubmitButton text="Search" type="submit" />
+          <PrimaryButton text="Search" type="submit" />
         </div>
       </form>
     </div>

@@ -1,5 +1,5 @@
 import { useData } from "@context/useDataContext";
-import Card from "./Card/Card";
+import { Card } from "@molecules";
 import styles from "./Carousel.module.scss";
 
 export default function Carousel() {
@@ -32,7 +32,10 @@ export default function Carousel() {
             className={styles["carousel__scrollButton--left"]}
           ></button>
           <ul className={styles["card__list"]}>
-            {!loading && data.map((card) => <Card card={card} key={card.id} />)}
+            {!loading &&
+              data
+                .slice(0, 4)
+                .map((card) => <Card card={card} key={card.id} />)}
           </ul>
           <button
             type="button"

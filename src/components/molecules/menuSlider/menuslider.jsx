@@ -24,30 +24,35 @@ const MenuSlider = (props) => {
   return (
     <nav className={`${styles["menuSlider"]} ${styles[classMenu]}`}>
       <NavItem
+        OnClickHandler={isScreenSmall ? props.OnClickHandler : ""}
         classname="--header"
         linkto="/home"
         text="Home"
         nonFocusable={nonFocusable}
       ></NavItem>
       <NavItem
+        OnClickHandler={isScreenSmall ? props.OnClickHandler : ""} 
         classname="--header"
         linkto="/recipes"
         text="Recipes"
         nonFocusable={nonFocusable}
       ></NavItem>
       <NavItem
+        OnClickHandler={isScreenSmall ? props.OnClickHandler : ""} 
         classname="--header"
         linkto="/blog"
         text="Blog"
         nonFocusable={nonFocusable}
       ></NavItem>
       <NavItem
+        OnClickHandler={isScreenSmall ? props.OnClickHandler : ""} 
         classname="--header"
         linkto="/about-us"
         text="About Us"
         nonFocusable={nonFocusable}
       ></NavItem>
       <NavItem
+        OnClickHandler={isScreenSmall ? props.OnClickHandler : ""} 
         classname="--header"
         linkto="/contact"
         text="Contact"

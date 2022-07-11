@@ -35,7 +35,7 @@ const Menu = ({ onExpand }) => {
   return (
     <nav className={styles["menu"]}>
       <MenuHamburguer OnClickHandler={OnClickHandler} rotate={menuState} />
-      <MenuSlider menuState={menuState} />
+      <MenuSlider menuState={menuState} OnClickHandler={OnClickHandler} />
     </nav>
   );
 };
