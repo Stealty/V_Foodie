@@ -1,8 +1,13 @@
 import React from "react";
 import { Section } from "@molecules";
-import { SubscriptionCard, ChefSection, Recipes } from "@organisms";
+import {
+  SubscriptionCard,
+  ChefSection,
+  Recipes,
+  CategoriesSection,
+} from "@organisms";
 import { HighlightCard } from "@molecules";
-import { Categories } from "@molecules";
+import { Categories, RecipesGrid } from "@molecules";
 
 const Home = () => {
   return (
@@ -10,8 +15,8 @@ const Home = () => {
       {/* <Section arialabel="Highlights Section">
         <HighlightCard />
       </Section> */}
-      <Section arialabel="Categories Section">
-        <Categories />
+      <Section arialabel="Categories">
+        <CategoriesSection />
       </Section>
       <Section arialabel="Chef Section">
         <ChefSection />
