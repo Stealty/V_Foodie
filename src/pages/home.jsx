@@ -1,13 +1,11 @@
-import React from "react";
-import { Section } from "@molecules";
 import {
   SubscriptionCard,
   ChefSection,
   Recipes,
   CategoriesSection,
+  InstaSection,
 } from "@organisms";
-import { HighlightCard } from "@molecules";
-import { Categories, RecipesGrid } from "@molecules";
+import { HighlightCard, Section } from "@molecules";
 
 const Home = () => {
   return (
@@ -20,6 +18,9 @@ const Home = () => {
       </Section>
       <Section arialabel="Chef Section">
         <ChefSection />
+      </Section>
+      <Section>
+        <InstaSection />
       </Section>
       <Section arialabel="Recipes">
         <Recipes />

@@ -1,0 +1,19 @@
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+.postCaption {
+  font-size: 1rem;
+  color: #262626;
+  margin: 3% 0;
+}
+
+.postAuthor {
+  font-weight: bold;
+}
+
+.postDate {
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.4);
+}
