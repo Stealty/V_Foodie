@@ -24,17 +24,7 @@ $sm: 620px;
     display: grid;
     grid-template-columns: 50% 50%;
     margin-bottom: 50px;
-
-    &__Title {
-        width: 80%;
-        display: flex;
-        font-size: 2.3rem;
-    }
-
-    &__Description {
-        color: var(--muted-text-color);
-        font-size: 0.8rem;
-    }
+    align-items: center;
 }
 
 .Recipes {
