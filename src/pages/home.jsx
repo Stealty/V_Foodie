@@ -7,9 +7,9 @@ import { Categories } from "@molecules";
 const Home = () => {
   return (
     <>
-      {/* <Section arialabel="Highlights Section">
+      <Section arialabel="Highlights Section">
         <HighlightCard />
-      </Section> */}
+      </Section>
       <Section arialabel="Categories Section">
         <Categories />
       </Section>
