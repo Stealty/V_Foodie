@@ -24,7 +24,9 @@ const Categories = () => {
 
   return (
     <div className={styles["categories"]}>
-      <Heading className={styles["categories__heading"]}>Categories</Heading>
+      <Heading className={styles["categories__heading"]} level="2">
+        Categories
+      </Heading>
       <ul className={styles["categories__list"]}>
         {categoriesNames.map((category) => (
           <li className={styles["categories__list__item"]} key={category}>
