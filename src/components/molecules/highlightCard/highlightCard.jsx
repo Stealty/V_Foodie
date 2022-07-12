@@ -1,6 +1,6 @@
 import styles from "./highlightCard.module.scss";
 import HighlightInfo from "@molecules/highlightInfo/highlightInfo";
-import IFramePlayer from "../../atoms/iFramePlayer/iFramePlayer";
+import IFrameYTB from "../iFrameYTB/iFrameYTB";
 
 import { useState } from "react";
 import HighlightImage from "../../atoms/highlightImage/highlightImage";
@@ -17,7 +17,21 @@ export default function HighlightCard() {
         }
         alt="Ilustration of a baked chiken wings asian"
       />
-      {playing && <IFramePlayer movieId="c35V0sCNadw" isPlaying={playing} />}
+      <div
+        className={
+          playing
+            ? styles.HighlightCard__iFrame +
+              " " +
+              styles["HighlightCard__iFrame--playing"]
+            : styles.HighlightCard__iFrame
+        }
+      >
+        <IFrameYTB
+          isPlaying={playing}
+          setIsPlaying={setPlaying}
+          videoID={"c35V0sCNadw"}
+        />
+      </div>
     </div>
   );
 }
