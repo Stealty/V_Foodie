@@ -18,7 +18,13 @@ export default function IFrameYTB() {
     player = new YT.Player("iFrame", {
       videoId: videoID,
       playerVars: {
-        playsinline: 1,
+        playsinline: 0,
+        controls: 0,
+        showinfo: 0,
+        rel: 0,
+        modestbranding: 0,
+        disablekb: 1,
+        autohide: 1,
       },
       events: {
         onReady: onPlayerReady,
