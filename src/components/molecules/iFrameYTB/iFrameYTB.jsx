@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import styles from "./iFrameYTB.module.scss";
+import { PrimaryButton } from "@atoms";
 
-var player;
+let player;
 
 export default function IFrameYTB() {
   const tag = document.createElement("script");
@@ -46,8 +47,9 @@ export default function IFrameYTB() {
     player.pauseVideo();
   }
 
-  function stopVideo() {
+  function reloadVideo() {
     player.stopVideo();
+    player.playVideo();
   }
 
   return (
@@ -55,14 +57,32 @@ export default function IFrameYTB() {
       <div className={styles.iFramePlayer__containerPlaying}>
         <div id="iFrame" className={styles.iFramePlayer__iframePlaying}></div>
       </div>
-      <button onClick={() => playVideo()}>Play</button>
-      <button
-        onClick={() => pauseVideo()}
-        className={styles.iFramePlayer__controls}
-      >
-        Pause
-      </button>
-      <button onClick={() => reloadVideo()}>Reload</button>
+      <div className={styles.iFrameControls__wrapper}>
+        <PrimaryButton
+          type="button"
+          className={styles.iFramePlayer__button}
+          text="Play"
+          onClick={() => playVideo()}
+        >
+          Play
+        </PrimaryButton>
+        <PrimaryButton
+          type="button"
+          className={styles.iFramePlayer__button}
+          text="Pause"
+          onClick={() => pauseVideo()}
+        >
+          Pause
+        </PrimaryButton>
+        <PrimaryButton
+          type="button"
+          className={styles.iFramePlayer__button}
+          text="Reload"
+          onClick={() => reloadVideo()}
+        >
+          Reload
+        </PrimaryButton>
+      </div>
     </>
   );
 }
