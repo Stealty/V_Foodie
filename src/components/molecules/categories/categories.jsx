@@ -1,6 +1,8 @@
 import { CategoryCard } from "@molecules";
 import { Heading, PrimaryButton } from "@atoms";
 import styles from "./categories.module.scss";
+import classes from "@utils/classes";
+import { useState } from "react";
 
 const pickColor = (color) => {
   const categoriesColors = {
@@ -13,6 +15,7 @@ const pickColor = (color) => {
 };
 
 const Categories = () => {
+  const [extended, setExtended] = useState(false);
   const categoriesNames = [
     "breakfast",
     "vegan",
@@ -22,8 +25,14 @@ const Categories = () => {
     "chocolate",
   ];
 
+  const categoriesClasses = classes(styles);
+  categoriesClasses.add("categories");
+  if (extended) categoriesClasses.add("categories--extended");
+
+  const handleClick = () => setExtended((state) => !state);
+
   return (
-    <div className={styles["categories"]}>
+    <div className={categoriesClasses.get()}>
       <Heading className={styles["categories__heading"]} level="2">
         Categories
       </Heading>
@@ -35,9 +44,10 @@ const Categories = () => {
         ))}
       </ul>
       <PrimaryButton
-        text="View All Categories"
+        text={!extended ? "View All Categories" : "View Less"}
         variant="light"
         className={styles["categories__button"]}
+        onClick={handleClick}
       ></PrimaryButton>
     </div>
   );
