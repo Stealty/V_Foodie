@@ -5,7 +5,7 @@ import InstaCardMedia from "../instaCardMedia/instaCardMedia";
 import styles from "./instaCard.module.scss";
 
 const InstaCard = (props) => {
-  /* console.log(props.postInfo.id); */
+  /* console.log(props.postInfo); */
   return (
     <a
       className={styles.cardContainer}
@@ -14,15 +14,19 @@ const InstaCard = (props) => {
     >
       <InstaCardHeader username={props.postInfo.username} />
       <InstaCardMedia
-        mediaId={props.postInfo.id}
-        mediaType={props.postInfo.media_type}
-        mediaLink={props.postInfo.media_url}
+        cardInfo={{
+          mediaId: props.postInfo.id,
+          mediaType: props.postInfo.media_type,
+          mediaLink: props.postInfo.media_url,
+          carouselItens: props.postInfo.children,
+        }}
       />
       <InstaCardActions />
       <InstaCardInfo
         username={props.postInfo.username}
         caption={props.postInfo.caption}
         date={props.postInfo.timestamp}
+        children={props.postInfo.children}
       />
     </a>
   );
