@@ -29,3 +29,4 @@ export { default as ChefIllustration } from "./chefIllustration/chefIllustration
 export { default as Categories } from "./categories/categories";
 export { default as CategoryCard } from "./categoryCard/categoryCard";
 export { default as RecipesGrid } from "./recipesGrid/recipesGrid";
+export { default as Carousel } from "./Carousel/Carousel";

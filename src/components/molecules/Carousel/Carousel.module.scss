@@ -11,16 +11,8 @@
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   padding-right: 40px;
-
-  &__recipes {
-    display: none;
-    text-align: center;
-    margin-top: -12px;
-    margin-bottom: 80px;
-    letter-spacing: -0.04em;
-    font-weight: 600;
-    font-size: 36px;
-  }
+  scroll-snap-align: start;
+  isolation: isolate;
 
   &:last-child {
     margin: 0;
@@ -30,52 +22,40 @@
     display: none;
   }
 
-  &__scrollButton--left {
-    z-index: 1;
+  &__list {
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  &__scrollButton {
     position: absolute;
-    top: 60px;
-    left: 4.7px;
-    height: 46px;
-    width: 31px;
     background-color: transparent;
     background-image: url("/images/Union.png");
     background-size: auto;
     background-repeat: no-repeat;
     border: none;
+    cursor: pointer;
+    z-index: 1;
+    top: 60px;
+    height: 46px;
+    width: 31px;
+  }
+
+  &__scrollButton--left {
     transform: translateY(50%);
     margin: 0;
-    cursor: pointer;
   }
 
   &__scrollButton--right {
-    position: absolute;
-    top: 60px;
     right: 4.7px;
-    height: 46px;
-    width: 31px;
-    background-color: transparent;
-    background-image: url("/images/Union.png");
-    background-size: auto;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
     transform: translateY(50%) rotate(180deg);
   }
-}
-
-.card__list {
-  display: flex;
-  gap: 2.5rem;
 }
 
 @media screen and (min-width: 1394px) {
   .carousel {
     overflow: hidden;
     justify-content: center;
-
-    &__recipes {
-      display: block;
-    }
 
     &__scrollButton--left {
       display: none;
