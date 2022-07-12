@@ -1,5 +1,5 @@
 import useFetch from "@hooks/useFetch";
-import InstaCard from "@molecules/instaCard/instaCard";
+import { InstaCard, Carousel } from "@molecules";
 import { PrimaryButton } from "@atoms";
 import styles from "./instaSection.module.scss";
 
@@ -10,24 +10,9 @@ const url = `https://graph.instagram.com/me/media?access_token=${token}&fields=$
 
 const InstaSection = () => {
   const [data, loading, error] = useFetch(url);
-  console.log(data);
+
   const { data: postList } = data || { data: [] };
-
-  /* const getInstaPosts = async () => {
-    try {
-      const req = await fetch(url);
-      const { data } = await req.json();
-      console.log(data);
-      setPostsList(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    getInstaPosts();
-  }, []); */
-
+  /* console.log(data); */
   return (
     <section className={styles.instaCardsContainer}>
       <h5 className={styles.instaCardsContainer_title}>
@@ -38,10 +23,10 @@ const InstaSection = () => {
         tempor incididunt ut labore et dolore magna aliqut enim ad minim
       </p>
 
-      <div className={styles.postsContainer}>
+      <Carousel>
         {!loading &&
           postList.map((item) => <InstaCard key={item.id} postInfo={item} />)}
-      </div>
+      </Carousel>
 
       <a
         href="https://www.instagram.com/_foodieland._/"
@@ -66,8 +51,6 @@ const InstaSection = () => {
           }
         />
       </a>
-
-      {/*  {console.log(postsList)} */}
     </section>
   );
 };
