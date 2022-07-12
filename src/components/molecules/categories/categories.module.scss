@@ -1,4 +1,5 @@
 .categories {
+  $c: &;
   width: 100%;
   display: grid;
   grid-template-areas:
@@ -23,38 +24,39 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0;
+    gap: 1rem 0;
 
     &__item {
       list-style-type: none;
     }
 
-    & li:nth-child(n + 1) {
+    & li:nth-child(n + 2) {
       display: none;
     }
-    @media screen and (min-width: 300px) {
+    @media screen and (min-width: 420px) {
+      justify-content: space-between;
       & li:nth-child(2) {
         display: list-item;
       }
     }
-    @media screen and (min-width: 500px) {
+    @media screen and (min-width: 610px) {
       & li:nth-child(3) {
         display: list-item;
       }
     }
-    @media screen and (min-width: 700px) {
+    @media screen and (min-width: 810px) {
       & li:nth-child(4) {
         display: list-item;
       }
     }
-    @media screen and (min-width: 900px) {
+    @media screen and (min-width: 970px) {
       & li:nth-child(5) {
         display: list-item;
       }
     }
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 1140px) {
       & li:nth-child(6) {
         display: list-item;
       }
@@ -67,5 +69,8 @@
     @media (min-width: 768px) {
       justify-self: end;
     }
+  }
+  &--extended #{$c}__list__item {
+    display: list-item !important;
   }
 }
