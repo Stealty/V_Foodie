@@ -1,9 +1,11 @@
 import { useData } from "@context/useDataContext";
 import { SiteBanner, Card } from "@molecules";
 import styles from "./recipesGrid.module.scss";
+import useQuery from "@hooks/useQuery";
 
 const RecipesGrid = () => {
-  const { data, loading } = useData();
+  //const { data, loading } = useData();
+  const [data, loading, error] = useQuery("recipes", "@/../data.json");
 
   return (
     <div>

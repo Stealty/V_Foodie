@@ -51,18 +51,21 @@ export default function HighlightInfo(props) {
               </svg>
             }
             onClick={(event) => {
-              if (playing) {
-                event.target.parentNode.className =
-                  styles.iFramePlayer__buttonWrapper;
+              if (!playing) {
+                event.target.parentNode.className = `${styles["iFramePlayer__buttonWrapper--playing"]}`;
               } else {
-                event.target.parentNode.className =
-                  styles.iFramePlayer__buttonWrapperPlaying;
+                event.target.parentNode.className = `${styles["iFramePlayer__buttonWrapper"]}`;
               }
               setPlaying(!playing);
             }}
           />
         </div>
       </div>
+      <img
+        src="./images/handpicked.png"
+        alt="A Handpicked Recipes little image"
+        className={styles.highlightInfo__handpicked}
+      />
     </div>
   );
 }

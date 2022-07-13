@@ -1,25 +1,27 @@
-import React from "react";
-import { Section } from "@molecules";
 import {
   SubscriptionCard,
   ChefSection,
   Recipes,
   CategoriesSection,
+  InstaSection,
 } from "@organisms";
-import { HighlightCard } from "@molecules";
-import { Categories, RecipesGrid } from "@molecules";
+import { Section } from "@molecules";
+import Highlights from "../components/molecules/highlights/highlights";
 
 const Home = () => {
   return (
     <>
       <Section arialabel="Highlights Section">
-        <HighlightCard />
+        <Highlights />
       </Section>
       <Section arialabel="Categories">
         <CategoriesSection />
       </Section>
       <Section arialabel="Chef Section">
         <ChefSection />
+      </Section>
+      <Section>
+        <InstaSection />
       </Section>
       <Section arialabel="Recipes">
         <Recipes />

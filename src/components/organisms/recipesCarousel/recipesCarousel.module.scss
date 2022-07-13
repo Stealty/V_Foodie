@@ -1,0 +1,13 @@
+.carouselTitle {
+  display: none;
+  text-align: center;
+  margin-top: -12px;
+  margin-bottom: 80px;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+  font-size: 36px;
+
+  @media screen and (min-width: 1394px) {
+    display: block;
+  }
+}

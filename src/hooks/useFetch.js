@@ -1,29 +1,29 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function useFetch(url) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const isFirstTime = useRef(true);
-
   useEffect(() => {
-    if (!isFirstTime.current) {
-      return;
-    }
-    isFirstTime.current = false;
+    let ignore = false;
     const fetchData = async () => {
       try {
         const response = await fetch(url);
         const json = await response.json();
-        setData(json);
-        setLoading(false);
+        if (!ignore) {
+          setData(json);
+          setLoading(false);
+        }
       } catch (error) {
         setError(error);
         setLoading(false);
       }
     };
     fetchData();
+    return () => {
+      ignore = true;
+    };
   }, [url]);
 
   return [data, loading, error];

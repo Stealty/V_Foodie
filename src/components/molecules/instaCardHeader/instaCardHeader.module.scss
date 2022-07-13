@@ -1,0 +1,25 @@
+.headerContainer {
+  width: 45%;
+  padding: 0 5px;
+  align-content: center;
+  column-gap: 8px;
+  display: grid;
+  grid-template-areas:
+    "img username"
+    "img location";
+}
+
+.profileImg {
+  grid-area: img;
+  max-height: 40px;
+}
+
+.username {
+  grid-area: username;
+  font-size: 15px;
+}
+
+.location {
+  grid-area: location;
+  font-size: 13px;
+}

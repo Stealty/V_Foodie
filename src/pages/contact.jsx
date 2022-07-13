@@ -1,6 +1,6 @@
 import React from "react";
 import { Section } from "@molecules";
-import { Carousel, ContactForm, SubscriptionCard } from "@organisms";
+import { RecipesCarousel, ContactForm, SubscriptionCard } from "@organisms";
 import "@/styles/contact.scss";
 
 const Contact = () => {
@@ -12,8 +12,8 @@ const Contact = () => {
       <Section arialabel="Subscription Card">
         <SubscriptionCard />
       </Section>
-      <Section arialabel="Carousel" nomargin>
-        <Carousel />
+      <Section arialabel="Recipes Carousel">
+        <RecipesCarousel />
       </Section>
     </>
   );

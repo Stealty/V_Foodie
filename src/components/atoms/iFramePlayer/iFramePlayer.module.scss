@@ -36,52 +36,15 @@
   }
 }
 
-@keyframes nonRelative {
-  0% {
-    position: inherit;
-  }
-  99% {
-    position: inherit;
-  }
-  100% {
-    position: absolute;
-  }
-}
-
-.IFramePlayer__container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 200%;
-  min-height: 630px;
-  padding-top: 75%;
-  border-top-right-radius: 40px;
-  border-bottom-right-radius: 40px;
-  // animation: stopPlaying 0.8s ease-out;
-}
-
 .iFramePlayer__containerPlaying {
   position: absolute;
   overflow: hidden;
   width: 100%;
-  height: 100%;
-  padding-top: 56.25%;
+  height: 640px;
+  padding-top: 36.25%;
   border-radius: 40px;
-}
-
-.IFramePlayer__iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  border-top-right-radius: 40px;
-  border-bottom-right-radius: 40px;
+  align-self: center;
+  pointer-events: none;
 }
 
 .iFramePlayer__iframePlaying {
@@ -93,7 +56,4 @@
   width: 100%;
   height: 100%;
   border-radius: 40px;
-}
-
-@media screen and (max-width: 1295px) {
 }

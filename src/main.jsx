@@ -4,6 +4,9 @@ import ReactDOM from "react-dom/client";
 import Layout from "@templates/layout";
 import { Router } from "@organisms";
 import "./styles/global.scss";
+import configureStore from "./store/recipesSlice";
+
+configureStore();
 
 //aqui será configurada as rotas do site
 ReactDOM.createRoot(document.getElementById("root")).render(

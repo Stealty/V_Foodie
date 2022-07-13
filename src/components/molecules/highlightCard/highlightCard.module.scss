@@ -1,10 +1,57 @@
+@keyframes turnOnPlayer {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes turnOffPlayer {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .HighLightCard__container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   position: relative;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   height: 100%;
   margin-bottom: 162px;
+  border-radius: 40px;
+  background-color: transparent;
+  scroll-snap-align: center;
+
+  @media screen and (min-width: 1240px) {
+    width: max-content;
+    max-width: 1180px;
+  }
+}
+
+.HighlightCard__iFrame {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  background-color: transparent;
+}
+
+.HighlightCard__iFrame--playing {
+  display: block;
+  animation: turnOnPlayer 0.8s ease-out;
 }

@@ -1,6 +1,6 @@
 import styles from "./highlightCard.module.scss";
 import HighlightInfo from "@molecules/highlightInfo/highlightInfo";
-import IFramePlayer from "../../atoms/iFramePlayer/iFramePlayer";
+import IFrameYTB from "../iFrameYTB/iFrameYTB";
 
 import { useState } from "react";
 import HighlightImage from "../../atoms/highlightImage/highlightImage";
@@ -12,12 +12,26 @@ export default function HighlightCard() {
     <div className={styles.HighLightCard__container}>
       <HighlightInfo isPlaying={playing} setIsPlaying={setPlaying} />
       <HighlightImage
-        bgImage={`url(
-            "./images/baked-chicken-wings-asian-style-tomatoes-sauce-plate 1.png"
-          )`}
+        src={
+          "./images/baked-chicken-wings-asian-style-tomatoes-sauce-plate 1.png"
+        }
         alt="Ilustration of a baked chiken wings asian"
       />
-      {playing && <IFramePlayer movieId="c35V0sCNadw" isPlaying={playing} />}
+      <div
+        className={
+          playing
+            ? styles.HighlightCard__iFrame +
+              " " +
+              styles["HighlightCard__iFrame--playing"]
+            : styles.HighlightCard__iFrame
+        }
+      >
+        <IFrameYTB
+          isPlaying={playing}
+          setIsPlaying={setPlaying}
+          videoID={"c35V0sCNadw"}
+        />
+      </div>
     </div>
   );
 }
