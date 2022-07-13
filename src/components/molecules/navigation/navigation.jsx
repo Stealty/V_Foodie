@@ -14,7 +14,6 @@ const Navigation = (props) => {
       currentPage.classList.toggle(styles["Navigation__NavItem--current"]);
     }
     setCurrentPage(e.target);
-    console.log(e.target, currentPage);
   }
 
   return <ul className={styles.Navigation}>

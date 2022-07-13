@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Card, Navigation } from "@molecules";
 import { Title, Description } from "@atoms";
 import { useData } from "@context/useDataContext";
@@ -10,6 +10,10 @@ const Recipes = () => {
     const [page, setPage] = useState("1");
     const [pageNumbers, pageContent] = usePages(4);
     const [isScreenSmall, setIsScreenSmall] = useState(false);
+
+    if(localStorage.getItem('Page') != null){
+      useMemo(() => setPage(localStorage.getItem('Page')), [localStorage.getItem('Page')]);
+    }
 
     useEffect(() => {
         //check if screen is small
@@ -28,7 +32,9 @@ const Recipes = () => {
       }, []);
 
     const OnClickHandler = (Item) => {
+        localStorage.setItem('Page', Item.target.innerHTML);
         setPage(Item.target.innerHTML);
+        console.log(localStorage.getItem("Page"));
     }
 
     return <>
@@ -38,7 +44,7 @@ const Recipes = () => {
         </div>
         <ul className={!isScreenSmall ? styles.Recipes__ListMobile : styles.Recipes__ListDesktop}>
             {!loading && !isScreenSmall ? pageNumbers.map((pageNumber) => 
-             page == pageNumber && pageContent[pageNumber-1].map((Item) => <Card card={Item} key={Item.id} />)) : !loading && data.map((card) => <Card card={card} key={card.id} />)}
+             localStorage.getItem('Page') == pageNumber && pageContent[pageNumber-1].map((Item) => <Card card={Item} key={Item.id} />)) : !loading && data.map((card) => <Card card={card} key={card.id} />)}
         </ul>
         <div className={styles.Navigation}>
             <Navigation list={pageNumbers} onClick={OnClickHandler} />
