@@ -5,13 +5,14 @@ import {
   CategoriesSection,
   InstaSection,
 } from "@organisms";
-import { HighlightCard, Section } from "@molecules";
+import { Section } from "@molecules";
+import Highlights from "../components/molecules/highlights/highlights";
 
 const Home = () => {
   return (
     <>
       <Section arialabel="Highlights Section">
-        <HighlightCard />
+        <Highlights />
       </Section>
       <Section arialabel="Categories">
         <CategoriesSection />

@@ -1,7 +1,5 @@
 .carouselWrapper {
   position: relative;
-  width: 100%;
-  overflow: hidden;
 }
 
 .carousel {
@@ -36,7 +34,7 @@
     border: none;
     cursor: pointer;
     z-index: 1;
-    top: 60px;
+    top: calc(35% - 60px);
     height: 46px;
     width: 31px;
   }
@@ -54,9 +52,6 @@
 
 @media screen and (min-width: 1394px) {
   .carousel {
-    overflow: hidden;
-    justify-content: center;
-
     &__scrollButton--left {
       display: none;
     }

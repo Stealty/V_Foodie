@@ -12,7 +12,9 @@ const Contact = () => {
       <Section arialabel="Subscription Card">
         <SubscriptionCard />
       </Section>
-      <RecipesCarousel />
+      <Section arialabel="Recipes Carousel">
+        <RecipesCarousel />
+      </Section>
     </>
   );
 };
