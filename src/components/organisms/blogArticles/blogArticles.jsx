@@ -1,6 +1,5 @@
 import React, { useMemo } from "react";
 import styles from "./blogArticles.module.scss";
-import { Routes, Route } from "react-router-dom";
 import {
   ArticleFilter,
   Articles,
@@ -9,7 +8,6 @@ import {
   SiteBanner,
   Navigation,
 } from "@molecules";
-
 import { useState } from "react";
 import useFetch from "@hooks/useFetch";
 
@@ -18,11 +16,11 @@ const maximumNumberArticlesShown = 6;
 
 const BlogArticles = () => {
   const [data, loading, error] = useFetch("@/../articles.json");
+
   const [recipes, recipesLoading, recipesFetchError] =
     useFetch("@/../data.json");
   const [filter, setFilter] = useState(() => () => true);
 
-  //const articles = data?.slice(0, maximumNumberArticlesShown) || [];
   const articles = useMemo(
     () => data?.filter(filter).slice(0, maximumNumberArticlesShown) || [],
     [data, filter]
@@ -48,7 +46,7 @@ const BlogArticles = () => {
         <div className={styles["blogArticles__searchBar"]}>
           <ArticleFilter handleSearch={handleSearch} />
         </div>
-        
+
         <div className={styles["blogArticles__articlesStack"]}>
           <Articles articles={articles} loading={loading} />
         </div>
@@ -66,7 +64,7 @@ const BlogArticles = () => {
         <div className={styles["blogArticles__ads"]}>
           <SiteBanner />
         </div>
-        <Navigation list={[1]}/>
+        <Navigation list={[1]} />
       </div>
     </>
   );

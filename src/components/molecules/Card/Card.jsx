@@ -1,24 +1,26 @@
-import { useState } from "react";
 import TimeInfo from "@molecules/timeInfo/timeInfo";
 import TypeInfo from "@molecules/typeInfo/typeInfo";
 import styles from "./Card.module.scss";
+import { useStore } from "@store/store";
 
 export default function Card({ card, background, full }) {
-  const [like, setLike] = useState(false);
+  const [store, dispatch] = useStore();
+
   function handleLike(event) {
-    let heartIcon = event.currentTarget.firstChild.classList.toggle(
-      styles["card__heart--notLiked"]
-    );
-    setLike(like);
-    return heartIcon;
+    dispatch("TOOGLE_HEART_RECIPES", card.id);
   }
 
-  const classes = [styles["card"]];
-  if (background) classes.push(styles["card--background"]);
-  if (full) classes.push(styles["card--full"]);
+  const classesNames = [styles["card"]];
+  if (background) classesNames.push(styles["card--background"]);
+  if (full) classesNames.push(styles["card--full"]);
+
+  let heartImgClasses = "";
+  if (!store.recipes.find((recipe) => recipe.id === card.id).isHeart)
+    //if (!card.isHeart)
+    heartImgClasses = styles["card__heart--notLiked"];
 
   return (
-    <li className={classes.join(" ")}>
+    <li className={classesNames.join(" ")}>
       <div className={styles["card__container"]}>
         <a
           className={styles["card__button"]}
@@ -35,7 +37,7 @@ export default function Card({ card, background, full }) {
         <button className={styles["card__heart"]} onClick={handleLike}>
           <img
             src="./images/card-heart.svg"
-            className={styles["card__heart--notLiked"]}
+            className={heartImgClasses}
             alt={"Like button for " + card.title}
           />
         </button>
