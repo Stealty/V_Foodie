@@ -36,6 +36,10 @@
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
 
+  @media screen and (min-width: 1024px) {
+    min-width: 555px;
+  }
+
   @media screen and(max-width: 1024px) {
     width: 100%;
     border-radius: 50px;
@@ -105,5 +109,15 @@
 
   @media screen and (max-width: 460px) {
     left: 32%;
+  }
+}
+
+.highlightInfo__handpicked {
+  position: absolute;
+  top: 50px;
+  right: -78px;
+
+  @media screen and (max-width: 1024px) {
+    display: none;
   }
 }
