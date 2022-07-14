@@ -33,7 +33,7 @@ const InstaCardMedia = (props) => {
     IMAGE: vefifyMediaType(props.cardInfo.mediaLink, props.cardInfo.mediaType),
     VIDEO: vefifyMediaType(props.cardInfo.mediaLink, props.cardInfo.mediaType),
     CAROUSEL_ALBUM: (
-      <Carousel withArrows={false}>
+      <Carousel withArrows={false} scrolling={true}>
         {showCarousel(props.cardInfo.carouselItens, props.cardInfo.mediaType)}
       </Carousel>
     ),
