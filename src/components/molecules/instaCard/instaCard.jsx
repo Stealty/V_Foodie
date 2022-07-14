@@ -9,8 +9,8 @@ const InstaCard = (props) => {
   return (
     <a
       className={styles.cardContainer}
-      href={props.postInfo.permalink}
-      target="_blank"
+      /*  href={props.postInfo.permalink}
+      target="_blank" */
     >
       <InstaCardHeader username={props.postInfo.username} />
       <InstaCardMedia

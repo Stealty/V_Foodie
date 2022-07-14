@@ -8,7 +8,7 @@ const InstaCardMedia = (props) => {
     return mediaType === "IMAGE" ? (
       <img src={mediaLink} className={styles.media} />
     ) : (
-      <video controls>
+      <video controls className={styles.media}>
         <source scr={mediaLink} />
       </video>
     );
@@ -17,11 +17,14 @@ const InstaCardMedia = (props) => {
   function showCarousel(carouselList, mediaType) {
     if (mediaType === "CAROUSEL_ALBUM") {
       /* console.log(carouselList.data); */
-      carouselList.data.map((carouselItem) => {
-        /* console.log(carouselItem.media_type); */
-        <li>
-          {vefifyMediaType(carouselItem.media_url, carouselItem.media_type)}
-        </li>;
+      return carouselList.data.map((carouselItem) => {
+        /* console.log(carouselItem.media_url); */
+
+        return (
+          <li className={styles.carouselItem}>
+            {vefifyMediaType(carouselItem.media_url, carouselItem.media_type)}
+          </li>
+        );
       });
     }
   }
@@ -30,7 +33,7 @@ const InstaCardMedia = (props) => {
     IMAGE: vefifyMediaType(props.cardInfo.mediaLink, props.cardInfo.mediaType),
     VIDEO: vefifyMediaType(props.cardInfo.mediaLink, props.cardInfo.mediaType),
     CAROUSEL_ALBUM: (
-      <Carousel>
+      <Carousel withArrows={false}>
         {showCarousel(props.cardInfo.carouselItens, props.cardInfo.mediaType)}
       </Carousel>
     ),
