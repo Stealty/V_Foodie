@@ -9,7 +9,7 @@
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   padding-right: 40px;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   isolation: isolate;
 
   &:last-child {

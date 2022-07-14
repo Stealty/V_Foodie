@@ -1,7 +1,32 @@
 import styles from "./Carousel.module.scss";
 import classes from "@utils/classes";
+import { useEffect } from "react";
 
-export default function Carousel({ children, withArrows = true }) {
+export default function Carousel({
+  children,
+  withArrows = true,
+  scrolling = false,
+}) {
+  useEffect(() => {
+    const carouselList = document.querySelector("#carouselList");
+    // setTimeout((event) => {
+    //   handleScrollRight(event);
+    // });
+    if (scrolling) {
+      carouselList.addEventListener("click", (event) => {
+        if (event.layerY > 660 || event.layerY < 52) {
+          return;
+        }
+        if (event.layerX < 40) {
+          handleScrollLeft(event);
+        }
+        if (event.layerX > 1200) {
+          handleScrollRight(event);
+        }
+      });
+    }
+  }, [window.onload]);
+
   const handleScrollRight = (event) => {
     event.currentTarget.parentNode.scrollBy({
       left: event.currentTarget.parentNode.offsetWidth / 2,
@@ -33,7 +58,10 @@ export default function Carousel({ children, withArrows = true }) {
             className={buttonLeftClasses.get()}
           ></button>
         )}
-        <ul className={styles["carousel__list"]}>{children}</ul>
+
+        <ul className={styles["carousel__list"]} id="carouselList">
+          {children}
+        </ul>
         {withArrows && (
           <button
             type="button"
