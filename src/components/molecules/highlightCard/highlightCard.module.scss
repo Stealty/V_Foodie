@@ -27,17 +27,13 @@
   display: grid;
   grid-template-columns: 1fr auto;
   position: relative;
-  width: 100%;
+  width: max-content - 500px;
+  max-width: 65%;
+
   height: 100%;
   margin-bottom: 162px;
   border-radius: 40px;
   background-color: transparent;
-  scroll-snap-align: center;
-
-  @media screen and (min-width: 1240px) {
-    width: max-content;
-    max-width: 1180px;
-  }
 }
 
 .HighlightCard__iFrame {

@@ -4,10 +4,12 @@ import TypeInfo from "@molecules/typeInfo/TypeInfo";
 import { PrimaryButton } from "@atoms";
 import HighlightAuthor from "../highlightAuthor/highlightAuthor";
 
-export default function HighlightInfo(props) {
-  const playing = props.isPlaying;
-  const setPlaying = props.setIsPlaying;
-
+export default function HighlightInfo({
+  playing,
+  setPlaying,
+  videoID,
+  setVideoID,
+}) {
   return (
     <div className={styles.highlightInfo}>
       <span className={styles.highlightInfo__hotAlert}>
@@ -57,6 +59,7 @@ export default function HighlightInfo(props) {
                 event.target.parentNode.className = `${styles["iFramePlayer__buttonWrapper"]}`;
               }
               setPlaying(!playing);
+              setVideoID(videoID);
             }}
           />
         </div>
