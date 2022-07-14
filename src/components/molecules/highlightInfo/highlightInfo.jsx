@@ -61,6 +61,11 @@ export default function HighlightInfo(props) {
           />
         </div>
       </div>
+      <img
+        src="./images/handpicked.png"
+        alt="A Handpicked Recipes little image"
+        className={styles.highlightInfo__handpicked}
+      />
     </div>
   );
 }

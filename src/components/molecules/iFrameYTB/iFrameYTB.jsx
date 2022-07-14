@@ -1,18 +1,30 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "./iFrameYTB.module.scss";
 import { PrimaryButton } from "@atoms";
 
 let player;
 
 export default function IFrameYTB() {
-  const tag = document.createElement("script");
+  const [videoFrame, setVideoFrame] = useState(null);
+
+  var tag = document.createElement("script");
   tag.src = "https://www.youtube.com/iframe_api";
   const firstScriptTag = document.getElementsByTagName("script")[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
   useEffect(() => {
     loadPlayer();
+    setTimeout(() => {
+      setVideoFrame(player.getIframe());
+    }, 1000);
   }, [window.onload]);
+
+  function removeElements() {
+    document.getElementById("iFrame").remove();
+    setVideoFrame(null);
+    player = null;
+    console.log(videoFrame);
+  }
 
   function onYouTubeIframeAPIReady(videoID) {
     player = new YT.Player("iFrame", {
@@ -25,6 +37,8 @@ export default function IFrameYTB() {
         modestbranding: 0,
         disablekb: 1,
         autohide: 1,
+        ecver: 1,
+        loop: 1,
       },
       events: {
         onReady: onPlayerReady,
@@ -46,6 +60,7 @@ export default function IFrameYTB() {
   }
 
   function playVideo() {
+    loadPlayer();
     player.playVideo();
   }
 
