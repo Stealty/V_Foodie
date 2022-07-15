@@ -25,6 +25,7 @@
 }
 
 .highlightInfo {
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
@@ -32,17 +33,23 @@
   gap: 1rem;
   background-color: #e7fafe;
   padding: 50px;
-  position: relative;
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
 
-  @media screen and (min-width: 1024px) {
-    min-width: 555px;
+  // @media screen and (min-width: 1024px) {
+  //   min-width: 555px;
+  // }
+  @media screen and (max-width: 415px) {
+    width: 330px;
   }
 
-  @media screen and(max-width: 1024px) {
-    width: 100%;
+  @media screen and (max-width: 1024px) {
     border-radius: 50px;
+    min-width: 87vw;
+  }
+
+  @media screen and(min-width: 1024px) {
+    min-width: 555px;
   }
 }
 
@@ -103,12 +110,18 @@
 
 .iFramePlayer__buttonWrapper--playing {
   position: absolute;
-  left: 0%;
+  left: -5%;
   bottom: -70px;
   animation: onPlayButton 0.8s ease-out;
 
   @media screen and (max-width: 460px) {
-    left: 32%;
+    left: 25%;
+    bottom: -90px;
+  }
+
+  @media screen and (max-width: 572px) {
+    left: 30%;
+    bottom: -90px;
   }
 }
 

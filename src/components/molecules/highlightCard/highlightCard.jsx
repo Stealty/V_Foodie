@@ -1,20 +1,28 @@
 import styles from "./highlightCard.module.scss";
 import HighlightInfo from "@molecules/highlightInfo/highlightInfo";
-import IFrameYTB from "../iFrameYTB/iFrameYTB";
+import HighlightImage from "@atoms/highlightImage/highlightImage";
 
-import { useState } from "react";
-import HighlightImage from "../../atoms/highlightImage/highlightImage";
-
-export default function HighlightCard() {
-  const [playing, setPlaying] = useState(false);
-
+export default function HighlightCard({
+  playing,
+  setPlaying,
+  title,
+  description,
+  image,
+  setVideoID,
+  videoID,
+}) {
   return (
     <div className={styles.HighLightCard__container}>
-      <HighlightInfo isPlaying={playing} setIsPlaying={setPlaying} />
+      <HighlightInfo
+        title={title}
+        description={description}
+        playing={playing}
+        setPlaying={() => setPlaying(!playing)}
+        videoID={videoID}
+        setVideoID={setVideoID}
+      />
       <HighlightImage
-        src={
-          "./images/baked-chicken-wings-asian-style-tomatoes-sauce-plate 1.png"
-        }
+        src={image}
         alt="Ilustration of a baked chiken wings asian"
       />
       <div
@@ -25,13 +33,7 @@ export default function HighlightCard() {
               styles["HighlightCard__iFrame--playing"]
             : styles.HighlightCard__iFrame
         }
-      >
-        <IFrameYTB
-          isPlaying={playing}
-          setIsPlaying={setPlaying}
-          videoID={"c35V0sCNadw"}
-        />
-      </div>
+      ></div>
     </div>
   );
 }

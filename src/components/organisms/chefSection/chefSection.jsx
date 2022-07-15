@@ -6,7 +6,7 @@ const ChefSection = () => {
   return (
     <div className={styles["chefSection__wrapper"]}>
       <div className={styles["chefSection__text"]}>
-        <Heading level="1" className={styles["chefSection__text__heading"]}>
+        <Heading level="2" className={styles["chefSection__text__heading"]}>
           Everyone can be a chef in their own kitchen
         </Heading>
         <Paragraph muted>

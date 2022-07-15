@@ -9,9 +9,6 @@ export default function Carousel({
 }) {
   useEffect(() => {
     const carouselList = document.querySelector("#carouselList");
-    // setTimeout((event) => {
-    //   handleScrollRight(event);
-    // });
     if (scrolling) {
       carouselList.addEventListener("click", (event) => {
         if (event.layerY > 660 || event.layerY < 52) {
