@@ -10,9 +10,7 @@ const InstaCardInfo = (props) => {
   return (
     <div className={styles.infoContainer}>
       <p className={styles.postCaption}>
-        <a href="https://www.instagram.com/_foodieland._/" target="blank">
-          <span className={styles.postAuthor}>{props.username}</span>
-        </a>
+        <span className={styles.postAuthor}>{props.username}</span>{" "}
         {props.caption}
       </p>
       <p className={styles.postDate}>{date}</p>
