@@ -1,16 +1,18 @@
 import styles from "./instaCardMedia.module.scss";
 import { Carousel } from "@molecules";
 
-const InstaCardMedia = (props) => {
-  /* console.log(props.cardInfo.carouselItens); */
+const InstaCardMedia = ({ mediaType, mediaLink, carouselItens, postLink }) => {
+  /* console.log(carouselItens); */
 
   function vefifyMediaType(mediaLink, mediaType) {
     return mediaType === "IMAGE" ? (
-      <img src={mediaLink} className={styles.media} />
+      <a href={postLink} target="_blank">
+        <img src={mediaLink} className={styles.media} />
+      </a>
     ) : (
-      <video controls className={styles.media}>
-        <source scr={mediaLink} />
-      </video>
+      <a href={postLink} target="_blank">
+        <video controls className={styles.media} scr={mediaLink}></video>
+      </a>
     );
   }
 
@@ -21,7 +23,7 @@ const InstaCardMedia = (props) => {
         /* console.log(carouselItem.media_url); */
 
         return (
-          <li className={styles.carouselItem}>
+          <li key={Math.random() * 10} className={styles.carouselItem}>
             {vefifyMediaType(carouselItem.media_url, carouselItem.media_type)}
           </li>
         );
@@ -30,16 +32,16 @@ const InstaCardMedia = (props) => {
   }
 
   const type = {
-    IMAGE: vefifyMediaType(props.cardInfo.mediaLink, props.cardInfo.mediaType),
-    VIDEO: vefifyMediaType(props.cardInfo.mediaLink, props.cardInfo.mediaType),
+    IMAGE: vefifyMediaType(mediaLink, mediaType),
+    VIDEO: vefifyMediaType(mediaLink, mediaType),
     CAROUSEL_ALBUM: (
       <Carousel withArrows={false} scrolling={true}>
-        {showCarousel(props.cardInfo.carouselItens, props.cardInfo.mediaType)}
+        {showCarousel(carouselItens, mediaType)}
       </Carousel>
     ),
   };
 
-  return type[props.cardInfo.mediaType];
+  return type[mediaType];
 };
 
 export default InstaCardMedia;
