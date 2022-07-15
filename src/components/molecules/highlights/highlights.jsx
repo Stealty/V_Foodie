@@ -1,8 +1,6 @@
 import styles from "./highlights.module.scss";
 import { useState } from "react";
-
-import { Carousel, HighlightCard } from "@molecules";
-import IFrameYTB from "../iFrameYTB/iFrameYTB";
+import { Carousel, HighlightCard, IFrameYTB } from "@molecules";
 
 export default function Highlights() {
   const [playing, setPlaying] = useState(false);
@@ -11,7 +9,8 @@ export default function Highlights() {
   const cards = [
     {
       title: "Baked Chicken Wings",
-      description: "A delicious chicken wings with a hint of Asian flavor",
+      description:
+        "Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim ",
       image:
         "./images/baked-chicken-wings-asian-style-tomatoes-sauce-plate 1.png",
       id: "1",
@@ -19,7 +18,8 @@ export default function Highlights() {
     },
     {
       title: "Baked Chicken Wings",
-      description: "A delicious chicken wings with a hint of Asian flavor",
+      description:
+        "Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim ",
       image:
         "./images/baked-chicken-wings-asian-style-tomatoes-sauce-plate 1.png",
       id: "2",
@@ -27,7 +27,8 @@ export default function Highlights() {
     },
     {
       title: "Baked Chicken Wings",
-      description: "A delicious chicken wings with a hint of Asian flavor",
+      description:
+        "Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim ",
       image:
         "./images/baked-chicken-wings-asian-style-tomatoes-sauce-plate 1.png",
       id: "3",
@@ -35,7 +36,8 @@ export default function Highlights() {
     },
     {
       title: "Baked Chicken Wings",
-      description: "A delicious chicken wings with a hint of Asian flavor",
+      description:
+        "Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim ",
       image:
         "./images/baked-chicken-wings-asian-style-tomatoes-sauce-plate 1.png",
       id: "4",
@@ -43,7 +45,8 @@ export default function Highlights() {
     },
     {
       title: "Baked Chicken Wings",
-      description: "A delicious chicken wings with a hint of Asian flavor",
+      description:
+        "Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqut enim ad minim ",
       image:
         "./images/baked-chicken-wings-asian-style-tomatoes-sauce-plate 1.png",
       id: "5",

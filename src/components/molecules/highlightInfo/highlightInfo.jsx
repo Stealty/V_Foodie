@@ -1,8 +1,6 @@
 import styles from "./highlightInfo.module.scss";
-import TimeInfo from "@molecules/timeInfo/TimeInfo";
-import TypeInfo from "@molecules/typeInfo/TypeInfo";
+import { TimeInfo, TypeInfo, HighlightAuthor } from "@molecules";
 import { PrimaryButton } from "@atoms";
-import HighlightAuthor from "../highlightAuthor/highlightAuthor";
 
 export default function HighlightInfo({
   playing,
@@ -11,10 +9,6 @@ export default function HighlightInfo({
   setVideoID,
   title,
   description,
-  image,
-  author,
-  type,
-  time,
 }) {
   return (
     <div className={styles.highlightInfo}>

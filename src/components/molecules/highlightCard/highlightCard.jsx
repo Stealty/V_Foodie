@@ -1,6 +1,6 @@
 import styles from "./highlightCard.module.scss";
-import HighlightInfo from "@molecules/highlightInfo/highlightInfo";
-import HighlightImage from "@atoms/highlightImage/highlightImage";
+import { HighlightInfo } from "@molecules";
+import { HighlightImage } from "@atoms";
 
 export default function HighlightCard({
   playing,

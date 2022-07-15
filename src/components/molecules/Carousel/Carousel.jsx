@@ -13,7 +13,6 @@ export default function Carousel({
       carouselList.addEventListener("click", (event) => {
         const cardWidth = event.target.parentNode.offsetWidth;
         const cardPercentage = Math.floor((event.layerX * 100) / cardWidth);
-        console.log(cardPercentage);
 
         if (event.layerY > 660 || event.layerY < 52) {
           return;
