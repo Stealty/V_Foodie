@@ -1,28 +1,33 @@
 import styles from "./instaCardMedia.module.scss";
 import { Carousel } from "@molecules";
 
-const InstaCardMedia = (props) => {
-  /* console.log(props.cardInfo.carouselItens); */
-
-  function vefifyMediaType(mediaLink, mediaType) {
+const InstaCardMedia = ({
+  mediaId,
+  mediaType,
+  mediaLink,
+  carouselItens,
+  postLink,
+}) => {
+  function vefifyMediaType(mediaLink, mediaType, postLink) {
     return mediaType === "IMAGE" ? (
-      <img src={mediaLink} className={styles.media} />
+      <a href={postLink} target="_blank">
+        <img key={mediaId} src={mediaLink} className={styles.media} />
+      </a>
     ) : (
-      <video controls className={styles.media}>
-        <source scr={mediaLink} />
-      </video>
+      <a href={postLink} target="_blank">
+        <video controls className={styles.media} scr={mediaLink}></video>
+      </a>
     );
   }
 
   function showCarousel(carouselList, mediaType) {
     if (mediaType === "CAROUSEL_ALBUM") {
-      /* console.log(carouselList.data); */
       return carouselList.data.map((carouselItem) => {
-        /* console.log(carouselItem.media_url); */
-
         return (
           <li className={styles.carouselItem}>
-            {vefifyMediaType(carouselItem.media_url, carouselItem.media_type)}
+            <a href={postLink} target="_blank">
+              {vefifyMediaType(carouselItem.media_url, carouselItem.media_type)}
+            </a>
           </li>
         );
       });
@@ -30,16 +35,16 @@ const InstaCardMedia = (props) => {
   }
 
   const type = {
-    IMAGE: vefifyMediaType(props.cardInfo.mediaLink, props.cardInfo.mediaType),
-    VIDEO: vefifyMediaType(props.cardInfo.mediaLink, props.cardInfo.mediaType),
+    IMAGE: vefifyMediaType(mediaLink, mediaType, postLink),
+    VIDEO: vefifyMediaType(mediaLink, mediaType),
     CAROUSEL_ALBUM: (
       <Carousel withArrows={false} scrolling={true}>
-        {showCarousel(props.cardInfo.carouselItens, props.cardInfo.mediaType)}
+        {showCarousel(carouselItens, mediaType, postLink)}
       </Carousel>
     ),
   };
 
-  return type[props.cardInfo.mediaType];
+  return type[mediaType];
 };
 
 export default InstaCardMedia;

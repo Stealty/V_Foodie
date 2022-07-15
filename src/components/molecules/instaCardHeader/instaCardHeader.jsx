@@ -1,16 +1,13 @@
 import styles from "./instaCardHeader.module.scss";
-import ProfileImg from "../../../../public/images/perfil_img.png";
+import ProfileImg from "/images/perfil_img.png";
 
-const InstaCardHeader = (props) => {
-  /* console.log(props); */
+const InstaCardHeader = ({ username }) => {
   return (
-    <div
-      href="https://www.instagram.com/_foodieland._/"
-      target="blank"
-      className={styles.headerContainer}
-    >
+    <div className={styles.headerContainer}>
       <img src={ProfileImg} className={styles.profileImg} />
-      <h5 className={styles.username}>{props.username}</h5>
+      <a href="https://www.instagram.com/_foodieland._/" target="blank">
+        <h5 className={styles.username}>{username}</h5>
+      </a>
       <p className={styles.location}>Tokyo, Japan</p>
     </div>
   );

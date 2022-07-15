@@ -1,25 +1,21 @@
-import InstaCardActions from "../instaCardActions/instaCardActions";
-import InstaCardHeader from "../instaCardHeader/instaCardHeader";
-import InstaCardInfo from "../instaCardInfo/instaCardInfo";
-import InstaCardMedia from "../instaCardMedia/instaCardMedia";
+import {
+  InstaCardMedia,
+  InstaCardInfo,
+  InstaCardHeader,
+  InstaCardActions,
+} from "@molecules";
 import styles from "./instaCard.module.scss";
 
 const InstaCard = (props) => {
-  /* console.log(props.postInfo); */
   return (
-    <a
-      className={styles.cardContainer}
-      /*  href={props.postInfo.permalink}
-      target="_blank" */
-    >
+    <li className={styles.cardContainer}>
       <InstaCardHeader username={props.postInfo.username} />
       <InstaCardMedia
-        cardInfo={{
-          mediaId: props.postInfo.id,
-          mediaType: props.postInfo.media_type,
-          mediaLink: props.postInfo.media_url,
-          carouselItens: props.postInfo.children,
-        }}
+        mediaId={props.postInfo.id}
+        mediaType={props.postInfo.media_type}
+        mediaLink={props.postInfo.media_url}
+        carouselItens={props.postInfo.children}
+        postLink={props.postInfo.permalink}
       />
       <InstaCardActions />
       <InstaCardInfo
@@ -28,7 +24,7 @@ const InstaCard = (props) => {
         date={props.postInfo.timestamp}
         children={props.postInfo.children}
       />
-    </a>
+    </li>
   );
 };
 
