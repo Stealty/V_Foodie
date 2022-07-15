@@ -1,14 +1,14 @@
 import styles from "./highlightInfo.module.scss";
-import TimeInfo from "@molecules/timeInfo/TimeInfo";
-import TypeInfo from "@molecules/typeInfo/TypeInfo";
+import { TimeInfo, TypeInfo, HighlightAuthor } from "@molecules";
 import { PrimaryButton } from "@atoms";
-import HighlightAuthor from "../highlightAuthor/highlightAuthor";
 
 export default function HighlightInfo({
   playing,
   setPlaying,
   videoID,
   setVideoID,
+  title,
+  description,
 }) {
   return (
     <div className={styles.highlightInfo}>
@@ -19,13 +19,8 @@ export default function HighlightInfo({
         />
         Hot Recipes
       </span>
-      <h1 className={styles.highlightInfo__title}>
-        Spicy delicious chicken wings
-      </h1>
-      <p className={styles.highlightInfo__text}>
-        Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqut enim ad minim{" "}
-      </p>
+      <h1 className={styles.highlightInfo__title}>{title}</h1>
+      <p className={styles.highlightInfo__text}>{description}</p>
       <div className={styles.hightlightInfo__details}>
         <TimeInfo time="30 Minutes" background="rgba(0, 0, 0, 0.05)" />
         <TypeInfo type="Chicken" background="rgba(0, 0, 0, 0.05)" />
@@ -52,12 +47,7 @@ export default function HighlightInfo({
                 />
               </svg>
             }
-            onClick={(event) => {
-              if (!playing) {
-                event.target.parentNode.className = `${styles["iFramePlayer__buttonWrapper--playing"]}`;
-              } else {
-                event.target.parentNode.className = `${styles["iFramePlayer__buttonWrapper"]}`;
-              }
+            onClick={() => {
               setPlaying(!playing);
               setVideoID(videoID);
             }}

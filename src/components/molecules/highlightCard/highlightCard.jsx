@@ -1,6 +1,6 @@
 import styles from "./highlightCard.module.scss";
-import HighlightInfo from "@molecules/highlightInfo/highlightInfo";
-import HighlightImage from "@atoms/highlightImage/highlightImage";
+import { HighlightInfo } from "@molecules";
+import { HighlightImage } from "@atoms";
 
 export default function HighlightCard({
   playing,
@@ -12,7 +12,15 @@ export default function HighlightCard({
   videoID,
 }) {
   return (
-    <div className={styles.HighLightCard__container}>
+    <div
+      className={
+        !playing
+          ? styles.HighLightCard__container
+          : styles.HighLightCard__container +
+            " " +
+            styles["HighLightCard__container--opaque"]
+      }
+    >
       <HighlightInfo
         title={title}
         description={description}
