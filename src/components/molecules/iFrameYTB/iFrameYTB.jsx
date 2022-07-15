@@ -4,11 +4,18 @@ import { PrimaryButton } from "@atoms";
 
 let player;
 
-export default function IFrameYTB({ videoID, playing }) {
+export default function IFrameYTB({ videoID, playing, setPlaying }) {
   var tag = document.createElement("script");
   tag.src = "https://www.youtube.com/iframe_api";
   const firstScriptTag = document.getElementsByTagName("script")[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  useEffect(() => {
+    if (playing) {
+      player.loadVideoById(videoID);
+      playVideo();
+    }
+  }, [playing]);
 
   useEffect(() => {
     loadPlayer();
@@ -41,14 +48,12 @@ export default function IFrameYTB({ videoID, playing }) {
   }
 
   function onPlayerReady() {
-    player.playVideo();
     player.mute(true);
     player.isMuted();
     player.setLoop(true);
   }
 
   function playVideo() {
-    loadPlayer();
     player.playVideo();
   }
 
@@ -61,6 +66,11 @@ export default function IFrameYTB({ videoID, playing }) {
     player.playVideo();
   }
 
+  function stopVideo() {
+    player.stopVideo();
+    setPlaying(false);
+  }
+
   return (
     <>
       <div
@@ -71,7 +81,6 @@ export default function IFrameYTB({ videoID, playing }) {
       >
         <div id="player" className={styles.iFramePlayer__iframePlaying}></div>
       </div>
-
       {playing && (
         <div className={styles.iFrameControls__wrapper}>
           <PrimaryButton
@@ -89,6 +98,15 @@ export default function IFrameYTB({ videoID, playing }) {
             onClick={() => pauseVideo()}
           >
             Pause
+          </PrimaryButton>
+
+          <PrimaryButton
+            type="button"
+            className={styles.iFramePlayer__button}
+            text="Stop"
+            onClick={() => stopVideo()}
+          >
+            Stop
           </PrimaryButton>
           <PrimaryButton
             type="button"

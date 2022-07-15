@@ -11,14 +11,18 @@ export default function Carousel({
     const carouselList = document.querySelector("#carouselList");
     if (scrolling) {
       carouselList.addEventListener("click", (event) => {
+        const cardWidth = event.target.parentNode.offsetWidth;
+        const cardPercentage = Math.floor((event.layerX * 100) / cardWidth);
+        console.log(cardPercentage);
+
         if (event.layerY > 660 || event.layerY < 52) {
           return;
         }
-        if (event.layerX < 40) {
-          handleScrollLeft(event);
-        }
-        if (event.layerX > 1200) {
+        if (cardPercentage < 20) {
           handleScrollRight(event);
+        }
+        if (cardPercentage > 130) {
+          handleScrollLeft(event);
         }
       });
     }

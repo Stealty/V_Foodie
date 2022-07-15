@@ -6,7 +6,7 @@ import IFrameYTB from "../iFrameYTB/iFrameYTB";
 
 export default function Highlights() {
   const [playing, setPlaying] = useState(false);
-  const [videoID, setVideoID] = useState("c35V0sCNadw");
+  const [videoID, setVideoID] = useState(null);
 
   const cards = [
     {
@@ -23,7 +23,7 @@ export default function Highlights() {
       image:
         "./images/baked-chicken-wings-asian-style-tomatoes-sauce-plate 1.png",
       id: "2",
-      movie: "dQw4w9WgXcQ",
+      movie: "ub1WfnpqXFc",
     },
     {
       title: "Baked Chicken Wings",
@@ -31,7 +31,7 @@ export default function Highlights() {
       image:
         "./images/baked-chicken-wings-asian-style-tomatoes-sauce-plate 1.png",
       id: "3",
-      movie: "dQw4w9WgXcQ",
+      movie: "dQw4w9WgXcS",
     },
     {
       title: "Baked Chicken Wings",

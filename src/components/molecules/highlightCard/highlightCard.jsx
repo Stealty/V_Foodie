@@ -12,7 +12,15 @@ export default function HighlightCard({
   videoID,
 }) {
   return (
-    <div className={styles.HighLightCard__container}>
+    <div
+      className={
+        !playing
+          ? styles.HighLightCard__container
+          : styles.HighLightCard__container +
+            " " +
+            styles["HighLightCard__container--opaque"]
+      }
+    >
       <HighlightInfo
         title={title}
         description={description}

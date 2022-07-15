@@ -81,20 +81,20 @@
 .iFrameControls__wrapper {
   z-index: 2;
   position: absolute;
-  bottom: 93px;
-  right: 0;
+  bottom: 80px;
+  left: 0;
   display: flex;
   gap: 1rem;
   animation: opace 0.8 ease-out;
 
   @media screen and (max-width: 572px) {
     bottom: 260px;
-    left: 23.5%;
+    left: 16%;
   }
 
   @media screen and (max-width: 472px) {
     bottom: 260px;
-    left: 17%;
+    left: 5%;
   }
 }
 

@@ -34,6 +34,10 @@
   margin-bottom: 162px;
   border-radius: 40px;
   background-color: transparent;
+
+  &--opaque {
+    opacity: 0;
+  }
 }
 
 .HighlightCard__iFrame {
