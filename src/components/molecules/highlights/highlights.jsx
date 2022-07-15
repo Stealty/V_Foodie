@@ -31,7 +31,7 @@ export default function Highlights() {
       image:
         "./images/baked-chicken-wings-asian-style-tomatoes-sauce-plate 1.png",
       id: "3",
-      movie: "dQw4w9WgXcS",
+      movie: "u54aQPzwbWc",
     },
     {
       title: "Baked Chicken Wings",
@@ -39,7 +39,7 @@ export default function Highlights() {
       image:
         "./images/baked-chicken-wings-asian-style-tomatoes-sauce-plate 1.png",
       id: "4",
-      movie: "dQw4w9WgXcQ",
+      movie: "EZ-MXloBm1Q",
     },
     {
       title: "Baked Chicken Wings",
@@ -47,7 +47,7 @@ export default function Highlights() {
       image:
         "./images/baked-chicken-wings-asian-style-tomatoes-sauce-plate 1.png",
       id: "5",
-      movie: "dQw4w9WgXcQ",
+      movie: "gKCdJSY3n38",
     },
   ];
 
