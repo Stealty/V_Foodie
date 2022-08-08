@@ -33,7 +33,7 @@ const MenuSlider = (props) => {
       <NavItem
         OnClickHandler={isScreenSmall ? props.OnClickHandler : ""} 
         classname="--header"
-        linkto="/recipes"
+        linkto="/mixed-tropical-fruit-salad-with-superfood-boosts"
         text="Recipes"
         nonFocusable={nonFocusable}
       ></NavItem>

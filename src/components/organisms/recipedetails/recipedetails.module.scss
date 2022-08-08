@@ -1,0 +1,12 @@
+.Header{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 60% 10% 30%;
+    grid-template-areas: 'title .  icons' 'details .  icons';
+
+    &__Details{
+        display: flex;
+        grid-area: details;
+
+    }
+}

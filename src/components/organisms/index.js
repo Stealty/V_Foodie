@@ -10,3 +10,4 @@ export { default as Recipes } from "./recipes/recipes";
 export { default as ChefSection } from "./chefSection/chefSection";
 export { default as CategoriesSection } from "./categoriesSection/categoriesSection";
 export { default as RecipesCarousel } from "./recipesCarousel/recipesCarousel";
+export { default as RecipeDetails } from "./recipedetails/recipedetails";
