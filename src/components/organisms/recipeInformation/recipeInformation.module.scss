@@ -1,5 +1,26 @@
-.recipeInformation {
+.RecipeInformation {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 50px;
   &__resume {
     display: flex;
+  }
+
+  &__tools {
+    position: absolute;
+    display: flex;
+    max-width: 192px;
+    gap: 32px;
+    top: 125px;
+    right: 42px;
+  }
+}
+
+@media screen and(max-width: 850px) {
+  .RecipeInformation {
+    &__tools {
+      display: none;
+    }
   }
 }
