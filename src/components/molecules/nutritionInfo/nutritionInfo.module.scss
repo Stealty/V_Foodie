@@ -1,0 +1,45 @@
+.nutritionInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--card-background-color);
+  max-width: 400px;
+  height: 600px;
+  padding: 32px;
+  border-radius: 30px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 54px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+
+  &__type {
+    letter-spacing: -0.04em;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 500;
+  }
+
+  &__value {
+    letter-spacing: 0.04em;
+    font-weight: 500;
+  }
+
+  &__text {
+    color: rgba(0, 0, 0, 0.6);
+  }
+}

@@ -5,6 +5,7 @@
   margin-top: 50px;
   &__resume {
     display: flex;
+    flex-wrap: wrap;
   }
 
   &__tools {

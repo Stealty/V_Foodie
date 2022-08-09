@@ -6,6 +6,7 @@ import {
   PrinterButton,
   ShareButton,
   HighlightAuthor,
+  NutritionInfo,
 } from "@molecules";
 
 export default function RecipeInformation() {
@@ -22,6 +23,7 @@ export default function RecipeInformation() {
         <PrinterButton />
         <ShareButton />
       </div>
+      <NutritionInfo />
     </div>
   );
 }
