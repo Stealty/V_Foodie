@@ -6,7 +6,13 @@ export default function RecipePage() {
   return (
     <>
       <Section arialabel="Recipe Title, movie and information">
-        <RecipeInformation />
+        <RecipeInformation
+          name={"Rainbow Chicken Salad with Almond Honey Mustard Dressing"}
+          time={"30 Minutes"}
+          videoId={"kXYiU_JCYtU"}
+          image={"/images/rainbow-chicken.png"}
+          type={"Healthy"}
+        />
       </Section>
       {/* <Section arialabel="Recipe ingredients">Recipe ingredients</Section>
       <Section arialabel="Recipe instructions">Recipe instructions</Section> */}

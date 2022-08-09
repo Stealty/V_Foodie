@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "/images/fruit-salad.png",
+    "image": "images/fruit-salad.png",
     "title": "Mixed Tropical Fruit Salad with Superfood Boosts",
     "time": "30 Minutes",
     "type": "Healthy",
@@ -9,7 +9,7 @@
   },
   {
     "id": 2,
-    "image": "/images/beef.png",
+    "image": "images/beef.png",
     "title": "Big and Juicy Wagyu Beef Cheeseburger",
     "time": "30 Minutes",
     "type": "Western",
@@ -17,7 +17,7 @@
   },
   {
     "id": 3,
-    "image": "/images/japanese.png",
+    "image": "images/japanese.png",
     "title": "Healthy Japanese Fried Rice with Asparagus",
     "time": "30 Minutes",
     "type": "Healthy",
@@ -25,7 +25,7 @@
   },
   {
     "id": 4,
-    "image": "/images/taco.png",
+    "image": "images/taco.png",
     "title": "Cauliflower Walnut Vegetarian Taco Meat",
     "time": "30 Minutes",
     "type": "Eastern",
@@ -33,7 +33,7 @@
   },
   {
     "id": 5,
-    "image": "/images/rainbow-chicken.png",
+    "image": "images/rainbow-chicken.png",
     "title": "Rainbow Chicken Salad with Almond Honey Mustard Dressing",
     "time": "30 Minutes",
     "type": "Healthy",
@@ -41,7 +41,7 @@
   },
   {
     "id": 6,
-    "image": "/images/sandwich.png",
+    "image": "images/sandwich.png",
     "title": "Barbeque Spicy Sandwiches with Chips ",
     "time": "30 Minutes",
     "type": "Snack",
@@ -49,7 +49,7 @@
   },
   {
     "id": 7,
-    "image": "/images/lettuce-wraps.png",
+    "image": "images/lettuce-wraps.png",
     "title": "Firecracker Vegan Lettuce Wraps - Spicy! ",
     "time": "30 Minutes",
     "type": "Seafood",
@@ -57,7 +57,7 @@
   },
   {
     "id": 8,
-    "image": "/images/chicken-ramen.png",
+    "image": "images/chicken-ramen.png",
     "title": "Chicken Ramen Soup with Mushroom",
     "time": "30 Minutes",
     "type": "Japanese",

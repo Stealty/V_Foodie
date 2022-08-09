@@ -13,15 +13,43 @@
     display: flex;
     max-width: 192px;
     gap: 32px;
-    top: 125px;
+    top: 165px;
     right: 42px;
+  }
+  &__content {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__ilustration {
+    width: 100%;
+    max-width: calc(100% - 400px);
+    border-radius: 30px;
+    object-fit: cover;
+  }
+
+  &__movie {
+    position: absolute;
+    left: 0;
+    top: 375px;
+    width: 100%;
+    height: 750px;
   }
 }
 
-@media screen and(max-width: 850px) {
+@media screen and(max-width: 860px) {
   .RecipeInformation {
+    align-items: center;
     &__tools {
       display: none;
+    }
+
+    &__ilustration {
+      display: none;
+    }
+
+    &__movie {
+      // display: none;
     }
   }
 }
