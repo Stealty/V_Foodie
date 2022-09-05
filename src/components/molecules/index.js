@@ -31,3 +31,6 @@ export { default as CategoryCard } from "./categoryCard/categoryCard";
 export { default as RecipesGrid } from "./recipesGrid/recipesGrid";
 export { default as Carousel } from "./Carousel/Carousel";
 export { default as IFrameYTB } from "./IFrameYTB/IFrameYTB";
+export { default as PrinterButton } from "./printerButton/printerButton";
+export { default as ShareButton } from "./shareButton/shareButton";
+export { default as NutritionInfo } from "./nutritionInfo/nutritionInfo";
